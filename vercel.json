@@ -1,0 +1,10 @@
+{
+  "projects": [
+    {
+      "path": "novel-reader",
+      "settings": {
+        "framework": "nextjs"
+      }
+    }
+  ]
+}
