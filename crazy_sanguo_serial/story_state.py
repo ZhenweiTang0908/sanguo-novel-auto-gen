@@ -30,7 +30,8 @@ class CharacterState:
     identity: str
     current_location: str
     goal: str
-    status: str  # alive, dead, missing, transformed
+    status: str = "alive"  # alive, dead, missing, transformed
+    role: str = "supporting"  # main, supporting
     relationship_changes: List[str] = field(default_factory=list)
     new_traits: List[str] = field(default_factory=list)
 
@@ -309,7 +310,57 @@ class StoryState:
     def update_main_conflict(self, conflict: str):
         """更新主线冲突"""
         self._plot_state["main_conflict"] = conflict
-    
+
+    def add_character(self, name: str, identity: str, current_location: str = "未知", goal: str = "待探索", status: str = "alive", role: str = "supporting"):
+        """添加新角色"""
+        if self._characters is None:
+            self._characters = {}
+        self._characters[name] = CharacterState(
+            name=name,
+            identity=identity,
+            current_location=current_location,
+            goal=goal,
+            status=status,
+            role=role,
+            relationship_changes=[],
+            new_traits=[]
+        )
+        logger.info(f"添加角色: {name} - {identity} ({role})")
+
+    def get_main_characters(self) -> Dict[str, CharacterState]:
+        """获取主要人物"""
+        return {n: c for n, c in self.characters.items() if c.role == "main"}
+
+    def get_supporting_characters(self) -> Dict[str, CharacterState]:
+        """获取配角"""
+        return {n: c for n, c in self.characters.items() if c.role == "supporting"}
+
+    def set_active_characters(self, names: List[str]):
+        """设置下一章需要出现的角色（优先级最高）"""
+        self._plot_state["active_characters"] = names
+
+    def get_active_characters(self) -> Optional[List[str]]:
+        """获取下一章需要出现的角色"""
+        return self._plot_state.get("active_characters")
+
+    def clear_active_characters(self):
+        """清除活动角色设置"""
+        if "active_characters" in self._plot_state:
+            del self._plot_state["active_characters"]
+
+    def set_user_inspiration(self, inspiration: str):
+        """设置用户输入的灵感线索，下一章必须融入"""
+        self._plot_state["user_inspiration"] = inspiration
+
+    def get_user_inspiration(self) -> Optional[str]:
+        """获取用户灵感线索"""
+        return self._plot_state.get("user_inspiration")
+
+    def clear_user_inspiration(self):
+        """清除用户灵感线索（使用后）"""
+        if "user_inspiration" in self._plot_state:
+            del self._plot_state["user_inspiration"]
+
     # ==================== 状态查询 ====================
     
     @property

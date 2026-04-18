@@ -18,91 +18,91 @@ class PromptBuilder:
     def build_init_world_prompt() -> str:
         """
         构建初始化世界观的 Prompt
-        
+
         Returns:
             用于生成初始世界观设定的 prompt
         """
-        return """# 任务：创建一个癫狂离谱的魔改三国世界观
+        return """# 任务：创建一个魔改三国世界观
 
-你是这个疯狂宇宙的造物主。现在要为一本反原著、脑洞离谱的三国同人小说创建基础世界观。
+你是这个疯狂宇宙的造物主。现在要为一本三国同人小说创建基础设定。
 
 ## 核心要求
 
-### 1. 保留的元素
-- 三国主要人物名字（刘备、关羽、张飞、曹操、孙权、诸葛亮、周瑜、吕布、董卓、袁绍等）
-- 三国基本势力划分（魏/蜀/吴或其他变体）
-- 一些经典三国事件的影子（赤壁、官渡、夷陵等）
+### 1. 基础设定（保持原样）
+- 时代：东汉末年，黄巾起义之后
+- 地理：九州框架
+- 人物：三国主要人物（刘备、关羽、张飞、曹操、孙权、诸葛亮等）
+- 势力：魏/蜀/吴三国
 
-### 2. 必须魔改的元素（全部颠覆！）
+### 2. 世界观（保持简洁正常）
+- 不需要复杂的修炼体系
+- 不需要上古神族、外星文明
+- 不需要科幻元素
+- 保持历史小说的基本框架
 
-#### 科技体系
-- 可以引入：赛博朋克、量子科技、修仙机甲、AI系统、时间循环、外星科技
-- 例子：赤兔马是机甲战马、诸葛亮的扇子是气象控制仪、曹操的军队有记忆税收系统
+### 3. 魔改点在【剧情和人物关系】上！
 
-#### 社会设定
-- 古代官职可以变成现代职业：太守=城市CEO、将军=军团指挥官、谋士=战略顾问
-- 可以有：连锁教主、创业教父、AI皇帝、丧尸儒学、外星朝廷
-- 货币体系可以癫狂：可以用"忠义值"、"气运"、"业力"等
+举例魔改手法（全部要体现在伏笔和人物设定中）：
+- 人物身份颠倒：刘备其实是曹操的亲兄弟 / 诸葛亮是女性卧底
+- 隐藏血脉：某人其实是前朝皇室遗孤 / 孙权是龙的化身
+- 背叛与反转：最信任的人其实是卧底 / 敌人其实在保护你
+- 历史事件重塑：赤壁之战其实是因为一场赌约 / 夷陵之战是诸葛亮设的局
+- 阴谋论：董卓之死是王允和吕布联手策划的 / 黄巾起义背后有人操控
+- 身份秘密：华雄其实没死 / 貂蝉是间谍
+- 命运纠缠：某些人物之间有"宿命"绑定
 
-#### 人物设定（必须离谱但有逻辑）
-- 刘备：曾经的连续创业者，现在是连锁教主，桃园是他的第一个"创业孵化器"
-- 曹操：记忆税收官，能收取他人的记忆作为赋税
-- 孙权：掌控海上生物神经网络，能和海洋生物心灵感应
-- 诸葛亮：前气象武器工程师，现在隐居种地（其实是远程操控天气）
-- 关羽：义气值拉满，刀法自带"忠诚打击"属性
-- 张飞：嗓门大到可以当声波武器
-- 吕布：最强的机甲驾驶员，但情商为零
-
-### 3. 必须包含的内容
+### 4. 必须包含的内容
 
 请生成以下 JSON 格式的世界观设定：
 
 ```json
 {
-  "world_overview": "世界观总体描述（300字）",
+  "world_overview": "世界观简述（100字）",
   "core_rules": [
-    "核心规则1",
-    "核心规则2",
-    "核心规则3"
+    "规则1：某种基础设定",
+    "规则2：某种基础设定"
   ],
   "factions": [
     {
       "name": "势力名",
       "leader": "领袖",
-      "special_power": "特殊能力",
-      "ideology": "意识形态"
+      "special_power": "势力特长",
+      "ideology": "势力理念"
     }
   ],
   "main_characters": [
     {
       "name": "角色名",
       "original_identity": "原本身份",
-      "new_identity": "魔改后身份",
+      "new_identity": "真实身份或隐藏身份",
       "core_trait": "核心特质",
-      "secret": "隐藏秘密"
+      "secret": "隐藏秘密或阴谋"
     }
   ],
-  "main_conflict": "当前主线冲突描述",
+  "main_conflict": "当前主线冲突",
   "sustainable_hooks": [
-    "可持续展开的伏笔1",
-    "可持续展开的伏笔2",
-    "可持续展开的伏笔3"
+    "伏笔1：某个阴谋或秘密",
+    "伏笔2：某个身份反转",
+    "伏笔3：某个命运纠缠"
   ],
   "creative_types_used": [
-    "tech_disaster",
-    "bureaucracy_chaos"
+    "betrayal_reveal",
+    "identity_swap"
   ]
 }
 ```
 
 ## 风格要求
 
-- 癫狂但有逻辑
-- 离谱但可持续连载
-- 必须形成"挖坑-填坑"的结构
-- 每个设定都要有潜在的剧情发展空间
+- 世界观简洁正常，魔改点在剧情和人物秘密、人物关系上
+- 每个角色都要有隐藏的秘密
+- 部分角色包含恶趣味
+- 大部分角色都庸俗化和带有市井气味，没有那种英雄感
+- 允许同性恋、恋物癖、三角恋等元素出现
+- 允许角色有反派行为
+- 每个伏笔都要能持续挖坑
 
-请立即生成这个世界观设定！不要犹豫，不要保守，越疯越好！"""
+请立即生成！"""
 
     # ==================== 章节续写 Prompt ====================
     
@@ -213,9 +213,26 @@ class PromptBuilder:
 
 """
         
-        # 添加角色状态
-        for name, char in list(characters.items())[:8]:
-            prompt += f"""### {name}
+        # 添加角色状态（如果用户指定了角色，优先显示）
+        active_chars = plot_state.get('active_characters')
+        if active_chars:
+            # 按用户指定的顺序排列
+            chars_to_show = []
+            for name in active_chars:
+                if name in characters:
+                    chars_to_show.append((name, characters[name]))
+            # 添加其他角色
+            for name, char in characters.items():
+                if name not in active_chars:
+                    chars_to_show.append((name, char))
+        else:
+            # 默认：main 角色优先
+            chars_sorted = sorted(characters.items(), key=lambda x: x[1].get('role', 'supporting') != 'main', reverse=True)
+            chars_to_show = chars_sorted[:8]
+
+        for name, char in chars_to_show:
+            role_label = "【主演】" if char.get('role') == 'main' else "【配角】"
+            prompt += f"""### {name} {role_label}
 - 身份：{char.get('identity', '未知')}
 - 当前位置：{char.get('current_location', '未知')}
 - 当前目标：{char.get('goal', '未知')}
@@ -257,7 +274,16 @@ class PromptBuilder:
         
         for i, creative in enumerate(selected_creatives, 1):
             prompt += f"{i}. {creative}\n"
-        
+
+        user_inspiration = plot_state.get('user_inspiration')
+        if user_inspiration:
+            prompt += f"""
+---
+
+## 💡 用户指定灵感（必须融入本章！）
+**{user_inspiration}**
+"""
+
         prompt += """
 ---
 

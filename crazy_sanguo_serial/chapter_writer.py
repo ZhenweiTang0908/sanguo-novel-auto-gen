@@ -116,7 +116,11 @@ class ChapterWriter:
             
             # 13. 保存所有状态
             self.story_state.save_all()
-            
+
+            # 14. 清除已使用的设置
+            self.story_state.clear_user_inspiration()
+            self.story_state.clear_active_characters()
+
             logger.info(f"第{chapter_num}章写作完成")
             return True, chapter_content
             

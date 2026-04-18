@@ -1,46 +1,71 @@
 {
   "刘备": {
     "name": "刘备",
-    "identity": "连锁教主",
+    "identity": "前朝刘氏皇裔，实为曹操亲生兄弟",
     "current_location": "初始地点",
     "goal": "待探索",
     "status": "alive",
+    "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
   },
   "关羽": {
     "name": "关羽",
-    "identity": "义气值拉满的声波战士",
+    "identity": "被选中的‘天命之刃’，拥有操控雷电之力",
     "current_location": "初始地点",
     "goal": "待探索",
     "status": "alive",
+    "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
   },
   "张飞": {
     "name": "张飞",
-    "identity": "声波武器专家",
+    "identity": "天生异瞳，能看破人心真相",
     "current_location": "初始地点",
     "goal": "待探索",
     "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "曹操": {
+    "name": "曹操",
+    "identity": "真正的汉室遗孤，假扮奸雄以图大业",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "alive",
+    "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
   },
   "诸葛亮": {
     "name": "诸葛亮",
-    "identity": "气象武器工程师",
+    "identity": "女性间谍，真实身份为吴国密探",
     "current_location": "初始地点",
     "goal": "待探索",
     "status": "alive",
+    "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
   },
-  "吕布": {
-    "name": "吕布",
-    "identity": "最强机甲驾驶员",
+  "孙权": {
+    "name": "孙权",
+    "identity": "龙族后裔，能控制水元素",
     "current_location": "初始地点",
     "goal": "待探索",
     "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "潘森": {
+    "name": "潘森",
+    "identity": "刚从未来穿越回到三国；故事：潘森 潘森是黎木人。潘森 “潘森” 这个名号，起源于刚入学的时候。军训期间，潘森站在厕所门口，华林看到他，问：“你叫什么名字？” 潘森回答后，华林又问：“你会玩《英雄联盟》吗？” 潘森说会，华林就说：“那你以后就叫潘森吧。” 于是“潘森”这个名字就传开了。军训结束后，老寻也来了，老寻问潘森这个名号的由来，当时没人能回答，老寻就开玩笑说：“难道是因为你想开饭店，打算叫‘森记饭店’吗？” 振为刚到城里来，不知道“森记”这个名字的由来，华林说：“你怎么能不认识森记呢？他可是很有名的人啊。” 后来老寻把“森记”名号的由来告诉了振为。第一个学期，潘森起初和何启豪坐在一起，座位大概在第三组中",
+    "current_location": "广西的厕所",
+    "goal": "找到梁培俊，抛掉他的棉被",
+    "status": "alive",
+    "role": "main",
     "relationship_changes": [],
     "new_traits": []
   }

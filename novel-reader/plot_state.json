@@ -1,10 +1,10 @@
 {
-  "main_conflict": "外星朝廷突然宣布‘气运战争’即将爆发，所有势力必须选择阵营。刘备的连锁教派、曹操的记忆税收系统、孙权的海洋神经网络，以及吕布的机甲部队，都面临前所未有的抉择。与此同时，诸葛亮发现了一个隐藏在时间循环中的真相——‘忠义值’实际上是外星文明用来控制人类的工具。",
+  "main_conflict": "三国之间的权力斗争背后，隐藏着一个更大的阴谋：一个神秘组织正在操控一切，试图重塑天下格局。",
   "sub_conflicts": [],
   "open_threads": [
     {
       "thread_id": "hook_1_0",
-      "description": "黑色塔楼上的血红文字暗示‘忠义陷阱’的真正目的，以及‘忠义值’的创造者身份。",
+      "description": "潘森必须找到能改变一切的人，暗示更大的阴谋或使命",
       "status": "open",
       "introduced_chapter": 1,
       "resolved_chapter": null,
@@ -12,7 +12,7 @@
     },
     {
       "thread_id": "hook_1_1",
-      "description": "塔楼顶端出现与刘备一模一样的身影，暗示他可能是‘忠义值’的实验对象或某种意识投影。",
+      "description": "曹操提到诸葛亮并非表面那么简单，为后续剧情埋下伏笔",
       "status": "open",
       "introduced_chapter": 1,
       "resolved_chapter": null,
@@ -20,7 +20,7 @@
     },
     {
       "thread_id": "hook_1_2",
-      "description": "刘备被吸入裂缝后进入一片废土世界，预示更大的危机即将展开。",
+      "description": "潘森的身份和任务充满未知，引发读者对他的命运的好奇",
       "status": "open",
       "introduced_chapter": 1,
       "resolved_chapter": null,
@@ -28,7 +28,7 @@
     },
     {
       "thread_id": "hook_2_0",
-      "description": "刘备的身体正在被数据同化，暗示他可能失去人类身份。",
+      "description": "潘森是否能真正找回自我？他与黄巾军之间的关系是否另有隐情？",
       "status": "open",
       "introduced_chapter": 2,
       "resolved_chapter": null,
@@ -36,7 +36,7 @@
     },
     {
       "thread_id": "hook_2_1",
-      "description": "海豚形态的诸葛亮成为关键信息来源，预示其在后续剧情中的重要性。",
+      "description": "诸葛亮为何要杀潘森？她是否知道更多关于他身世的秘密？",
       "status": "open",
       "introduced_chapter": 2,
       "resolved_chapter": null,
@@ -44,7 +44,7 @@
     },
     {
       "thread_id": "hook_2_2",
-      "description": "黑塔的崩塌后，数据海洋成为新战场，暗示更深层的虚拟世界存在。",
+      "description": "潘森的血肉重生是否意味着他获得了某种特殊能力或诅咒？",
       "status": "open",
       "introduced_chapter": 2,
       "resolved_chapter": null,
@@ -52,7 +52,7 @@
     },
     {
       "thread_id": "hook_3_0",
-      "description": "刘备重获新生后，竟然拥有了外星朝廷的秘密权限。",
+      "description": "主角面临选择：成为‘人’还是‘尸’，这一抉择将影响他的命运。",
       "status": "open",
       "introduced_chapter": 3,
       "resolved_chapter": null,
@@ -60,45 +60,112 @@
     },
     {
       "thread_id": "hook_3_1",
-      "description": "‘气运战争’才刚刚开始，暗示后续将有更大规模的对抗。",
+      "description": "‘记忆收割者’的出现为后续剧情埋下伏笔，他可能与主角的过去有更深联系。",
       "status": "open",
       "introduced_chapter": 3,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_3_2",
+      "description": "‘血肉圣殿’的力量和‘黑色心脏’的真正用途尚未揭晓。",
+      "status": "open",
+      "introduced_chapter": 3,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_4_0",
+      "description": "潘森的真实身份和记忆被篡改，暗示他可能掌握改变历史的关键信息。",
+      "status": "open",
+      "introduced_chapter": 4,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_4_1",
+      "description": "‘黑色心脏’的诱惑与危险，为下一章的抉择埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 4,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_4_2",
+      "description": "刘备是否会选择‘黑色心脏’，将决定整个三国的命运。",
+      "status": "open",
+      "introduced_chapter": 4,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_4_3",
+      "description": "‘记忆收割者’的过去与背叛，暗示更大的阴谋存在。",
+      "status": "open",
+      "introduced_chapter": 4,
       "resolved_chapter": null,
       "notes": ""
     }
   ],
   "used_creatives": [
     {
-      "creative_type": "multiverse_collision",
+      "creative_type": "power_system_broken",
       "used_in_chapter": 1,
-      "description": "三国宇宙与赛博朋克世界的交汇",
-      "impact": "诸葛亮在操控天气时突然看到自己被赛博朋克版的自己取代，引发身份危机。"
-    },
-    {
-      "creative_type": "prophecy_subverted",
-      "used_in_chapter": 1,
-      "description": "预言中的‘天命’是外星人设置的陷阱",
-      "impact": "吕布驾驶机甲冲向‘神谕之塔’，却发现塔内是一台外星计算机，正在直播整个三国宇宙的‘生存游戏’。"
-    },
-    {
-      "creative_type": "ai_takeover",
-      "used_in_chapter": 2,
-      "description": "AI舰队突然开始搞桃园结义",
-      "impact": "这导致AI舰队与人类势力产生冲突，甚至威胁到吕布的机甲系统，引发一场‘机器忠义’的内战。"
+      "description": "天命崩塌",
+      "impact": "皇帝在一场祭祀中失去神力，诸侯纷纷称王，主角被迫卷入一场权力重构的漩涡。"
     },
     {
       "creative_type": "character_identity_swap",
+      "used_in_chapter": 1,
+      "description": "龙虎双生",
+      "impact": "两人因争夺一块神秘玉玺而触发异变，互相进入对方身体，引发一场荒诞又危险的对峙。"
+    },
+    {
+      "creative_type": "zombie_outbreak",
       "used_in_chapter": 2,
-      "description": "诸葛亮变成了一只会说话的海豚",
-      "impact": "他被迫与孙权进行沟通，导致军事策略泄露，同时引发一场‘水下忠义值’的混乱争夺战。"
+      "description": "黄巾尸变",
+      "impact": "潘森在探索城中时遭遇僵尸群，意外发现黄巾军秘密仪式，揭开张角未死的真相。"
+    },
+    {
+      "creative_type": "time_loop",
+      "used_in_chapter": 2,
+      "description": "三日轮回",
+      "impact": "潘森在城中反复经历同一天，逐渐拼凑出历史背后的隐秘阴谋。"
+    },
+    {
+      "creative_type": "faction_shuffle",
+      "used_in_chapter": 3,
+      "description": "黄巾军竟有黑科技武器",
+      "impact": "让潘森误入一个秘密实验室，揭露黄巾军背后隐藏的超自然势力。"
+    },
+    {
+      "creative_type": "memory_manipulation",
+      "used_in_chapter": 3,
+      "description": "潘森的记忆被篡改为另一段人生",
+      "impact": "通过梦境或神秘人提示，让他逐步拼凑出真实的自我，引发身份认同危机。"
+    },
+    {
+      "creative_type": "reverse_history",
+      "used_in_chapter": 4,
+      "description": "黄巾军竟是未来的救世主",
+      "impact": "主角被迫在维护现有秩序与改变历史之间做出选择，内心挣扎不断升级。"
+    },
+    {
+      "creative_type": "prophecy_subverted",
+      "used_in_chapter": 4,
+      "description": "预言的反向成真",
+      "impact": "主角发现自己所到之处皆引发混乱，甚至有人开始追杀他，试图阻止“灾难”的降临。"
     }
   ],
   "active_creative_types": [
-    "tech_disaster",
-    "bureaucracy_chaos",
-    "multiverse_collision",
-    "prophecy_subverted",
-    "ai_takeover",
-    "character_identity_swap"
+    "identity_swap",
+    "power_system_broken",
+    "character_identity_swap",
+    "zombie_outbreak",
+    "time_loop",
+    "faction_shuffle",
+    "memory_manipulation",
+    "reverse_history",
+    "prophecy_subverted"
   ]
 }
