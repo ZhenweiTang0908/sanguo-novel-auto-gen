@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { notFound } from 'next/navigation';
 
-const DATA_DIR = path.join(process.cwd(), '../data/chapters');
+const DATA_DIR = path.join(process.cwd(), 'data/chapters');
 
 interface PageProps {
   params: Promise<{ id: string }>;
