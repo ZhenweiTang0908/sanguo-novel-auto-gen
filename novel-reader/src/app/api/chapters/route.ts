@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-const DATA_DIR = path.join(process.cwd(), '../data/chapters');
-const META_PATH = path.join(process.cwd(), '../meta.json');
+const DATA_DIR = path.join(process.cwd(), 'data/chapters');
+const META_PATH = path.join(process.cwd(), 'meta.json');
 
 interface ChapterInfo {
   id: number;

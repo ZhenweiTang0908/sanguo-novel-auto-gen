@@ -45,15 +45,15 @@ class ChapterConfig:
 
 @dataclass
 class StorageConfig:
-    """存储路径配置"""
-    data_dir: str = "data"
-    meta_file: str = "meta.json"
-    story_bible_file: str = "story_bible.json"
-    characters_file: str = "characters.json"
-    plot_state_file: str = "plot_state.json"
-    arc_summaries_file: str = "arc_summaries.json"
-    chapters_dir: str = "data/chapters"
-    chapter_summaries_dir: str = "data/chapter_summaries"
+    """存储路径配置 - 指向 novel-reader/data 与前端共用"""
+    data_dir: str = "../novel-reader/data"
+    meta_file: str = "../novel-reader/meta.json"
+    story_bible_file: str = "../novel-reader/story_bible.json"
+    characters_file: str = "../novel-reader/characters.json"
+    plot_state_file: str = "../novel-reader/plot_state.json"
+    arc_summaries_file: str = "../novel-reader/arc_summaries.json"
+    chapters_dir: str = "../novel-reader/data/chapters"
+    chapter_summaries_dir: str = "../novel-reader/data/chapter_summaries"
 
 
 @dataclass

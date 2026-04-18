@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-const DATA_DIR = path.join(process.cwd(), '../data/chapters');
+const DATA_DIR = path.join(process.cwd(), 'data/chapters');
 
 export async function GET(
   request: Request,
