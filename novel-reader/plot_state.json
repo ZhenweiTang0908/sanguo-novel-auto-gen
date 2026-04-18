@@ -1,34 +1,10 @@
 {
-  "main_conflict": "三国之间的权力斗争背后，隐藏着一个更大的阴谋：一个神秘组织正在操控一切，试图重塑天下格局。",
+  "main_conflict": "各方势力暗中角力，真相逐渐浮出水面——所谓黄巾起义是某个神秘组织的布局，而真正的幕后黑手，正在等待时机统一九州。",
   "sub_conflicts": [],
   "open_threads": [
     {
-      "thread_id": "hook_1_0",
-      "description": "潘森必须找到能改变一切的人，暗示更大的阴谋或使命",
-      "status": "open",
-      "introduced_chapter": 1,
-      "resolved_chapter": null,
-      "notes": ""
-    },
-    {
-      "thread_id": "hook_1_1",
-      "description": "曹操提到诸葛亮并非表面那么简单，为后续剧情埋下伏笔",
-      "status": "open",
-      "introduced_chapter": 1,
-      "resolved_chapter": null,
-      "notes": ""
-    },
-    {
-      "thread_id": "hook_1_2",
-      "description": "潘森的身份和任务充满未知，引发读者对他的命运的好奇",
-      "status": "open",
-      "introduced_chapter": 1,
-      "resolved_chapter": null,
-      "notes": ""
-    },
-    {
       "thread_id": "hook_2_0",
-      "description": "潘森是否能真正找回自我？他与黄巾军之间的关系是否另有隐情？",
+      "description": "刘备是否真的只是个投影？他的真实身份和过去仍是个谜。",
       "status": "open",
       "introduced_chapter": 2,
       "resolved_chapter": null,
@@ -36,7 +12,7 @@
     },
     {
       "thread_id": "hook_2_1",
-      "description": "诸葛亮为何要杀潘森？她是否知道更多关于他身世的秘密？",
+      "description": "曹操声称知道刘备妹妹的真相，但他的动机和目的尚未明确。",
       "status": "open",
       "introduced_chapter": 2,
       "resolved_chapter": null,
@@ -44,7 +20,7 @@
     },
     {
       "thread_id": "hook_2_2",
-      "description": "潘森的血肉重生是否意味着他获得了某种特殊能力或诅咒？",
+      "description": "青铜神机的真正意图是什么？它是否在等待某个特定的人来解开它的秘密？",
       "status": "open",
       "introduced_chapter": 2,
       "resolved_chapter": null,
@@ -52,7 +28,7 @@
     },
     {
       "thread_id": "hook_3_0",
-      "description": "主角面临选择：成为‘人’还是‘尸’，这一抉择将影响他的命运。",
+      "description": "孩童手中的红色宝石和自称‘真正天子’的设定，暗示更大的势力或人物介入。",
       "status": "open",
       "introduced_chapter": 3,
       "resolved_chapter": null,
@@ -60,7 +36,7 @@
     },
     {
       "thread_id": "hook_3_1",
-      "description": "‘记忆收割者’的出现为后续剧情埋下伏笔，他可能与主角的过去有更深联系。",
+      "description": "孔明寻找‘真正的刘备’的行动，为后续剧情埋下伏笔。",
       "status": "open",
       "introduced_chapter": 3,
       "resolved_chapter": null,
@@ -68,104 +44,62 @@
     },
     {
       "thread_id": "hook_3_2",
-      "description": "‘血肉圣殿’的力量和‘黑色心脏’的真正用途尚未揭晓。",
+      "description": "曹操提到‘你不是诸葛亮’，暗示更多关于孔明过去的秘密未被揭开。",
       "status": "open",
       "introduced_chapter": 3,
-      "resolved_chapter": null,
-      "notes": ""
-    },
-    {
-      "thread_id": "hook_4_0",
-      "description": "潘森的真实身份和记忆被篡改，暗示他可能掌握改变历史的关键信息。",
-      "status": "open",
-      "introduced_chapter": 4,
-      "resolved_chapter": null,
-      "notes": ""
-    },
-    {
-      "thread_id": "hook_4_1",
-      "description": "‘黑色心脏’的诱惑与危险，为下一章的抉择埋下伏笔。",
-      "status": "open",
-      "introduced_chapter": 4,
-      "resolved_chapter": null,
-      "notes": ""
-    },
-    {
-      "thread_id": "hook_4_2",
-      "description": "刘备是否会选择‘黑色心脏’，将决定整个三国的命运。",
-      "status": "open",
-      "introduced_chapter": 4,
-      "resolved_chapter": null,
-      "notes": ""
-    },
-    {
-      "thread_id": "hook_4_3",
-      "description": "‘记忆收割者’的过去与背叛，暗示更大的阴谋存在。",
-      "status": "open",
-      "introduced_chapter": 4,
       "resolved_chapter": null,
       "notes": ""
     }
   ],
   "used_creatives": [
     {
-      "creative_type": "power_system_broken",
+      "creative_type": "memory_manipulation",
       "used_in_chapter": 1,
-      "description": "天命崩塌",
-      "impact": "皇帝在一场祭祀中失去神力，诸侯纷纷称王，主角被迫卷入一场权力重构的漩涡。"
-    },
-    {
-      "creative_type": "character_identity_swap",
-      "used_in_chapter": 1,
-      "description": "龙虎双生",
-      "impact": "两人因争夺一块神秘玉玺而触发异变，互相进入对方身体，引发一场荒诞又危险的对峙。"
-    },
-    {
-      "creative_type": "zombie_outbreak",
-      "used_in_chapter": 2,
-      "description": "黄巾尸变",
-      "impact": "潘森在探索城中时遭遇僵尸群，意外发现黄巾军秘密仪式，揭开张角未死的真相。"
+      "description": "失忆的曹操与记忆贩卖者",
+      "impact": "曹操在寻找记忆的过程中逐渐发现自己的过往并不如想象中光明，甚至可能涉及更大的秘密。"
     },
     {
       "creative_type": "time_loop",
+      "used_in_chapter": 1,
+      "description": "三日轮回的赤兔马",
+      "impact": "关羽在不断重复的三日内寻找破解方法，期间与吕布、曹操等人发生意外交锋，导致历史走向微妙变化。"
+    },
+    {
+      "creative_type": "multiverse_collision",
       "used_in_chapter": 2,
-      "description": "三日轮回",
-      "impact": "潘森在城中反复经历同一天，逐渐拼凑出历史背后的隐秘阴谋。"
+      "description": "异界军师现世",
+      "impact": "他被刘备误认为是预言中的贤士，开始协助制定战略，却意外引发多方势力的争夺。"
     },
     {
-      "creative_type": "faction_shuffle",
-      "used_in_chapter": 3,
-      "description": "黄巾军竟有黑科技武器",
-      "impact": "让潘森误入一个秘密实验室，揭露黄巾军背后隐藏的超自然势力。"
-    },
-    {
-      "creative_type": "memory_manipulation",
-      "used_in_chapter": 3,
-      "description": "潘森的记忆被篡改为另一段人生",
-      "impact": "通过梦境或神秘人提示，让他逐步拼凑出真实的自我，引发身份认同危机。"
-    },
-    {
-      "creative_type": "reverse_history",
-      "used_in_chapter": 4,
-      "description": "黄巾军竟是未来的救世主",
-      "impact": "主角被迫在维护现有秩序与改变历史之间做出选择，内心挣扎不断升级。"
+      "creative_type": "ai_takeover",
+      "used_in_chapter": 2,
+      "description": "青铜神机觉醒",
+      "impact": "它选择帮助曹操，却因逻辑混乱导致战场局势大乱，引发各方势力的恐慌与合作。"
     },
     {
       "creative_type": "prophecy_subverted",
-      "used_in_chapter": 4,
-      "description": "预言的反向成真",
-      "impact": "主角发现自己所到之处皆引发混乱，甚至有人开始追杀他，试图阻止“灾难”的降临。"
+      "used_in_chapter": 3,
+      "description": "预言中的‘真命天子’竟是个孩童",
+      "impact": "刘备、曹操等人争夺这个孩子，却不知他才是命运真正的棋手，颠覆所有人的期待与信念。"
+    },
+    {
+      "creative_type": "character_identity_swap",
+      "used_in_chapter": 3,
+      "description": "刘备成了曹操的替身",
+      "impact": "刘备被迫在陌生身份中周旋，引发身份混乱和信任危机，同时让曹操借机布局夺取天下。"
     }
   ],
   "active_creative_types": [
+    "betrayal_reveal",
     "identity_swap",
-    "power_system_broken",
-    "character_identity_swap",
-    "zombie_outbreak",
-    "time_loop",
-    "faction_shuffle",
     "memory_manipulation",
-    "reverse_history",
-    "prophecy_subverted"
-  ]
+    "time_loop",
+    "multiverse_collision",
+    "ai_takeover",
+    "prophecy_subverted",
+    "character_identity_swap"
+  ],
+  "random_character_mode": false,
+  "random_character_count": 5,
+  "user_inspiration": "无"
 }

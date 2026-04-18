@@ -335,6 +335,43 @@ class StoryState:
         """获取配角"""
         return {n: c for n, c in self.characters.items() if c.role == "supporting"}
 
+    def update_character(self, name: str, identity: Optional[str] = None, role: Optional[str] = None, current_location: Optional[str] = None, goal: Optional[str] = None):
+        """修改角色信息"""
+        if name not in self._characters:
+            logger.warning(f"角色不存在: {name}")
+            return False
+        char = self._characters[name]
+        if identity is not None:
+            char.identity = identity
+        if role is not None:
+            char.role = role
+        if current_location is not None:
+            char.current_location = current_location
+        if goal is not None:
+            char.goal = goal
+        logger.info(f"更新角色: {name}")
+        return True
+
+    def set_random_character_mode(self, enabled: bool, count: int = 5):
+        """设置随机角色模式"""
+        self._plot_state["random_character_mode"] = enabled
+        self._plot_state["random_character_count"] = count
+        if enabled:
+            self.clear_active_characters()
+        logger.info(f"随机角色模式: {'开启' if enabled else '关闭'}, 数量: {count}")
+
+    def is_random_character_mode(self) -> bool:
+        """是否启用随机角色模式"""
+        return self._plot_state.get("random_character_mode", False)
+
+    def get_random_characters(self, count: int = 5) -> List[str]:
+        """获取随机角色列表"""
+        import random
+        all_chars = list(self._characters.keys())
+        if len(all_chars) <= count:
+            return all_chars
+        return random.sample(all_chars, count)
+
     def set_active_characters(self, names: List[str]):
         """设置下一章需要出现的角色（优先级最高）"""
         self._plot_state["active_characters"] = names

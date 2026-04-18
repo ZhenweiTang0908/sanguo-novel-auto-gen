@@ -215,11 +215,13 @@ def run_interactive(story_state, chapter_writer):
         print("\n请选择操作：")
         print("  1. 生成新章节")
         print("  2. 添加新角色")
-        print("  3. 设置灵感线索")
-        print("  4. 查看更多信息")
-        print("  5. 删除章节")
-        print("  6. 彻底重置小说")
-        print("  7. 退出")
+        print("  3. 修改角色信息")
+        print("  4. 设置灵感线索")
+        print("  5. 随机角色模式")
+        print("  6. 查看更多信息")
+        print("  7. 删除章节")
+        print("  8. 彻底重置小说")
+        print("  9. 退出")
 
         try:
             choice = input("\n  > ").strip()
@@ -233,30 +235,37 @@ def run_interactive(story_state, chapter_writer):
                 print("  无效输入")
                 continue
 
-            # 选择角色
-            characters = story_state.characters
-            if characters:
-                print("  选择角色（主演）或直接回车跳过:")
-                print("  格式: 1,3,4 或 角色名 直接回车跳过")
-                for i, (name, char) in enumerate(characters.items(), 1):
-                    role = "主演" if char.role == "main" else "配角"
-                    print(f"    {i}. {name} [{role}]")
-                selection = input("  > ").strip()
+            # 检查随机角色模式
+            if story_state.is_random_character_mode():
+                random_count = story_state.plot_state.get("random_character_count", 5)
+                selected = story_state.get_random_characters(random_count)
+                print(f"  🎲 随机模式: {', '.join(selected)}")
+                story_state.set_active_characters(selected)
+            else:
+                # 选择角色
+                characters = story_state.characters
+                if characters:
+                    print("  选择角色（主演）或直接回车跳过:")
+                    print("  格式: 1,3,4 或 角色名 直接回车跳过")
+                    for i, (name, char) in enumerate(characters.items(), 1):
+                        role = "主演" if char.role == "main" else "配角"
+                        print(f"    {i}. {name} [{role}]")
+                    selection = input("  > ").strip()
 
-                if selection:
-                    # 支持数字序号或名字
-                    selected = []
-                    for item in selection.split(','):
-                        item = item.strip()
-                        if item.isdigit():
-                            idx = int(item) - 1
-                            if 0 <= idx < len(characters):
-                                selected.append(list(characters.keys())[idx])
-                        elif item in characters:
-                            selected.append(item)
-                    if selected:
-                        story_state.set_active_characters(selected)
-                        print(f"  已选择: {', '.join(selected)}")
+                    if selection:
+                        # 支持数字序号或名字
+                        selected = []
+                        for item in selection.split(','):
+                            item = item.strip()
+                            if item.isdigit():
+                                idx = int(item) - 1
+                                if 0 <= idx < len(characters):
+                                    selected.append(list(characters.keys())[idx])
+                            elif item in characters:
+                                selected.append(item)
+                        if selected:
+                            story_state.set_active_characters(selected)
+                            print(f"  已选择: {', '.join(selected)}")
 
             run_chapters(int(num), story_state, chapter_writer)
 
@@ -282,6 +291,57 @@ def run_interactive(story_state, chapter_writer):
 
         elif choice == '3':
             try:
+                characters = story_state.characters
+                if not characters:
+                    print("  暂无角色")
+                    continue
+                print("  选择要修改的角色:")
+                for i, (name, char) in enumerate(characters.items(), 1):
+                    role = "主演" if char.role == "main" else "配角"
+                    print(f"    {i}. {name} [{role}] - {char.identity}")
+                sel = input("  输入编号或角色名: ").strip()
+                if not sel:
+                    print("  已取消")
+                    continue
+                # 支持数字序号或名字
+                target_name = None
+                if sel.isdigit():
+                    idx = int(sel) - 1
+                    if 0 <= idx < len(characters):
+                        target_name = list(characters.keys())[idx]
+                elif sel in characters:
+                    target_name = sel
+                
+                if not target_name:
+                    print("  无效选择")
+                    continue
+                
+                char = characters[target_name]
+                print(f"\n  修改角色: {target_name}")
+                print(f"  当前身份: {char.identity}")
+                new_identity = input("  新身份设定(直接回车跳过): ").strip()
+                print(f"  当前定位: {'主演' if char.role == 'main' else '配角'}")
+                print("  角色定位: 1.主演  2.配角  直接回车跳过")
+                role_sel = input("  > ").strip()
+                
+                role = None
+                if role_sel == "1":
+                    role = "main"
+                elif role_sel == "2":
+                    role = "supporting"
+                
+                story_state.update_character(
+                    target_name,
+                    identity=new_identity if new_identity else None,
+                    role=role
+                )
+                story_state.save_all()
+                print("  已更新")
+            except (EOFError, KeyboardInterrupt):
+                print("  已取消")
+
+        elif choice == '4':
+            try:
                 inspiration = input("  灵感线索: ").strip()
                 if inspiration:
                     story_state.set_user_inspiration(inspiration)
@@ -292,10 +352,30 @@ def run_interactive(story_state, chapter_writer):
             except (EOFError, KeyboardInterrupt):
                 print("  已取消")
 
-        elif choice == '4':
+        elif choice == '5':
+            try:
+                current_mode = story_state.is_random_character_mode()
+                if current_mode:
+                    print("  当前状态: 随机角色模式 [开启]")
+                    confirm = input("  关闭随机模式? [y/N]: ").strip()
+                    if confirm.lower() == 'y':
+                        story_state.set_random_character_mode(False)
+                        story_state.save_all()
+                        print("  已关闭随机模式")
+                else:
+                    print("  当前状态: 随机角色模式 [关闭]")
+                    count = input("  输入随机角色数量(默认5): ").strip()
+                    count = int(count) if count.isdigit() else 5
+                    story_state.set_random_character_mode(True, count)
+                    story_state.save_all()
+                    print(f"  已开启随机模式，每次随机选择 {count} 个角色")
+            except (EOFError, KeyboardInterrupt):
+                print("  已取消")
+
+        elif choice == '6':
             show_full_info(story_state)
 
-        elif choice == '5':
+        elif choice == '7':
             chapters = story_state.storage.list_chapters()
             if not chapters:
                 print("  暂无章节")
@@ -326,7 +406,7 @@ def run_interactive(story_state, chapter_writer):
             story_state.save_all()
             story_state.load_all()
 
-        elif choice == '6':
+        elif choice == '8':
             confirm = input("  ⚠️ 彻底删除所有内容？[y/N]: ").strip()
             if confirm.lower() == 'y':
                 confirm2 = input("  再次确认，输入 YES: ").strip()
@@ -348,7 +428,7 @@ def run_interactive(story_state, chapter_writer):
             else:
                 print("  已取消")
 
-        elif choice == '7':
+        elif choice == '9':
             print("  再见！")
             break
 

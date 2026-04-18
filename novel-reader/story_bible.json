@@ -1,78 +1,85 @@
 {
-  "world_overview": "东汉末年，黄巾起义后的九州大地风雨飘摇。各方势力角逐，英雄与奸雄并存。但在这看似熟悉的历史中，隐藏着许多令人瞠目的秘密和反转。",
+  "world_overview": "东汉末年，黄巾起义后的九州大地，英雄与枭雄并起。看似熟悉的三国世界中，隐藏着不为人知的秘密与命运纠缠，每个人都在为了生存和真相而挣扎。",
   "core_rules": [
-    "所有人物都有不为人知的过去",
-    "信任是最脆弱的武器"
+    "历史事件仍发生，但背后有隐秘操控",
+    "所有主要人物都有不可告人的秘密"
   ],
   "factions": [
     {
       "name": "魏",
       "leader": "曹操",
-      "special_power": "权谋与铁血",
-      "ideology": "以强为尊，谁有实力谁就是正统"
+      "special_power": "权谋与铁血征伐",
+      "ideology": "天下为王，强则生，弱则亡"
     },
     {
       "name": "蜀",
       "leader": "刘备",
-      "special_power": "仁义与忠义",
-      "ideology": "以仁德服人，以信义立国"
+      "special_power": "仁义之师，忠臣集结",
+      "ideology": "兴复汉室，匡扶正义"
     },
     {
       "name": "吴",
       "leader": "孙权",
-      "special_power": "水军与外交",
-      "ideology": "稳中求胜，立足江东"
+      "special_power": "水军霸主，暗中布局",
+      "ideology": "割据江东，保境安民"
     }
   ],
   "main_characters": [
     {
       "name": "刘备",
-      "original_identity": "涿郡布衣",
-      "new_identity": "前朝刘氏皇裔，实为曹操亲生兄弟",
-      "core_trait": "表面仁义，实则心机深沉",
-      "secret": "他与曹操私通书信，暗中策划反曹计划"
+      "original_identity": "中山靖王之后，皇叔",
+      "new_identity": "实为曹操亲生弟弟，因政变被流放",
+      "core_trait": "表面仁厚，实则算计",
+      "secret": "他早知赤壁之战是曹操设下的局，目的是引出诸葛亮"
     },
     {
       "name": "关羽",
-      "original_identity": "武将",
-      "new_identity": "被选中的‘天命之刃’，拥有操控雷电之力",
-      "core_trait": "重情重义，却对主公忠诚度存疑",
-      "secret": "他其实是朝廷派来的卧底，任务是监视刘备"
+      "original_identity": "蜀汉五虎上将之一",
+      "new_identity": "真实身份是东汉皇室遗孤，暗中联络旧部",
+      "core_trait": "刚正不阿，重情重义",
+      "secret": "他一直爱慕张飞，却因忠义无法表白"
     },
     {
       "name": "张飞",
-      "original_identity": "屠户出身",
-      "new_identity": "天生异瞳，能看破人心真相",
-      "core_trait": "暴躁易怒，实则心地善良",
-      "secret": "他对诸葛亮有特殊感情，曾因嫉妒而差点杀人"
+      "original_identity": "蜀汉五虎上将之一",
+      "new_identity": "曾是曹操的私生子，因母亲为妾而不得承认",
+      "core_trait": "暴躁粗犷，重兄弟情义",
+      "secret": "他暗中与貂蝉有染，只因她答应帮他找到生母"
     },
     {
       "name": "曹操",
-      "original_identity": "魏王",
-      "new_identity": "真正的汉室遗孤，假扮奸雄以图大业",
-      "core_trait": "野心勃勃，却又极度重视亲情",
-      "secret": "他暗中扶持刘备，希望其成为对抗董卓残余势力的棋子"
+      "original_identity": "魏国丞相，一代奸雄",
+      "new_identity": "其实为刘备亲兄，因乱世被迫改名",
+      "core_trait": "野心勃勃，心机深沉",
+      "secret": "他暗中培养诸葛亮，希望其成为自己的傀儡"
     },
     {
       "name": "诸葛亮",
-      "original_identity": "军师",
-      "new_identity": "女性间谍，真实身份为吴国密探",
-      "core_trait": "智慧超群，却常常做出令人意想不到的决定",
-      "secret": "她的真实任务是协助孙权夺取荆州，却逐渐爱上刘备"
+      "original_identity": "蜀汉丞相",
+      "new_identity": "女性，原为董卓婢女，后潜入蜀地",
+      "core_trait": "智谋无双，冷静多疑",
+      "secret": "她与周瑜有婚约，却在战事中爱上刘备"
     },
     {
       "name": "孙权",
-      "original_identity": "江东主公",
-      "new_identity": "龙族后裔，能控制水元素",
-      "core_trait": "精明圆滑，内心极度不安全感",
-      "secret": "他其实一直在暗中监视周瑜，并打算在关键时刻取而代之"
+      "original_identity": "东吴君主",
+      "new_identity": "其实是蛟龙转世，能控制水域",
+      "core_trait": "城府极深，擅长操纵人心",
+      "secret": "他暗中勾结吕布，试图吞并荆州"
+    },
+    {
+      "name": "貂蝉",
+      "original_identity": "司徒王允的侍女",
+      "new_identity": "华雄未死，她是他的替身与卧底",
+      "core_trait": "妩媚动人，心思缜密",
+      "secret": "她同时爱着吕布与董卓，最终选择背叛一切"
     }
   ],
-  "main_conflict": "三国之间的权力斗争背后，隐藏着一个更大的阴谋：一个神秘组织正在操控一切，试图重塑天下格局。",
+  "main_conflict": "各方势力暗中角力，真相逐渐浮出水面——所谓黄巾起义是某个神秘组织的布局，而真正的幕后黑手，正在等待时机统一九州。",
   "sustainable_hooks": [
-    "伏笔1：曹操的亲信竟是敌方派出的内鬼",
-    "伏笔2：诸葛亮的真实身份将在赤壁之战时暴露",
-    "伏笔3：刘备与曹操之间有着无法割舍的宿命联系"
+    "伏笔1：华雄并未死去，而是藏在吕布身边伺机复仇",
+    "伏笔2：刘备与曹操是亲兄弟，他们各自都有一段不愿面对的过去",
+    "伏笔3：诸葛亮与周瑜的命运早已绑定，他们的爱情与战争交织成一场无法逃脱的宿命"
   ],
   "creative_types_used": [
     "betrayal_reveal",
