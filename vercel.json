@@ -1,6 +1,5 @@
 {
   "buildCommand": "cd novel-reader && npm run build",
   "outputDirectory": "novel-reader/.next",
-  "installCommand": "cd novel-reader && npm install",
-  "framework": null
+  "installCommand": "cd novel-reader && npm install"
 }
