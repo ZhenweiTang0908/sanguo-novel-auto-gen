@@ -1,12 +1,6 @@
 {
-  "projects": [
-    {
-      "path": "novel-reader",
-      "settings": {
-        "buildCommand": "cd novel-reader && npm run build",
-        "outputDirectory": "novel-reader/.next",
-        "installCommand": "cd novel-reader && npm install"
-      }
-    }
-  ]
+  "buildCommand": "cd novel-reader && npm run build",
+  "outputDirectory": "novel-reader/.next",
+  "installCommand": "cd novel-reader && npm install",
+  "framework": null
 }
