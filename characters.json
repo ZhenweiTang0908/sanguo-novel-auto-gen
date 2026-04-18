@@ -1,0 +1,47 @@
+{
+  "刘备": {
+    "name": "刘备",
+    "identity": "连锁教主",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "alive",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "关羽": {
+    "name": "关羽",
+    "identity": "义气值拉满的声波战士",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "alive",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "张飞": {
+    "name": "张飞",
+    "identity": "声波武器专家",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "alive",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "诸葛亮": {
+    "name": "诸葛亮",
+    "identity": "气象武器工程师",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "alive",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "吕布": {
+    "name": "吕布",
+    "identity": "最强机甲驾驶员",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "alive",
+    "relationship_changes": [],
+    "new_traits": []
+  }
+}

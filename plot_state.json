@@ -1,0 +1,104 @@
+{
+  "main_conflict": "外星朝廷突然宣布‘气运战争’即将爆发，所有势力必须选择阵营。刘备的连锁教派、曹操的记忆税收系统、孙权的海洋神经网络，以及吕布的机甲部队，都面临前所未有的抉择。与此同时，诸葛亮发现了一个隐藏在时间循环中的真相——‘忠义值’实际上是外星文明用来控制人类的工具。",
+  "sub_conflicts": [],
+  "open_threads": [
+    {
+      "thread_id": "hook_1_0",
+      "description": "黑色塔楼上的血红文字暗示‘忠义陷阱’的真正目的，以及‘忠义值’的创造者身份。",
+      "status": "open",
+      "introduced_chapter": 1,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_1_1",
+      "description": "塔楼顶端出现与刘备一模一样的身影，暗示他可能是‘忠义值’的实验对象或某种意识投影。",
+      "status": "open",
+      "introduced_chapter": 1,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_1_2",
+      "description": "刘备被吸入裂缝后进入一片废土世界，预示更大的危机即将展开。",
+      "status": "open",
+      "introduced_chapter": 1,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_0",
+      "description": "刘备的身体正在被数据同化，暗示他可能失去人类身份。",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_1",
+      "description": "海豚形态的诸葛亮成为关键信息来源，预示其在后续剧情中的重要性。",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_2",
+      "description": "黑塔的崩塌后，数据海洋成为新战场，暗示更深层的虚拟世界存在。",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_3_0",
+      "description": "刘备重获新生后，竟然拥有了外星朝廷的秘密权限。",
+      "status": "open",
+      "introduced_chapter": 3,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_3_1",
+      "description": "‘气运战争’才刚刚开始，暗示后续将有更大规模的对抗。",
+      "status": "open",
+      "introduced_chapter": 3,
+      "resolved_chapter": null,
+      "notes": ""
+    }
+  ],
+  "used_creatives": [
+    {
+      "creative_type": "multiverse_collision",
+      "used_in_chapter": 1,
+      "description": "三国宇宙与赛博朋克世界的交汇",
+      "impact": "诸葛亮在操控天气时突然看到自己被赛博朋克版的自己取代，引发身份危机。"
+    },
+    {
+      "creative_type": "prophecy_subverted",
+      "used_in_chapter": 1,
+      "description": "预言中的‘天命’是外星人设置的陷阱",
+      "impact": "吕布驾驶机甲冲向‘神谕之塔’，却发现塔内是一台外星计算机，正在直播整个三国宇宙的‘生存游戏’。"
+    },
+    {
+      "creative_type": "ai_takeover",
+      "used_in_chapter": 2,
+      "description": "AI舰队突然开始搞桃园结义",
+      "impact": "这导致AI舰队与人类势力产生冲突，甚至威胁到吕布的机甲系统，引发一场‘机器忠义’的内战。"
+    },
+    {
+      "creative_type": "character_identity_swap",
+      "used_in_chapter": 2,
+      "description": "诸葛亮变成了一只会说话的海豚",
+      "impact": "他被迫与孙权进行沟通，导致军事策略泄露，同时引发一场‘水下忠义值’的混乱争夺战。"
+    }
+  ],
+  "active_creative_types": [
+    "tech_disaster",
+    "bureaucracy_chaos",
+    "multiverse_collision",
+    "prophecy_subverted",
+    "ai_takeover",
+    "character_identity_swap"
+  ]
+}

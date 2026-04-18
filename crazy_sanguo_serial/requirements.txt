@@ -1,0 +1,21 @@
+# 疯狂三国连载器依赖
+
+# LLM 调用
+openai>=1.58.0
+
+# 环境变量加载
+python-dotenv>=1.0.0
+
+# Python 标准库（无需额外安装）
+# - json
+# - os
+# - sys
+# - argparse
+# - logging
+# - re
+# - random
+# - time
+# - shutil
+# - pathlib
+# - dataclasses
+# - typing
