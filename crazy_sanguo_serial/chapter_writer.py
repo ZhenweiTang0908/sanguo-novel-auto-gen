@@ -856,12 +856,20 @@ class ChapterWriter:
 - 主题：{chapter_inspiration.get('theme', '未知')}
 """
         
+        # 获取永久角色名字列表（用于禁止生成）
+        permanent_names = list(self.story_state.characters.keys())
+        forbidden_names = ", ".join(permanent_names) if permanent_names else "（暂无）"
+        
         prompt = f"""# 任务：生成临时人物（仅本章出现）
+
+## ⚠️ 硬性禁止
+**绝对禁止**使用以下永久角色名字生成临时人物：
+{forbidden_names}
 
 ## 当前小说进度
 - 世界观：{world_info or '未知'}
 
-## 当前永久角色
+## 当前永久角色（仅供剧情参考，不要用这些名字）
 {chars_text}
 
 {inspiration_text}
@@ -873,15 +881,18 @@ class ChapterWriter:
 
 请根据上述信息，推测本章故事发展可能出现的临时人物。
 这些人物**仅在本章故事中出现，不会出现在后续章节**。
-可以是：
-- 来访的使者、官员、商贩
-- 某个偶然出现的路人
-- 短暂交手的对手
-- 地方小吏、士兵、村民
+临时人物**必须是小人物、路人之类**，比如：
+- 街边小贩、茶馆掌柜、酒楼店小二
+- 来访的使者、送信的信差
+- 地方小吏、巡逻士兵
+- 偶然碰到的路人、村民
+- 短暂交手的敌方小兵
+
+**禁止**：主角、重要配角、著名历史人物等
 
 生成 {count} 个临时人物，每个包含：
-- name: 角色名（不要与已有永久角色重名）
-- identity: 身份描述（20字以内）
+- name: 角色名（**绝对不能是上述禁止名单中的名字**，用小人物的名字）
+- identity: 身份描述（20字以内，要像小人物）
 - role_in_chapter: 在本章中的作用（简短描述）
 
 ## 输出格式
@@ -889,7 +900,7 @@ class ChapterWriter:
 ```json
 [
   {{
-    "name": "角色名",
+    "name": "角色名（必须是普通人名）",
     "identity": "身份描述",
     "role_in_chapter": "作用描述"
   }}

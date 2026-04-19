@@ -561,7 +561,17 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
                     continue
                 num = int(num)
                 
-                confirm = input(f"  确认生成 {num} 章？[y/N]: ").strip()
+                # 生成前询问提交设置
+                print("\n📤 提交设置:")
+                print("  1. 仅提交(commit)")
+                print("  2. 提交并推送(commit+push)")
+                print("  0. 不提交")
+                commit_choice = input("  > ").strip()
+                
+                do_commit = commit_choice in ['1', '2']
+                do_push = commit_choice == '2'
+                
+                confirm = input(f"\n  确认生成 {num} 章？[y/N]: ").strip()
                 if confirm.lower() != 'y':
                     print("  已取消")
                     continue
@@ -594,33 +604,54 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
                 if results['world_changes']:
                     print(f"  🔄 世界观更新: {len(results['world_changes'])} 次")
                 
-                # 自动 git commit
                 story_state.load_all()
                 show_status(story_state, novel_manager.get_novel(current_novel_id))
                 
-                auto_commit = input("\n  是否自动提交？[y/N]: ").strip()
-                if auto_commit.lower() == 'y':
+                # 执行提交/推送
+                if do_commit:
                     import subprocess
                     try:
+                        # git add
                         result = subprocess.run(
                             ['git', 'add', '-A'],
                             capture_output=True,
                             text=True,
                             cwd=storage.base_path
                         )
+                        
+                        # git commit
+                        import datetime
+                        timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+                        commit_msg = f'连续生成 {num} 章 - 成功{results["success"]}章 [{timestamp}]'
                         result = subprocess.run(
-                            ['git', 'commit', '-m', f'连续生成 {num} 章 - 成功{results["success"]}章'],
+                            ['git', 'commit', '-m', commit_msg],
                             capture_output=True,
                             text=True,
                             cwd=storage.base_path
                         )
-                        if result.returncode == 0:
-                            print("  ✅ 已自动提交")
-                        else:
-                            print(f"  ⚠️ 提交失败: {result.stderr}")
-                    except Exception as e:
-                        print(f"  ⚠️ 提交出错: {e}")
                         
+                        if result.returncode == 0:
+                            print(f"  ✅ 已提交: {commit_msg}")
+                            
+                            # git push
+                            if do_push:
+                                result = subprocess.run(
+                                    ['git', 'push'],
+                                    capture_output=True,
+                                    text=True,
+                                    cwd=storage.base_path
+                                )
+                                if result.returncode == 0:
+                                    print("  ✅ 已推送至远程")
+                                else:
+                                    print(f"  ⚠️ 推送失败: {result.stderr}")
+                        else:
+                            if 'nothing to commit' in result.stdout:
+                                print("  ℹ️ 无新内容需要提交")
+                            else:
+                                print(f"  ⚠️ 提交失败: {result.stderr}")
+                    except Exception as e:
+                        print(f"  ⚠️ Git操作出错: {e}")
             except (EOFError, KeyboardInterrupt):
                 print("\n  已取消")
                 continue
