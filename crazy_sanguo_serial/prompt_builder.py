@@ -858,9 +858,13 @@ class PromptBuilder:
             existing_characters: 已存在的角色
             count: 生成角色数量
         """
+        def format_char(name: str, char) -> str:
+            if hasattr(char, 'identity'):
+                return f"- {name}: {char.identity} [{char.role}]"
+            return f"- {name}: {char.get('identity', '未知')} [{char.get('role', 'supporting')}]"
+        
         chars_text = "\n".join([
-            f"- {name}: {char.get('identity', '未知')} [{char.get('role', 'supporting')}]"
-            for name, char in existing_characters.items()
+            format_char(name, char) for name, char in existing_characters.items()
         ]) or "（暂无角色）"
 
         return f"""# 任务：随机生成新角色

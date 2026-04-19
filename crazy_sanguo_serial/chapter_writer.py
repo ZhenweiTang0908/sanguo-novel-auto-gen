@@ -599,14 +599,24 @@ class ChapterWriter:
         """
         logger.info(f"开始生成 {count} 个角色...")
 
-        world_overview = ""
+        world_info = ""
         if self.story_state.story_bible:
-            world_overview = self.story_state.story_bible.get('world_overview', '')
+            world_info = self.story_state.story_bible.get('world_overview', '')
+            factions = self.story_state.story_bible.get('factions', [])
+            if factions:
+                faction_info = "\n".join([
+                    f"- {f.get('name', '未知')}: {f.get('ideology', '')}"
+                    for f in factions[:3]
+                ])
+                world_info += f"\n\n## 势力信息\n{faction_info}"
+            core_rules = self.story_state.story_bible.get('core_rules', [])
+            if core_rules:
+                world_info += f"\n\n## 核心规则\n" + "\n".join([f"- {r}" for r in core_rules[:3]])
 
         main_conflict = self.story_state.plot_state.get('main_conflict', '')
 
         prompt = self.prompt_builder.build_generate_character_prompt(
-            world_overview=world_overview,
+            world_overview=world_info,
             main_conflict=main_conflict,
             existing_characters=self.story_state.characters,
             count=count
