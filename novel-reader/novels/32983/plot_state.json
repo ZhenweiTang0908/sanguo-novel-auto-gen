@@ -57,6 +57,86 @@
       "introduced_chapter": 3,
       "resolved_chapter": null,
       "notes": ""
+    },
+    {
+      "thread_id": "hook_1_0",
+      "description": "蛋仔和卡尔逃出地窖后被黑衣人包围，其中有人熟悉。",
+      "status": "open",
+      "introduced_chapter": 1,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_1_1",
+      "description": "蛋仔的歌声具有特殊力量，暗示他可能是关键人物。",
+      "status": "open",
+      "introduced_chapter": 1,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_1_2",
+      "description": "地窖中的其他蛋仔是实验品，暗示更大的阴谋。",
+      "status": "open",
+      "introduced_chapter": 1,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_0",
+      "description": "卡尔是未来版本的蛋仔，暗示时间线或命运的循环。",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_1",
+      "description": "地窖中的其他蛋仔暗示更大的实验计划或阴谋。",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_2",
+      "description": "巷子尽头的黑影为后续剧情埋下悬念。",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_3_0",
+      "description": "商人消失后，一个新的蛋仔从时间机器中走出，眼神冰冷，暗示未来可能有更大的变数。",
+      "status": "open",
+      "introduced_chapter": 3,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_3_1",
+      "description": "时间机器的运作机制和其背后的秘密尚未完全揭示。",
+      "status": "open",
+      "introduced_chapter": 3,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_4_0",
+      "description": "咕噜蛋仔的广播中提到‘钟楼’，暗示其藏有改变命运的秘密",
+      "status": "open",
+      "introduced_chapter": 4,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_5_0",
+      "description": "蛋仔在废墟中发现一张古老地图，指向祖先建立的王室遗迹",
+      "status": "open",
+      "introduced_chapter": 5,
+      "resolved_chapter": null,
+      "notes": ""
     }
   ],
   "used_creatives": [
@@ -95,14 +175,77 @@
       "used_in_chapter": 3,
       "description": "盟友背后的黑手",
       "impact": "刘备在一次秘密会议中揭露军师的阴谋，引发内部动荡，为后续的战争埋下伏笔。"
+    },
+    {
+      "creative_type": "hidden_heir",
+      "used_in_chapter": 1,
+      "description": "皇室血脉的蛋仔",
+      "impact": "蛋仔在一次市集活动中被认出，被迫卷入一场关于王位继承的阴谋中。"
+    },
+    {
+      "creative_type": "scheming",
+      "used_in_chapter": 1,
+      "description": "市井商人的陷阱",
+      "impact": "蛋仔被诱骗参与一场赌局，随后陷入一系列连环计谋之中，不得不设法脱身。"
+    },
+    {
+      "creative_type": "past_secret",
+      "used_in_chapter": 2,
+      "description": "被掩埋的王室印记",
+      "impact": "蛋仔在逃脱过程中意外找到怀表，引发商人对他的进一步追捕，并引出更深层的秘密。"
+    },
+    {
+      "creative_type": "unexpected_ally",
+      "used_in_chapter": 2,
+      "description": "地下抵抗组织的援手",
+      "impact": "蛋仔在逃亡途中遇到这名女子，她提供关键信息并引导他前往安全地点，为后续剧情埋下伏笔。"
+    },
+    {
+      "creative_type": "revenge",
+      "used_in_chapter": 3,
+      "description": "商人复仇计划",
+      "impact": "蛋仔必须识破商人的阴谋，并在纳粹追捕中展开反击。"
+    },
+    {
+      "creative_type": "assassination_plan",
+      "used_in_chapter": 3,
+      "description": "刺杀行动的误判",
+      "impact": "蛋仔陷入危险，必须依靠新结识的伙伴脱身，同时揭露纳粹的阴谋。"
+    },
+    {
+      "creative_type": "faction_conflict",
+      "used_in_chapter": 4,
+      "description": "暗影与火的对决",
+      "impact": "在第4章中，蛋仔被不同派系的黑衣人追捕，同时揭露纳粹对金龙力量的兴趣。"
+    },
+    {
+      "creative_type": "secret_alliance",
+      "used_in_chapter": 4,
+      "description": "地下抵抗的召唤",
+      "impact": "蛋仔在逃亡途中遇到这名女子，逐渐揭开她的真实身份和背后隐藏的阴谋。"
+    },
+    {
+      "creative_type": "political_marriage",
+      "used_in_chapter": 5,
+      "description": "权力的联姻",
+      "impact": "本章中，白眼蛋仔被迫参加一场宴会，面对突如其来的婚约，他必须迅速做出选择。"
+    },
+    {
+      "creative_type": "power_struggle",
+      "used_in_chapter": 5,
+      "description": "王室血脉的代价",
+      "impact": "在本章中，白眼蛋仔被带到一处秘密实验室，纳粹科学家试图对他进行实验，同时他开始出现身体异变的征兆。"
     }
   ],
   "active_creative_types": [
+    "scheming",
+    "past_secret",
+    "unexpected_ally",
+    "revenge",
+    "assassination_plan",
     "faction_conflict",
     "secret_alliance",
     "political_marriage",
-    "power_struggle",
-    "identity_reveal",
-    "betrayal"
+    "power_struggle"
   ]
 }

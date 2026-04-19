@@ -48,5 +48,15 @@
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
+  },
+  "咕噜蛋仔": {
+    "name": "咕噜蛋仔",
+    "identity": "一名隐居的地下电台主持人，擅长用幽默讽刺的方式揭露纳粹的虚伪。",
+    "current_location": "柏林地下防空洞内的一间秘密播音室",
+    "goal": "秘密传播自由思想，鼓舞民众反抗压迫",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
   }
 }
