@@ -1,66 +1,10 @@
 {
-  "main_conflict": "蛋仔与市井小人和军人的三维矛盾",
+  "main_conflict": "蛋仔的呆与纳粹的鲁莽发生冲突",
   "sub_conflicts": [],
   "open_threads": [
     {
       "thread_id": "hook_1_0",
-      "description": "血沼深处传来低沉的笑声，暗示有更强大的存在正在苏醒。",
-      "status": "open",
-      "introduced_chapter": 1,
-      "resolved_chapter": null,
-      "notes": ""
-    },
-    {
-      "thread_id": "hook_2_0",
-      "description": "血沼深处传来的笑声，暗示有未知势力正在苏醒。",
-      "status": "open",
-      "introduced_chapter": 2,
-      "resolved_chapter": null,
-      "notes": ""
-    },
-    {
-      "thread_id": "hook_2_1",
-      "description": "白眼蛋仔的出现，暗示刘备的自我分裂可能还有更多未解之谜。",
-      "status": "open",
-      "introduced_chapter": 2,
-      "resolved_chapter": null,
-      "notes": ""
-    },
-    {
-      "thread_id": "hook_2_2",
-      "description": "刘备是否接受帝位，将成为下一章的关键抉择。",
-      "status": "open",
-      "introduced_chapter": 2,
-      "resolved_chapter": null,
-      "notes": ""
-    },
-    {
-      "thread_id": "hook_3_0",
-      "description": "血沼深处的黑影与血红眼睛暗示更大的敌人或力量正在逼近。",
-      "status": "open",
-      "introduced_chapter": 3,
-      "resolved_chapter": null,
-      "notes": ""
-    },
-    {
-      "thread_id": "hook_3_1",
-      "description": "蛋仔的存在及其对刘备的称呼引发疑问：他们是否真实？还是只是幻觉？",
-      "status": "open",
-      "introduced_chapter": 3,
-      "resolved_chapter": null,
-      "notes": ""
-    },
-    {
-      "thread_id": "hook_3_2",
-      "description": "刘备对小红蛋仔和峰哥的怀疑埋下新的线索。",
-      "status": "open",
-      "introduced_chapter": 3,
-      "resolved_chapter": null,
-      "notes": ""
-    },
-    {
-      "thread_id": "hook_1_0",
-      "description": "蛋仔和卡尔逃出地窖后被黑衣人包围，其中有人熟悉。",
+      "description": "白眼蛋仔的出现，暗示他可能是更大的阴谋的一部分。",
       "status": "open",
       "introduced_chapter": 1,
       "resolved_chapter": null,
@@ -68,7 +12,7 @@
     },
     {
       "thread_id": "hook_1_1",
-      "description": "蛋仔的歌声具有特殊力量，暗示他可能是关键人物。",
+      "description": "聪明蛋仔的出现，表明可能存在多个蛋仔版本，背后有更复杂的设定。",
       "status": "open",
       "introduced_chapter": 1,
       "resolved_chapter": null,
@@ -76,7 +20,7 @@
     },
     {
       "thread_id": "hook_1_2",
-      "description": "地窖中的其他蛋仔是实验品，暗示更大的阴谋。",
+      "description": "黑市老大的死亡和遗言“别相信任何人”，为后续剧情埋下伏笔。",
       "status": "open",
       "introduced_chapter": 1,
       "resolved_chapter": null,
@@ -84,7 +28,7 @@
     },
     {
       "thread_id": "hook_2_0",
-      "description": "卡尔是未来版本的蛋仔，暗示时间线或命运的循环。",
+      "description": "白眼蛋仔自称是蛋仔的另一个自己，引发身份认同的悬念。",
       "status": "open",
       "introduced_chapter": 2,
       "resolved_chapter": null,
@@ -92,7 +36,7 @@
     },
     {
       "thread_id": "hook_2_1",
-      "description": "地窖中的其他蛋仔暗示更大的实验计划或阴谋。",
+      "description": "爆炸事件暗示有第三方势力在操控局势，为后续剧情埋下伏笔。",
       "status": "open",
       "introduced_chapter": 2,
       "resolved_chapter": null,
@@ -100,7 +44,7 @@
     },
     {
       "thread_id": "hook_2_2",
-      "description": "巷子尽头的黑影为后续剧情埋下悬念。",
+      "description": "蛋仔对白眼蛋仔的不信任与依赖并存，制造心理张力。",
       "status": "open",
       "introduced_chapter": 2,
       "resolved_chapter": null,
@@ -108,7 +52,7 @@
     },
     {
       "thread_id": "hook_3_0",
-      "description": "商人消失后，一个新的蛋仔从时间机器中走出，眼神冰冷，暗示未来可能有更大的变数。",
+      "description": "白眼蛋仔被带走，他的命运成谜。",
       "status": "open",
       "introduced_chapter": 3,
       "resolved_chapter": null,
@@ -116,7 +60,15 @@
     },
     {
       "thread_id": "hook_3_1",
-      "description": "时间机器的运作机制和其背后的秘密尚未完全揭示。",
+      "description": "蛋仔必须找到那个“地方”，这可能是关键线索。",
+      "status": "open",
+      "introduced_chapter": 3,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_3_2",
+      "description": "纳粹实验的真相尚未完全揭开，暗示更多秘密等待揭露。",
       "status": "open",
       "introduced_chapter": 3,
       "resolved_chapter": null,
@@ -124,7 +76,15 @@
     },
     {
       "thread_id": "hook_4_0",
-      "description": "咕噜蛋仔的广播中提到‘钟楼’，暗示其藏有改变命运的秘密",
+      "description": "蛋仔在逃跑途中看到一个戴眼镜的男人，暗示其父亲或相关人物的存在。",
+      "status": "open",
+      "introduced_chapter": 4,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_4_1",
+      "description": "白眼蛋仔提到有人在暗中观察他们，为后续的监视和追捕埋下伏笔。",
       "status": "open",
       "introduced_chapter": 4,
       "resolved_chapter": null,
@@ -132,120 +92,256 @@
     },
     {
       "thread_id": "hook_5_0",
-      "description": "蛋仔在废墟中发现一张古老地图，指向祖先建立的王室遗迹",
+      "description": "炸弹仔的父亲身份揭示，暗示更大的家族秘密",
       "status": "open",
       "introduced_chapter": 5,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_5_1",
+      "description": "白眼蛋仔可能掌握关于纳粹计划的关键信息",
+      "status": "open",
+      "introduced_chapter": 5,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_5_2",
+      "description": "炸弹仔决定自己掌控命运，为后续行动埋下伏笔",
+      "status": "open",
+      "introduced_chapter": 5,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_6_0",
+      "description": "炸弹仔的真实身份和记忆被洗脑的真相尚未完全揭晓。",
+      "status": "open",
+      "introduced_chapter": 6,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_6_1",
+      "description": "影子蛋仔的间谍身份和背后势力未被完全揭露。",
+      "status": "open",
+      "introduced_chapter": 6,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_6_2",
+      "description": "地下室爆炸事件可能引发更大规模的冲突或追捕。",
+      "status": "open",
+      "introduced_chapter": 6,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_7_0",
+      "description": "炸弹仔手背上的神秘符号与白眼蛋仔的刺青相同，暗示两人之间存在某种联系或共同背景。",
+      "status": "open",
+      "introduced_chapter": 7,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_8_0",
+      "description": "神秘身影的出现，暗示更大的幕后黑手存在。",
+      "status": "open",
+      "introduced_chapter": 8,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_8_1",
+      "description": "炸弹仔发现自己只是棋盘上的一颗棋子，为后续剧情铺垫。",
+      "status": "open",
+      "introduced_chapter": 8,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_9_0",
+      "description": "黑袍人出现并暗示炸弹仔才是真正的棋子，引发对主角身份的更大疑问。",
+      "status": "open",
+      "introduced_chapter": 9,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_9_1",
+      "description": "炸弹仔手背的刺青与白眼蛋仔相同，暗示两人之间存在更深的联系。",
+      "status": "open",
+      "introduced_chapter": 9,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_9_2",
+      "description": "地窖爆炸后，炸弹仔独自面对未知的敌人，为下一章埋下危机伏笔。",
+      "status": "open",
+      "introduced_chapter": 9,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_10_0",
+      "description": "炸弹仔的刺青与白眼蛋仔相同，暗示两人可能有共同的起源或使命。",
+      "status": "open",
+      "introduced_chapter": 10,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_10_1",
+      "description": "黑袍人发出红色信号弹，预示更大的阴谋或新势力即将登场。",
+      "status": "open",
+      "introduced_chapter": 10,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_10_2",
+      "description": "炸弹仔在爆炸后未死，暗示他可能拥有特殊能力或隐藏身份。",
+      "status": "open",
+      "introduced_chapter": 10,
       "resolved_chapter": null,
       "notes": ""
     }
   ],
   "used_creatives": [
     {
-      "creative_type": "faction_conflict",
-      "used_in_chapter": 1,
-      "description": "血沼中的派系分裂",
-      "impact": "通过派系冲突推动剧情发展，展示刘备在混乱世界中的挣扎与成长。"
-    },
-    {
-      "creative_type": "secret_alliance",
-      "used_in_chapter": 1,
-      "description": "血沼中的暗线合作",
-      "impact": "制造信任危机，推动刘备独立行动，同时加深他对诸葛亮的疑虑和怀疑。"
-    },
-    {
-      "creative_type": "political_marriage",
-      "used_in_chapter": 2,
-      "description": "血沼联姻计划",
-      "impact": "安排一场虚假的婚礼仪式，暗藏阴谋，为后续剧情埋下伏笔。"
-    },
-    {
-      "creative_type": "power_struggle",
-      "used_in_chapter": 2,
-      "description": "血沼帝位之争",
-      "impact": "在血沼中展开多派系的明争暗斗，推动剧情向高潮发展。"
-    },
-    {
-      "creative_type": "identity_reveal",
-      "used_in_chapter": 3,
-      "description": "血沼中的真实身份",
-      "impact": "刘备根据地图前往墓穴探索，途中遭遇敌人追杀，最终揭开自己身世的真相。"
-    },
-    {
       "creative_type": "betrayal",
-      "used_in_chapter": 3,
-      "description": "盟友背后的黑手",
-      "impact": "刘备在一次秘密会议中揭露军师的阴谋，引发内部动荡，为后续的战争埋下伏笔。"
-    },
-    {
-      "creative_type": "hidden_heir",
       "used_in_chapter": 1,
-      "description": "皇室血脉的蛋仔",
-      "impact": "蛋仔在一次市集活动中被认出，被迫卷入一场关于王位继承的阴谋中。"
+      "description": "信任的破裂",
+      "impact": "通过一场突如其来的突袭或交易失败，揭示出内部的背叛与矛盾。"
     },
     {
       "creative_type": "scheming",
       "used_in_chapter": 1,
-      "description": "市井商人的陷阱",
-      "impact": "蛋仔被诱骗参与一场赌局，随后陷入一系列连环计谋之中，不得不设法脱身。"
+      "description": "阴谋的萌芽",
+      "impact": "蛋仔在调查中逐渐发现这个阴谋的蛛丝马迹，成为关键知情者。"
     },
     {
       "creative_type": "past_secret",
       "used_in_chapter": 2,
-      "description": "被掩埋的王室印记",
-      "impact": "蛋仔在逃脱过程中意外找到怀表，引发商人对他的进一步追捕，并引出更深层的秘密。"
+      "description": "胶卷背后的真相",
+      "impact": "黑市老大被迫展示照片，引发蛋仔对自身来历的怀疑与探索。"
     },
     {
-      "creative_type": "unexpected_ally",
+      "creative_type": "power_struggle",
       "used_in_chapter": 2,
-      "description": "地下抵抗组织的援手",
-      "impact": "蛋仔在逃亡途中遇到这名女子，她提供关键信息并引导他前往安全地点，为后续剧情埋下伏笔。"
+      "description": "黑市的裂痕",
+      "impact": "通过一场黑市暴动或背叛事件，展现权力斗争对蛋仔命运的影响。"
+    },
+    {
+      "creative_type": "hidden_heir",
+      "used_in_chapter": 3,
+      "description": "遗落的遗产",
+      "impact": "在黑市中，一张旧照片揭示了蛋仔的真实出身，引发各方觊觎。"
+    },
+    {
+      "creative_type": "identity_reveal",
+      "used_in_chapter": 3,
+      "description": "身份的代价",
+      "impact": "在交易过程中，一名特工认出了蛋仔的身份，导致黑市老大开始怀疑他的真实目的。"
     },
     {
       "creative_type": "revenge",
-      "used_in_chapter": 3,
-      "description": "商人复仇计划",
-      "impact": "蛋仔必须识破商人的阴谋，并在纳粹追捕中展开反击。"
-    },
-    {
-      "creative_type": "assassination_plan",
-      "used_in_chapter": 3,
-      "description": "刺杀行动的误判",
-      "impact": "蛋仔陷入危险，必须依靠新结识的伙伴脱身，同时揭露纳粹的阴谋。"
-    },
-    {
-      "creative_type": "faction_conflict",
       "used_in_chapter": 4,
-      "description": "暗影与火的对决",
-      "impact": "在第4章中，蛋仔被不同派系的黑衣人追捕，同时揭露纳粹对金龙力量的兴趣。"
+      "description": "复仇之路",
+      "impact": "为蛋仔的行动注入强烈个人动机，增强情感张力与故事深度。"
     },
     {
       "creative_type": "secret_alliance",
       "used_in_chapter": 4,
-      "description": "地下抵抗的召唤",
-      "impact": "蛋仔在逃亡途中遇到这名女子，逐渐揭开她的真实身份和背后隐藏的阴谋。"
+      "description": "暗中结盟",
+      "impact": "揭示白眼蛋仔的真实身份，为后续真相揭露和信任危机做铺垫。"
     },
     {
-      "creative_type": "political_marriage",
+      "creative_type": "war_strategy",
       "used_in_chapter": 5,
-      "description": "权力的联姻",
-      "impact": "本章中，白眼蛋仔被迫参加一场宴会，面对突如其来的婚约，他必须迅速做出选择。"
+      "description": "物资封锁计划",
+      "impact": "蛋仔得知计划后，决定破坏行动，利用自身资源对抗组织的控制。"
+    },
+    {
+      "creative_type": "unexpected_ally",
+      "used_in_chapter": 5,
+      "description": "被囚禁的叛徒",
+      "impact": "蛋仔在地窖中与白眼蛋仔展开对话，揭示黑市背后的真相，为后续行动提供关键情报。"
+    },
+    {
+      "creative_type": "betrayal",
+      "used_in_chapter": 6,
+      "description": "暗影中的背叛",
+      "impact": "在黑市交易中，蛋仔意外听到白眼蛋仔与神秘组织的密谈，揭示他并非真正的盟友。"
+    },
+    {
+      "creative_type": "assassination_plan",
+      "used_in_chapter": 6,
+      "description": "血色交易",
+      "impact": "蛋仔在黑市中听到关于一场即将发生的刺杀，决定介入阻止，却陷入更大的危机。"
+    },
+    {
+      "creative_type": "faction_conflict",
+      "used_in_chapter": 7,
+      "description": "两个阵营的对峙",
+      "impact": "让炸弹仔被迫选择站队，同时引发一系列阴谋和背叛事件。"
+    },
+    {
+      "creative_type": "past_secret",
+      "used_in_chapter": 7,
+      "description": "被掩埋的誓言",
+      "impact": "通过回忆片段或对话揭示白眼蛋仔的过去，并让炸弹仔开始怀疑自己的信任对象。"
+    },
+    {
+      "creative_type": "hidden_heir",
+      "used_in_chapter": 8,
+      "description": "血统的秘密",
+      "impact": "这个秘密被神秘组织察觉，迫使炸弹仔在生存与身份之间做出抉择。"
+    },
+    {
+      "creative_type": "scheming",
+      "used_in_chapter": 8,
+      "description": "暗影中的交易",
+      "impact": "炸弹仔发现白眼蛋仔的真实意图，两人关系出现微妙变化，为后续合作或冲突埋下伏笔。"
+    },
+    {
+      "creative_type": "identity_reveal",
+      "used_in_chapter": 9,
+      "description": "身份的裂痕",
+      "impact": "在黑市的一次物资交接中，白眼蛋仔被暗影商会的人认出，导致炸弹仔不得不重新评估他的立场。"
     },
     {
       "creative_type": "power_struggle",
-      "used_in_chapter": 5,
-      "description": "王室血脉的代价",
-      "impact": "在本章中，白眼蛋仔被带到一处秘密实验室，纳粹科学家试图对他进行实验，同时他开始出现身体异变的征兆。"
+      "used_in_chapter": 9,
+      "description": "暗流涌动",
+      "impact": "炸弹仔因之前与白眼蛋仔的对峙被暗影商会注意，被拉入一场派系斗争中，面临生死抉择。"
+    },
+    {
+      "creative_type": "love_triangle",
+      "used_in_chapter": 10,
+      "description": "背叛与情感",
+      "impact": "在一次黑市交易中，三人同时出现，各自隐藏的真实感情逐渐浮出水面。"
+    },
+    {
+      "creative_type": "secret_alliance",
+      "used_in_chapter": 10,
+      "description": "暗影中的盟约",
+      "impact": "在黑市中的一次物资争夺战中，炸弹仔与白眼蛋仔被逼共同行动，揭示彼此的秘密关系。"
     }
   ],
   "active_creative_types": [
-    "scheming",
-    "past_secret",
-    "unexpected_ally",
-    "revenge",
     "assassination_plan",
     "faction_conflict",
-    "secret_alliance",
-    "political_marriage",
-    "power_struggle"
+    "past_secret",
+    "hidden_heir",
+    "scheming",
+    "identity_reveal",
+    "power_struggle",
+    "love_triangle",
+    "secret_alliance"
   ]
 }

@@ -1,7 +1,7 @@
 {
   "白眼蛋仔": {
     "name": "白眼蛋仔",
-    "identity": "会翻白眼蠢萌蛋仔",
+    "identity": "呆呆的蛋仔穿越到了柏林街头不太聪明，经常干傻事",
     "current_location": "初始地点",
     "goal": "待探索",
     "status": "alive",
@@ -11,7 +11,17 @@
   },
   "希特勒": {
     "name": "希特勒",
-    "identity": "容易生气但是演讲能力很强",
+    "identity": "纳粹首领，鲁莽又愤怒",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "dead",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "聪明蛋仔": {
+    "name": "聪明蛋仔",
+    "identity": "聪明但是不高兴",
     "current_location": "初始地点",
     "goal": "待探索",
     "status": "alive",
@@ -19,9 +29,9 @@
     "relationship_changes": [],
     "new_traits": []
   },
-  "智慧聪明蛋仔": {
-    "name": "智慧聪明蛋仔",
-    "identity": "很聪明很势利",
+  "炸弹仔": {
+    "name": "炸弹仔",
+    "identity": "擅长使用炸弹的蛋仔",
     "current_location": "初始地点",
     "goal": "待探索",
     "status": "alive",
@@ -29,31 +39,61 @@
     "relationship_changes": [],
     "new_traits": []
   },
-  "小红蛋仔": {
-    "name": "小红蛋仔",
-    "identity": "一名普通的德国民众，经营着一家小面包店",
-    "current_location": "柏林市郊的一条街角",
-    "goal": "保护自己的小店不被军队征用，并维持家庭生计",
+  "影子蛋仔": {
+    "name": "影子蛋仔",
+    "identity": "柏林黑市中的神秘中间人，擅长收集和交易情报",
+    "current_location": "柏林地下酒窖",
+    "goal": "在纳粹与蛋仔之间维持平衡，确保黑市运作不被破坏",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "锈铁蛋仔": {
+    "name": "锈铁蛋仔",
+    "identity": "柏林旧城区的机械维修工，擅长改装和修复各种装置",
+    "current_location": "柏林东区废弃工厂",
+    "goal": "制造一台能躲避纳粹监控的通讯设备，以帮助地下抵抗组织传递情报",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "锈铁之眼": {
+    "name": "锈铁之眼",
+    "identity": "前柏林铁路工程师，因战争失去一切后成为黑市中擅长破解密码与监控系统的技术专家",
+    "current_location": "柏林地下隧道网络",
+    "goal": "找到能够揭露黑市组织秘密的证据，同时保护自己不被纳粹或黑市势力捕获",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "锈影": {
+    "name": "锈影",
+    "identity": "柏林黑市中活跃的暗杀者，擅长潜行与刺杀任务",
+    "current_location": "柏林东区废弃工厂",
+    "goal": "寻找能改变黑市格局的机密文件，同时躲避神秘交易组织的追捕",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "锈铃": {
+    "name": "锈铃",
+    "identity": "柏林黑市中经营地下电台的播音员，擅长通过电波传递秘密信息",
+    "current_location": "柏林旧城区废弃广播站",
+    "goal": "揭露神秘交易组织的真面目，并将真相传递给所有蛋仔",
     "status": "alive",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
   },
-  "峰哥": {
-    "name": "峰哥",
-    "identity": "自以为是的流浪者，常在街头吹嘘自己曾是英雄。",
-    "current_location": "柏林街头巷尾",
-    "goal": "寻找传说中的宝藏以证明自己的伟大",
-    "status": "alive",
-    "role": "supporting",
-    "relationship_changes": [],
-    "new_traits": []
-  },
-  "咕噜蛋仔": {
-    "name": "咕噜蛋仔",
-    "identity": "一名隐居的地下电台主持人，擅长用幽默讽刺的方式揭露纳粹的虚伪。",
-    "current_location": "柏林地下防空洞内的一间秘密播音室",
-    "goal": "秘密传播自由思想，鼓舞民众反抗压迫",
+  "锈纹": {
+    "name": "锈纹",
+    "identity": "柏林黑市中专营古董与情报的走私商",
+    "current_location": "柏林旧城区的地下酒窖",
+    "goal": "寻找一件能改变黑市格局的古老文物",
     "status": "alive",
     "role": "main",
     "relationship_changes": [],

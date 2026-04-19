@@ -1048,7 +1048,37 @@ class ChapterWriter:
                         })
                         logger.info(f"  ✅ 世界观更新: {world_change[:50]}...")
                 
-                # 6. 随机抽取参考语料（每章0-2条）
+                # 6. 随机选择本章活跃角色（至少3个）
+                all_chars = list(self.story_state.characters.items())
+                if all_chars:
+                    # 存活角色
+                    alive_chars = [(n, c) for n, c in all_chars if c.status != 'dead']
+                    if alive_chars:
+                        # 主演和配角分开
+                        main_chars = [(n, c) for n, c in alive_chars if c.role == 'main']
+                        supporting_chars = [(n, c) for n, c in alive_chars if c.role == 'supporting']
+                        
+                        # 随机选择：主演至少选1个，其他随机补足到至少3个
+                        selected = []
+                        
+                        # 至少选1个主演
+                        if main_chars:
+                            selected.append(random.choice(main_chars)[0])
+                        
+                        # 补足到至少3个
+                        pool_names = [n for n, c in main_chars + supporting_chars]
+                        while len(selected) < min(3, len(pool_names)):
+                            candidates = [n for n in pool_names if n not in selected]
+                            if candidates:
+                                selected.append(random.choice(candidates))
+                            else:
+                                break
+                        
+                        # 设置活跃角色
+                        self.story_state.set_active_characters(selected)
+                        logger.info(f"🎭 本章活跃角色: {', '.join(selected)}")
+                
+                # 7. 随机抽取参考语料（每章0-2条）
                 ref_reader = get_reference_reader()
                 ref_count = random.randint(0, 2)
                 reference_texts = []
@@ -1061,7 +1091,7 @@ class ChapterWriter:
                     if reference_texts:
                         logger.info(f"📚 使用 {len(reference_texts)} 条参考语料")
                 
-                # 7. 生成章节（传入临时人物）
+                # 8. 生成章节（传入临时人物）
                 success, content = self.write_chapter(
                     chapter_num=chapter_num,
                     target_length=target_length,
@@ -1083,6 +1113,9 @@ class ChapterWriter:
                     results["failed"] += 1
                     logger.error(f"  ❌ 第{chapter_num}章生成失败")
                 
+                # 无论成功失败，都清除活跃角色设置
+                self.story_state.clear_active_characters()
+                
                 # 每章之间稍作停顿
                 if i < num_chapters - 1:
                     import time
@@ -1093,6 +1126,8 @@ class ChapterWriter:
                 results["failed"] += 1
                 import traceback
                 traceback.print_exc()
+                # 异常时也要清除活跃角色
+                self.story_state.clear_active_characters()
         
         # 保存状态
         self.story_state.save_all()
