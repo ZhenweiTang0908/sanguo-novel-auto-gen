@@ -289,6 +289,12 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
     def reload_story_state():
         """重新加载故事状态"""
         nonlocal story_state, chapter_writer
+        # 重置全局单例，强制创建新实例
+        import chapter_writer as cw_module
+        import story_state as ss_module
+        cw_module._chapter_writer = None
+        ss_module._story_state = None
+        
         # 确定实际 novel_id
         if current_novel_id:
             # 检查新位置是否有数据
@@ -374,8 +380,9 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
         print("  8. 混杂模式设置")
         print("  9. 查看更多信息")
         print("  10. 删除章节")
-        print("  11. 彻底重置小说")
-        print("  12. 退出")
+        print("  11. 重新初始化世界观")
+        print("  12. 删除小说")
+        print("  13. 退出")
 
         try:
             choice = input("\n  > ").strip()
@@ -404,7 +411,81 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
                 novel["created_at"] = datetime.datetime.now().isoformat()
                 novel_manager.save_novel_list(novel_manager.list_novels())
                 
-                print(f"✅ 小说已创建: {title}")
+                # 切换到新小说并创建目录
+                current_novel_id = new_novel_id
+                
+                # 确保目录存在
+                novel_dir = storage.base_path / "novels" / current_novel_id
+                (novel_dir / "chapters").mkdir(parents=True, exist_ok=True)
+                (novel_dir / "chapter_summaries").mkdir(parents=True, exist_ok=True)
+                
+                # 重新加载状态
+                reload_story_state()
+                
+                # 设置标题到 meta
+                story_state.meta.story_title = title
+                story_state.meta.story_subtitle = subtitle
+                
+                # 选择初始化方式
+                print("\n选择初始化方式:")
+                print("  1. AI初始化（让AI根据标题生成人物和背景）")
+                print("  2. 手动初始化（自己输入世界观和人物）")
+                print("  3. 跳过（创建空小说，稍后设置）")
+                init_choice = input("  > ").strip()
+                
+                if init_choice == '1':
+                    keywords = input("  输入关键词引导（直接回车使用标题）: ").strip()
+                    if not keywords:
+                        keywords = title
+                    print("\n🔧 AI正在生成初始人物和背景...")
+                    if chapter_writer.initialize_story(keywords):
+                        story_state.load_all()
+                        print("✅ AI初始化完成！")
+                    else:
+                        print("❌ AI初始化失败，将创建空小说")
+                        story_state.save_all()
+                elif init_choice == '2':
+                    print("\n📝 手动初始化世界观")
+                    world_overview = input("  世界观概述: ").strip()
+                    main_conflict = input("  主线冲突: ").strip()
+                    
+                    print("\n👥 添加主演角色（输入角色名，直接回车结束）:")
+                    main_chars = []
+                    while True:
+                        name = input("  角色名（直接回车结束）: ").strip()
+                        if not name:
+                            break
+                        identity = input("  身份设定: ").strip()
+                        main_chars.append({"name": name, "new_identity": identity})
+                    
+                    print("\n🔧 构建初始数据...")
+                    story_bible = {
+                        "world_overview": world_overview,
+                        "main_conflict": main_conflict,
+                        "main_characters": main_chars
+                    }
+                    characters = {}
+                    for char in main_chars:
+                        characters[char["name"]] = {
+                            "name": char["name"],
+                            "identity": char["new_identity"],
+                            "current_location": "初始地点",
+                            "goal": "待探索",
+                            "status": "alive",
+                            "role": "main"
+                        }
+                    plot_state = {
+                        "main_conflict": main_conflict,
+                        "sub_conflicts": [],
+                        "open_threads": [],
+                        "used_creatives": [],
+                        "active_creative_types": []
+                    }
+                    story_state.initialize(story_bible, characters, plot_state)
+                    print("✅ 手动初始化完成！")
+                else:
+                    print("  将创建空小说，可稍后手动添加角色和设定")
+                    story_state.save_all()
             except (EOFError, KeyboardInterrupt):
                 print("  已取消")
 
@@ -637,28 +718,125 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
             story_state.load_all()
 
         elif choice == '11':
-            confirm = input("  ⚠️ 彻底删除所有内容？[y/N]: ").strip()
-            if confirm.lower() == 'y':
-                confirm2 = input("  再次确认，输入 YES: ").strip()
-                if confirm2 == 'YES':
-                    import shutil
-                    data_dir = story_state.storage.base_path / 'novel-reader' / 'data'
-                    for item in ['chapters', 'chapter_summaries']:
-                        d = data_dir / item
-                        if d.exists():
-                            for f in d.iterdir():
-                                f.unlink()
-                    # 重置 meta
-                    story_state.meta.current_chapter = 0
-                    story_state.save_all()
-                    story_state.load_all()
-                    print("  已重置")
-                else:
-                    print("  已取消")
-            else:
+            print("\n🔄 重新初始化世界观")
+            print("  提示：此操作将保留章节，但重新生成世界观、人物和主线")
+            confirm = input("  确认继续？[y/N]: ").strip()
+            if confirm.lower() != 'y':
                 print("  已取消")
+                continue
+            
+            print("\n选择初始化方式:")
+            print("  1. AI初始化")
+            print("  2. 手动初始化")
+            init_choice = input("  > ").strip()
+            
+            if init_choice == '1':
+                keywords = input("  输入关键词（直接回车使用标题）: ").strip()
+                if not keywords:
+                    keywords = story_state.meta.story_title
+                print("\n🔧 AI正在重新生成...")
+                if chapter_writer.initialize_story(keywords):
+                    story_state.load_all()
+                    print("✅ 重新初始化完成！")
+                else:
+                    print("❌ AI初始化失败")
+            elif init_choice == '2':
+                print("\n📝 手动输入世界观")
+                world_overview = input("  世界观概述: ").strip()
+                main_conflict = input("  主线冲突: ").strip()
+                
+                print("\n👥 添加主演角色（输入角色名，直接回车结束）:")
+                main_chars = []
+                while True:
+                    name = input("  角色名（直接回车结束）: ").strip()
+                    if not name:
+                        break
+                    identity = input("  身份设定: ").strip()
+                    main_chars.append({"name": name, "new_identity": identity})
+                
+                story_bible = {
+                    "world_overview": world_overview,
+                    "main_conflict": main_conflict,
+                    "main_characters": main_chars
+                }
+                characters = {}
+                for char in main_chars:
+                    characters[char["name"]] = {
+                        "name": char["name"],
+                        "identity": char["new_identity"],
+                        "current_location": "初始地点",
+                        "goal": "待探索",
+                        "status": "alive",
+                        "role": "main"
+                    }
+                plot_state = {
+                    "main_conflict": main_conflict,
+                    "sub_conflicts": [],
+                    "open_threads": [],
+                    "used_creatives": [],
+                    "active_creative_types": []
+                }
+                story_state.initialize(story_bible, characters, plot_state)
+                print("✅ 重新初始化完成！")
+            else:
+                print("  无效选择")
 
         elif choice == '12':
+            novels = novel_manager.list_novels()
+            if not novels:
+                print("  暂无小说")
+                continue
+            
+            if len(novels) == 1:
+                print("  至少需要保留一部小说")
+                continue
+            
+            print("\n删除小说：")
+            for i, n in enumerate(novels, 1):
+                marker = " [当前]" if n.get("id") == current_novel_id else ""
+                print(f"  {i}. {n.get('title', n.get('id'))}{marker}")
+            print("  0. 取消")
+            
+            sel = input("  > ").strip()
+            if sel == '0' or not sel:
+                print("  已取消")
+                continue
+            
+            target_id = None
+            if sel.isdigit():
+                idx = int(sel) - 1
+                if 0 <= idx < len(novels):
+                    target_id = novels[idx].get("id")
+            else:
+                for n in novels:
+                    if n.get("id") == sel:
+                        target_id = sel
+                        break
+            
+            if not target_id:
+                print("  无效选择")
+                continue
+            
+            if target_id == current_novel_id:
+                print("  不能删除当前选中小说，请先切换")
+                continue
+            
+            confirm = input(f"  确认删除 '{target_id}'？[y/N]: ").strip()
+            if confirm.lower() != 'y':
+                print("  已取消")
+                continue
+            
+            # 删除小说目录
+            import shutil as shutil_mod
+            novel_dir = storage.base_path / "novels" / target_id
+            if novel_dir.exists():
+                shutil_mod.rmtree(novel_dir)
+            
+            # 从列表中移除
+            novel_manager.remove_novel(target_id)
+            print(f"  已删除: {target_id}")
+
+        elif choice == '13':
             print("  再见！")
             break
 
