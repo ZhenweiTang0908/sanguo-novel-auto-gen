@@ -88,5 +88,15 @@
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
+  },
+  "夜枭": {
+    "name": "夜枭",
+    "identity": "前科技公司数据安全顾问，现为匿名信息泄露者",
+    "current_location": "沿海城市地下网络据点",
+    "goal": "揭露企业与政府勾结的证据，推动舆论变革",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
   }
 }

@@ -3,63 +3,87 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 245, 235;
-  --background-end-rgb: 255, 250, 240;
+  --color-primary: #f97316;
+  --color-primary-light: #fb923c;
+  --color-secondary: #84cc16;
+  --color-accent: #ec4899;
+  --color-bg-warm: #fffbf5;
+  --color-bg-card: rgba(255, 255, 255, 0.9);
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #6b7280;
+  --color-border: rgba(249, 115, 22, 0.2);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 30, 30, 30;
-    --background-end-rgb: 20, 20, 20;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 50%, #fed7aa 100%);
+  min-height: 100vh;
+  color: var(--color-text-primary);
+  overflow-x: hidden;
 }
 
-/* 自定义滚动条 */
+/* 背景纹理 */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f97316' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
+  background: rgba(249, 115, 22, 0.1);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
+  background: linear-gradient(180deg, #f97316, #fb923c);
+  border-radius: 3px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #a1a1a1;
+::selection {
+  background: rgba(249, 115, 22, 0.3);
+  color: #7c2d12;
 }
 
-/* 章节内容排版优化 */
-.prose p {
-  text-indent: 2em;
-  line-height: 1.8;
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(249, 115, 22, 0.15);
 }
 
-.prose p:first-of-type {
-  text-indent: 0;
+.glass-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(249, 115, 22, 0.1);
 }
 
-/* 动画效果 */
-@keyframes fadeIn {
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 
+    0 20px 40px rgba(249, 115, 22, 0.15),
+    0 0 0 1px rgba(249, 115, 22, 0.1);
+}
+
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -67,12 +91,135 @@ body {
   }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* 阅读页面内容区域最大宽度 */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.98); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
 .reading-content {
   max-width: 65ch;
   margin: 0 auto;
+  font-family: 'Noto Serif SC', Georgia, serif;
+  line-height: 2;
+  letter-spacing: 0.02em;
+}
+
+.reading-content p {
+  text-indent: 2em;
+  margin-bottom: 1.5em;
+}
+
+.reading-content p:first-of-type {
+  text-indent: 0;
+}
+
+.reading-content p:first-of-type::first-letter {
+  font-size: 1.6em;
+  font-weight: 700;
+  float: left;
+  line-height: 1;
+  margin-right: 0.1em;
+  color: #f97316;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(249, 115, 22, 0.2);
+  border-top-color: #f97316;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.progress-bar {
+  height: 3px;
+  background: linear-gradient(90deg, #fed7aa, #f97316, #fb923c);
+  background-size: 200% 100%;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  color: #ea580c;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.3), transparent);
+}
+
+.nav-btn {
+  position: relative;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background: rgba(249, 115, 22, 0.08);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  color: #ea580c;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.nav-btn:hover {
+  background: rgba(249, 115, 22, 0.15);
+  border-color: rgba(249, 115, 22, 0.4);
+  color: #c2410c;
+  transform: scale(1.02);
+}
+
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

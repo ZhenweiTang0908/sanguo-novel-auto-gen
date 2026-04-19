@@ -16,6 +16,7 @@ export interface Novel {
   title: string;
   subtitle: string;
   created_at: string;
+  last_updated?: string;
   current_chapter?: number;
 }
 

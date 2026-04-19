@@ -145,13 +145,13 @@ class ChapterWriter:
                 temp_characters=temp_characters
             )
             
-            # 7. 确定 temperature
+            # 7. 确定 temperature（更高温度=更多随机性）
             if chaos_mode is True:
-                temperature = 1.2
+                temperature = 1.4  # 混杂模式用更高温度
             elif chaos_mode is None:
-                temperature = 1.0  # AI决定模式，适中温度
+                temperature = 1.1  # AI决定模式，稍高温度鼓励创意
             else:
-                temperature = 0.9
+                temperature = 0.8  # 非混杂模式可以保守一点
             
             # 8. 调用 LLM 生成正文
             chapter_content = self.llm.generate_chapter(
@@ -202,16 +202,23 @@ class ChapterWriter:
         Returns:
             选中的创意列表
         """
+        import random
+        
         logger.info(f"生成本章创意 (第{chapter_num}章)...")
         
-        # 获取未使用的创意类型
-        unused_types = self.story_state.get_unused_creative_types(8)
+        # 40%概率直接让AI自由发挥（WILD_CARD）
+        if random.random() < 0.4:
+            logger.info("🎲 触发 WILD_CARD！AI将完全自由创作")
+            return ["（由AI自行决定）"]
+        
+        # 获取未使用的创意类型（过滤掉WILD_CARD）
+        unused_types = [t for t in self.story_state.get_unused_creative_types(12) if t != "wild_card"]
         
         # 如果未使用的不够，从全部类型中补充
         if len(unused_types) < 5:
-            all_types = list(CreativeTypes.ALL)
+            all_types = [t for t in CreativeTypes.ALL if t != "wild_card"]
             random.shuffle(all_types)
-            unused_types = all_types[:8]
+            unused_types = all_types[:12]
         
         # 获取最近章节摘要作为上下文
         recent_summary = self.summarizer.format_recent_summaries()
@@ -276,20 +283,26 @@ class ChapterWriter:
         return None
     
     def _get_fallback_creative(self, available_types: List[str]) -> List[str]:
-        """获取备用创意"""
+        """获取备用创意 - 更随机更有趣"""
         fallback_creatives = [
-            "角色之间爆发激烈争吵，揭露出过往的恩怨",
-            "意外的访客带来了重要的消息",
-            "角色发现被最信任的人背叛",
-            "一场密谋已久的计划终于浮出水面",
-            "角色面临一个艰难的抉择",
+            "一场意外打破了看似平静的局面",
+            "某人喝醉后说出了一个惊天秘密",
+            "街上突然出现的神秘传单引发骚动",
+            "一个路人的无心之言成为了关键线索",
+            "两个配角之间爆发了搞笑的冲突",
+            "主角做了一个奇怪的梦（可以是预言）",
+            "一份匿名信揭开了尘封的往事",
+            "一场突如其来的天气变化打乱了所有人的计划",
+            "某个角色展示了从未显露过的新技能",
+            "一个孩子说出的天真话语却道破了天机",
         ]
         
         selected = random.sample(fallback_creatives, min(2, len(fallback_creatives)))
         
-        # 也选择一个创意类型
-        if available_types:
-            type_selected = random.choice(available_types)
+        # 从可用类型中选一个，但过滤掉WILD_CARD
+        filtered_types = [t for t in available_types if t != "wild_card"]
+        if filtered_types:
+            type_selected = random.choice(filtered_types)
             selected.append(f"融入 {type_selected} 元素")
         
         return selected
@@ -726,49 +739,45 @@ class ChapterWriter:
         """
         确定临时人物数量
         
-        50%概率触发，根据分配表决定数量：
-        - 40%: 2人
-        - 30%: 3人
-        - 20%: 4人
-        - 10%: 5-8人（随机）
-        - 5%: 10人
-        - 1%: 20人
+        30%概率不触发（增加不触发的概率，让剧情更自然）
+        触发时数量分布更随机：
+        - 40%: 0-1人（龙套）
+        - 30%: 2-3人
+        - 20%: 4-5人
+        - 10%: 6-10人（随机）
         
         Returns:
             临时人物数量（0表示不触发）
         """
         import random
-        if random.random() >= 0.5:
+        if random.random() >= 0.7:  # 30%概率不触发
             return 0
         
         roll = random.random()
         if roll < 0.40:
-            return 2
+            return random.randint(0, 1)
         elif roll < 0.70:
-            return 3
+            return random.randint(2, 3)
         elif roll < 0.90:
-            return 4
-        elif roll < 0.95:
-            return random.randint(5, 8)
-        elif roll < 0.99:
-            return 10
+            return random.randint(4, 5)
         else:
-            return 20
+            return random.randint(6, 10)
 
     def _determine_permanent_char_add(self) -> Optional[str]:
         """
         确定是否添加永久人物
         
-        10%概率添加主演，30%概率添加配角，60%概率不添加
+        15%概率添加主演，35%概率添加配角，50%概率不添加
+        适当提高让剧情更丰富
         
         Returns:
             "main" / "supporting" / None
         """
         import random
         roll = random.random()
-        if roll < 0.10:
+        if roll < 0.15:
             return "main"
-        elif roll < 0.40:
+        elif roll < 0.50:
             return "supporting"
         else:
             return None
@@ -777,7 +786,8 @@ class ChapterWriter:
         """
         确定是否触发角色消亡
         
-        9%概率主演消亡（需主演>3），25%概率配角消亡
+        12%概率主演消亡（需主演>3），35%概率配角消亡
+        提高概率让剧情更跌宕起伏
         
         Returns:
             "main" / "supporting" / None
@@ -786,9 +796,9 @@ class ChapterWriter:
         main_chars = self.story_state.get_main_characters()
         
         roll = random.random()
-        if roll < 0.09 and len(main_chars) > 3:
+        if roll < 0.12 and len(main_chars) > 3:
             return "main"
-        elif roll < 0.34:
+        elif roll < 0.47:
             return "supporting"
         else:
             return None
@@ -1037,9 +1047,9 @@ class ChapterWriter:
                             "type": death_type
                         })
                 
-                # 5. 3%概率修改世界观
-                if random.random() < 0.03:
-                    logger.info("🎲 触发修改世界观 (3%概率)")
+                # 5. 10%概率修改世界观（增加概率让剧情更丰富）
+                if random.random() < 0.10:
+                    logger.info("🎲 触发修改世界观 (10%概率)")
                     world_change = self._modify_world_view()
                     if world_change:
                         results["world_changes"].append({
@@ -1091,12 +1101,20 @@ class ChapterWriter:
                     if reference_texts:
                         logger.info(f"📚 使用 {len(reference_texts)} 条参考语料")
                 
-                # 8. 生成章节（传入临时人物）
+                # 8. 生成章节（增加chaos_mode概率，让剧情更自由）
+                import random
+                if random.random() < 0.4:  # 40%概率混杂模式
+                    chaos_mode_write = True
+                elif random.random() < 0.3:  # 30%概率AI自主
+                    chaos_mode_write = None
+                else:
+                    chaos_mode_write = False
+                    
                 success, content = self.write_chapter(
                     chapter_num=chapter_num,
                     target_length=target_length,
                     reference_count=-1,
-                    chaos_mode=None,
+                    chaos_mode=chaos_mode_write,
                     temp_characters=temp_characters if temp_characters else None
                 )
                 

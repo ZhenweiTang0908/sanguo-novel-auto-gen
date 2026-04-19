@@ -65,21 +65,68 @@ class StorageConfig:
 
 @dataclass
 class CreativeTypes:
-    """创意类型枚举（保持现实克制风格）"""
-    IDENTITY_REVEAL = "identity_reveal"  # 身份揭露
-    SECRET_ALLIANCE = "secret_alliance"  # 秘密联盟
-    POWER_STRUGGLE = "power_struggle"  # 权力斗争
-    BETRAYAL = "betrayal"  # 背叛
-    REVENGE = "revenge"  # 复仇
-    LOVE_TRIANGLE = "love_triangle"  # 情感纠葛
-    SCHEMING = "scheming"  # 阴谋算计
-    WAR_STRATEGY = "war_strategy"  # 战争策略
-    POLITICAL_MARRIAGE = "political_marriage"  # 政治联姻
-    HIDDEN_HEIR = "hidden_heir"  # 隐藏的继承人
-    PAST_SECRET = "past_secret"  # 过往秘密
-    FACTION_CONFLICT = "faction_conflict"  # 势力冲突
-    ASSASSINATION_PLAN = "assassination_plan"  # 刺杀计划
-    UNEXPECTED_ALLY = "unexpected_ally"  # 意外盟友
+    """创意类型枚举 - 强调多样性和自由度"""
+    
+    # 核心剧情创意
+    IDENTITY_REVEAL = "identity_reveal"
+    SECRET_ALLIANCE = "secret_alliance"
+    POWER_STRUGGLE = "power_struggle"
+    BETRAYAL = "betrayal"
+    REVENGE = "revenge"
+    LOVE_TRIANGLE = "love_triangle"
+    SCHEMING = "scheming"
+    WAR_STRATEGY = "war_strategy"
+    POLITICAL_MARRIAGE = "political_marriage"
+    HIDDEN_HEIR = "hidden_heir"
+    PAST_SECRET = "past_secret"
+    FACTION_CONFLICT = "faction_conflict"
+    ASSASSINATION_PLAN = "assassination_plan"
+    UNEXPECTED_ALLY = "unexpected_ally"
+    
+    # 风格与节奏创意（新增）
+    COMIC_RELIEF = "comic_relief"
+    DARK_TURN = "dark_turn"
+    TIME_SKIP = "time_skip"
+    FLASHBACK = "flashback"
+    PARALLEL_EDITING = "parallel_editing"
+    UNRELIABLE_NARRATOR = "unreliable_narrator"
+    
+    # 事件创意（新增）
+    ACCIDENT = "accident"
+    NATURAL_DISASTER = "natural_disaster"
+    PUBBLIC_HUMILIATION = "public_humiliation"
+    THIRD_PARTY_INTERVENTION = "third_party_intervention"
+    ITEM_DISCOVERY = "item_discovery"
+    BODY_DISCOVERY = "body_discovery"
+    BETTING_GAME = "betting_game"
+    COOKING_BATTLE = "cooking_battle"
+    DRUNK_CONFESSION = "drunk_confession"
+    
+    # 角色互动创意（新增）
+    BODY_SWAP = "body_swap"
+    AMNESIA = "amnesia"
+    IMPOSTER = "imposter"
+    MISTAKE_IDENTITY = "mistake_identity"
+    ROLE_REVERSAL = "role_reversal"
+    ENEMIES_ALLIES_SWAP = "enemies_allies_swap"
+    
+    # 世界观扩展（新增）
+    NEW_FACTION_INTRO = "new_faction_intro"
+    FORGOTTEN_PROPHECY = "forgotten_prophecy"
+    ANCIENT_WEAPON = "ancient_weapon"
+    SECRET_TECHNIQUE = "secret_technique"
+    FORBIDDEN_KNOWLEDGE = "forbidden_knowledge"
+    
+    # 极端创意（让剧情炸裂）
+    MASS_CASUALTY = "mass_casualty"
+    SCANDAL_EXPOSURE = "scandal_exposure"
+    DEAL_WITH_DEVIL = "deal_with_devil"
+    SACRIFICE = "sacrifice"
+    HERO_TURN_VILLAIN = "hero_turn_villain"
+    VILLAIN_TURN_HERO = "villain_turn_hero"
+    
+    # 完全随机（真正让AI自由发挥）
+    WILD_CARD = "wild_card"
     
     ALL = [
         IDENTITY_REVEAL,
@@ -96,6 +143,39 @@ class CreativeTypes:
         FACTION_CONFLICT,
         ASSASSINATION_PLAN,
         UNEXPECTED_ALLY,
+        COMIC_RELIEF,
+        DARK_TURN,
+        TIME_SKIP,
+        FLASHBACK,
+        PARALLEL_EDITING,
+        UNRELIABLE_NARRATOR,
+        ACCIDENT,
+        NATURAL_DISASTER,
+        PUBBLIC_HUMILIATION,
+        THIRD_PARTY_INTERVENTION,
+        ITEM_DISCOVERY,
+        BODY_DISCOVERY,
+        BETTING_GAME,
+        COOKING_BATTLE,
+        DRUNK_CONFESSION,
+        BODY_SWAP,
+        AMNESIA,
+        IMPOSTER,
+        MISTAKE_IDENTITY,
+        ROLE_REVERSAL,
+        ENEMIES_ALLIES_SWAP,
+        NEW_FACTION_INTRO,
+        FORGOTTEN_PROPHECY,
+        ANCIENT_WEAPON,
+        SECRET_TECHNIQUE,
+        FORBIDDEN_KNOWLEDGE,
+        MASS_CASUALTY,
+        SCANDAL_EXPOSURE,
+        DEAL_WITH_DEVIL,
+        SACRIFICE,
+        HERO_TURN_VILLAIN,
+        VILLAIN_TURN_HERO,
+        WILD_CARD,
     ]
 
 

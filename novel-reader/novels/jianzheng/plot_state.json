@@ -169,6 +169,70 @@
       "introduced_chapter": 10,
       "resolved_chapter": null,
       "notes": ""
+    },
+    {
+      "thread_id": "hook_1_0",
+      "description": "U盘中藏有神秘地图，指向名为“深网”的未知区域，为后续剧情埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 1,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_1_1",
+      "description": "陈主任的冷笑暗示他早已掌控局势，小聪明只是棋盘上的一步。",
+      "status": "open",
+      "introduced_chapter": 1,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_0",
+      "description": "白露拿出手枪对准小聪明，暗示真相可能带来致命代价。",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_1",
+      "description": "小美是否参与操控舆论仍未明确，留下悬念。",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_2",
+      "description": "陈主任的人正在追踪小聪明，预示下一章将有激烈冲突。",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_3_0",
+      "description": "匿名信息提示小聪明的IP已被追踪，暗示他可能暴露了行踪。",
+      "status": "open",
+      "introduced_chapter": 3,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_3_1",
+      "description": "老K的出现为故事引入新的盟友或势力，带来新的可能性。",
+      "status": "open",
+      "introduced_chapter": 3,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_3_2",
+      "description": "结尾的枪声和警报声为下一章的紧张局势埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 3,
+      "resolved_chapter": null,
+      "notes": ""
     }
   ],
   "used_creatives": [
@@ -291,17 +355,29 @@
       "used_in_chapter": 10,
       "description": "两大阵营对峙",
       "impact": "他在两股力量之间周旋，既要躲避追捕，又要寻找真正的盟友。"
+    },
+    {
+      "creative_type": "new_faction_intro",
+      "used_in_chapter": 2,
+      "description": "键盘正义联盟",
+      "impact": "该组织的出现引发小聪明的警惕，并促使他采取更激进的策略来维持影响力。"
+    },
+    {
+      "creative_type": "forbidden_knowledge",
+      "used_in_chapter": 2,
+      "description": "数据深渊",
+      "impact": "这份知识让他意识到自己只是更大棋局中的一颗棋子，推动他开始寻找真相。"
     }
   ],
   "active_creative_types": [
-    "unexpected_ally",
-    "love_triangle",
     "past_secret",
     "identity_reveal",
     "assassination_plan",
     "power_struggle",
     "secret_alliance",
     "political_marriage",
-    "faction_conflict"
+    "faction_conflict",
+    "new_faction_intro",
+    "forbidden_knowledge"
   ]
 }

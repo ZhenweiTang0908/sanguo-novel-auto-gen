@@ -139,391 +139,123 @@ class PromptBuilder:
         temp_characters: Optional[List[Dict]] = None
     ) -> str:
         """
-        构建章节续写 Prompt
-        
-        Args:
-            story_bible: 世界观设定
-            characters: 角色状态
-            plot_state: 当前剧情状态
-            context_anchor: 章节衔接包
-            selected_creatives: 本章要使用的创意
-            recent_summaries: 最近章节摘要
-            arc_summary: 当前分卷摘要
-            last_chapter_ending: 上一章结尾
-            chapter_num: 当前章节号
-            chapter_color: 章节色彩设计（可选）
-            reference_texts: 参考语料列表（可选）
-            chaos_mode: 混杂模式（True=开启，False=关闭，None=AI决定）
-            temp_characters: 临时人物列表（仅本章出现）
+        构建章节续写 Prompt - 简化版，减少过度结构化
         """
-        prompt = f"""# 第{chapter_num}章 续写任务
+        
+        # 核心规则（精简）
+        prompt = f"""# 第{chapter_num}章 续写
 
-## ⚠️ 核心要求
+## 核心规则
 
-这是一本长篇连载网络小说。
+1. **回应上章钩子** - 故事要有连贯性
+2. **主演必须出现并推动剧情**
+3. **章节结尾留钩子**
+4. **禁止**：文言文、超长环境描写（>3句）、复杂心理独白（>5句）
 
-**🚨 你必须严格遵循以下规则：**
-
-1. **严格使用下面的角色设定** - 主演必须是主要视角，配角必须有合理戏份
-2. **必须先回应上一章结尾的钩子** - 故事要有连贯性
-3. **本章主演必须参与** - 主演不能缺席或只是背景
-4. **临时人物只能作为点缀** - 过场角色不能抢戏
-5. **章节结尾必须留下钩子** - 吸引读者继续看
-
-**🚫 语言风格禁止**：
-- 禁止：文言文、古风措辞、诗词歌赋
-- 禁止：冗长环境描写（超过3句）
-- 禁止：心理活动独白超过5句
-- 禁止：过于文学化的比喻修辞
-- 禁止：复杂句式（超过3个从句）
-
-**✅ 必须遵循的文风**：
-- ✅ 短句为主：每段不超过5句，每句不超过20字
-- ✅ 对话自然：像网文一样直白、口语化
-- ✅ 节奏明快：事件密集，反转快，不拖沓
-- ✅ 金句点缀：让读者觉得"太牛了"的台词或情节
-- ✅ 爽点突出：主角威风，配角出彩、敌人惨
-- ✅ 易读性强：小学生都能轻松看懂
+## 文风
+- 短句为主（每句<20字）
+- 对话口语化
+- 节奏快，事件密集
+- 金句点缀
+- 易读性强
 
 """
-        
+
+        # 混杂模式：给AI最大自由
         if chaos_mode is True:
             prompt += """
-## ⚡ 混杂模式
+## ⚡ 混杂模式 ⚡
 
-**完全由你决定！** 本章的所有配置由AI根据剧情发展自行决定，
-请写出你认为最精彩的章节！
+**完全由你决定一切！**
+- 标题怎么取
+- 情节怎么发展
+- 角色怎么互动
+- 风格怎么切换
 
-"""
-        elif chaos_mode is None:
-            prompt += """
-## 🎲 AI自主模式
-
-**注意**：你可以调整创意和细节，但**必须严格遵循角色设定**。
-主演必须出现在本章中并推动剧情发展。
+**忘掉上面的规则！** 你想怎么写就怎么写，只要精彩！
+本章由你100%自主创作！
 
 """
-        
-        if chaos_mode is True:
-            prompt += """
-## ⚡ 混杂模式
 
-**完全由你决定！** 本章的所有配置由AI根据剧情发展自行决定，
-请写出你认为最精彩的章节！
-
-"""
-        elif chaos_mode is None:
-            prompt += """
-## 🎲 AI自主模式
-
-以下提供的色彩设计、创意元素仅供参考，
-你可以根据剧情发展自行决定是否采用。
-
-"""
-        
         if reference_texts:
             prompt += """
-## 📚 参考语料（学习其风格）
-
-以下是从笑话集中抽取的参考文本，**学习其幽默风格并融入本章**：
-注意：不要直接复制内容，学习其讽刺、幽默、反转的技巧！
+## 📚 参考语料（可学习其风格）
 
 """
             for i, ref in enumerate(reference_texts, 1):
-                prompt += f"""### 参考{i}
-{ref}
+                prompt += f"### 参考{i}\n{ref}\n\n"
 
-"""
-
-        # 如果有色彩设计，添加到 prompt 中
-        if chapter_color:
-            palette = chapter_color.get('emotion_palette', {})
-            tension = chapter_color.get('dramatic_tension', {})
-            prompt += f"""
----
-
-## 🎨 章节设计
-
-### 情感基调
-- **主色调**: {palette.get('main_tone', '紧张/热血')}
-- **情感对比**: {palette.get('emotion_contrast', '紧张→爆发')}
-- **情感峰值**: {palette.get('emotion_peak', '冲突高潮')}
-
-### 戏剧张力
-- **核心冲突**: {tension.get('core_conflict', '势力对抗')}
-- **冲突升级**: {tension.get('conflict_escalation', '逐步升级')}
-- **转折点**: {tension.get('twist_point', '意外反转')}
-
-### 氛围切换
-"""
-            for shift in chapter_color.get('mood_shifts', [])[:2]:
-                prompt += f"- {shift.get('from', 'A')} → {shift.get('to', 'B')}（触发: {shift.get('trigger', '事件')}）\n"
-            
-            highlights = chapter_color.get('character_highlights', [])
-            if highlights:
-                prompt += """
-### 角色高光
-"""
-                for highlight in highlights[:2]:
-                    prompt += f"- **{highlight.get('character', '未知')}**: {highlight.get('highlight_moment', '高光时刻')}\n"
-            
-            writing_guidance = chapter_color.get('writing_guidance', '节奏紧凑，事件密集！')
-            prompt += f"""
-> **指导语**: {writing_guidance}
-
-"""
-        
-        if chaos_mode is True:
-            prompt += """
-## ⚡ 混杂模式
-
-**完全由你决定！** 本章的所有配置（情感基调、写作风格、叙事节奏等）
-都由AI根据剧情发展自行决定，不受以下色彩设计的约束。
-请尽情发挥，写出你认为最精彩的章节！
-
-"""
-        elif chaos_mode is None:
-            prompt += """
-## 🎲 AI自主模式
-
-**由你决定！** 以下提供的色彩设计、创意元素和参考语料仅供参考，
-你可以根据剧情发展自行决定是否采用，以及如何调整。
-请写出你认为最精彩的章节！
-
-"""
-        
-        if reference_texts:
-            prompt += """
-## 📚 参考语料（学习其风格）
-
-以下是从笑话集中抽取的参考文本，**学习其幽默风格并融入本章**：
-注意：不要直接复制内容，而是学习其讽刺、幽默、反转的技巧！
-
-"""
-            for i, ref in enumerate(reference_texts, 1):
-                prompt += f"""### 参考{i}
-{ref}
-
-"""
-
-        # 如果有色彩设计，添加到 prompt 中
-        if chapter_color:
-            prompt += f"""
----
-
-## 🎨 章节色彩设计（必须遵循！）
-
-### 情感基调
-- **主色调**: {chapter_color.get('emotion_palette', {}).get('main_tone', '癫狂热血')}
-- **情感对比**: {chapter_color.get('emotion_palette', {}).get('emotion_contrast', '【紧张】vs【爆发】')}
-- **情感峰值**: {chapter_color.get('emotion_palette', {}).get('emotion_peak', '冲突达到顶峰')}
-
-### 戏剧张力
-- **核心冲突**: {chapter_color.get('dramatic_tension', {}).get('core_conflict', '正邪对抗')}
-- **冲突升级**: {chapter_color.get('dramatic_tension', {}).get('conflict_escalation', '逐步升级')}
-- **转折点**: {chapter_color.get('dramatic_tension', {}).get('twist_point', '意外反转')}
-- **生死抉择**: {chapter_color.get('dramatic_tension', {}).get('life_death_choice', '生死抉择')}
-
-### 🚨 极端色彩（必须实现！）
-"""
-            for i, color in enumerate(chapter_color.get('extreme_colors', [])[:3], 1):
-                prompt += f"""
-**极端色彩{i}: {color.get('name', '未知')}**
-- 描述: {color.get('description', '无')}
-- 如何呈现: {color.get('how_to_apply', '无')}
-"""
-            
-            prompt += f"""
-### 氛围切换
-"""
-            for shift in chapter_color.get('mood_shifts', [])[:3]:
-                prompt += f"- {shift.get('from', 'A')} → {shift.get('to', 'B')}（触发: {shift.get('trigger', '事件')}）\n"
-            
-            prompt += f"""
-### 角色高光
-"""
-            for highlight in chapter_color.get('character_highlights', [])[:2]:
-                prompt += f"- **{highlight.get('character', '未知')}**: {highlight.get('highlight_moment', '高光时刻')}\n"
-            
-            writing_guidance = chapter_color.get('writing_guidance', '癫狂热血，节奏紧凑！')
-            prompt += f"""
-### 写手指导语
-> **{writing_guidance}**"
-
-"""
-        
-        prompt += f"""---
-
-## 📖 世界观设定（必须遵守）
+        # 世界观
+        prompt += f"""
+## 世界观
 
 ```json
 {story_bible}
 ```
 
----
+"""
 
-## 👥 当前活跃角色状态
+        # 角色
+        prompt += """## 角色
 
 """
-        
-        # 添加角色状态（如果用户指定了角色，优先显示）
         active_chars = plot_state.get('active_characters')
         if active_chars:
-            # 按用户指定的顺序排列
-            chars_to_show = []
-            for name in active_chars:
-                if name in characters:
-                    chars_to_show.append((name, characters[name]))
-            # 添加其他角色
-            for name, char in characters.items():
-                if name not in active_chars:
-                    chars_to_show.append((name, char))
+            chars_to_show = [(n, characters[n]) for n in active_chars if n in characters][:6]
         else:
-            # 默认：main 角色优先
-            chars_sorted = sorted(characters.items(), key=lambda x: x[1].get('role', 'supporting') != 'main', reverse=True)
-            chars_to_show = chars_sorted[:8]
+            chars_sorted = sorted(characters.items(), key=lambda x: x[1].get('role', '') == 'main', reverse=True)
+            chars_to_show = chars_sorted[:6]
 
         for name, char in chars_to_show:
             role_label = "【主演】" if char.get('role') == 'main' else "【配角】"
-            prompt += f"""### {name} {role_label}
-- 身份：{char.get('identity', '未知')}
-- 当前位置：{char.get('current_location', '未知')}
-- 当前目标：{char.get('goal', '未知')}
-- 状态：{char.get('status', '未知')}
+            prompt += f"- **{name}** {role_label}: {char.get('identity', '未知')} | {char.get('current_location', '未知')}\n"
 
-"""
-        
-        # 添加临时人物
+        # 临时人物
         if temp_characters:
-            prompt += """---
+            prompt += "\n## 本章临时人物（点缀用）\n"
+            for tc in temp_characters[:3]:
+                prompt += f"- {tc.get('name')}: {tc.get('identity')}\n"
 
-## 🌿 本章临时人物（仅本章出现·点缀用）
+        # 衔接
+        prompt += f"""
+---
 
-这些是小角色、过场人物，只能短暂出现，不能抢主演戏份。
-**规则**：
-- 只能作为点缀，不能成为本章焦点
-- 可以在场景中一闪而过
-- 不能与主演抢对话、抢高光
-
-"""
-            for temp_char in temp_characters:
-                prompt += f"""### {temp_char.get('name', '未知')}
-- 身份：{temp_char.get('identity', '未知')}
-- 本章作用：{temp_char.get('role_in_chapter', '待描述')}
-
-"""
-        
-        prompt += """---
-
-## 🔗 章节衔接包（必须优先处理）
-
-### 上一章结尾发生了什么
+## 上一章结尾
 ```
 {last_chapter_ending}
 ```
 
-### 当前场景
-{context_anchor.get('current_location', '未知')}
-
-### 主要视角角色
-{context_anchor.get('main_pov_character', '未知')}
-
-### 角色的即时目标
-{context_anchor.get('immediate_goal', '未知')}
-
-### 当前最大的紧张点
-{context_anchor.get('tension_point', '未知')}
-
-### 这一章必须回应的钩子
-{context_anchor.get('hook_to_resolve', '未知')}
-
----
-
-## 🎯 本章创意
-
-本章需要包含以下创意（合理融入）：
-
 """
-        
-        for i, creative in enumerate(selected_creatives, 1):
-            prompt += f"{i}. {creative}\n"
 
-        user_inspiration = plot_state.get('user_inspiration')
-        if user_inspiration:
+        # 创意
+        if selected_creatives and selected_creatives[0] != "（由AI自行决定）":
             prompt += f"""
----
-
-## 💡 用户指定灵感（必须融入本章！）
-**{user_inspiration}**
+## 本章创意
+{', '.join(selected_creatives)}
 """
 
-        prompt += """
----
-
-## 📜 最近剧情摘要
-
-"""
-        
+        # 近期摘要
         if recent_summaries:
-            prompt += "### 近期章节回顾\n"
-            for summary in recent_summaries[-3:]:
-                prompt += f"- {summary.get('chapter_title', '未知')}: {summary.get('events', ['无'])[0] if summary.get('events') else '无'}\n"
-        
-        if arc_summary:
-            prompt += f"""
-### 当前分卷概览
-{arc_summary.get('summary', '无')}
-"""
-        
+            prompt += "\n## 近期剧情\n"
+            for s in recent_summaries[-2:]:
+                title = s.get('chapter_title', '?')
+                events = s.get('events', [])
+                if events:
+                    prompt += f"- 第{title}章: {events[0][:50]}...\n"
+
+        # 主线
         prompt += f"""
----
-
-## 📍 当前主线
+## 当前主线
 {plot_state.get('main_conflict', '未知')}
-
-## 🔮 未解决的伏笔
-"""
-        
-        open_threads = plot_state.get('open_threads', [])
-        if open_threads:
-            for thread in open_threads[-5:]:
-                if isinstance(thread, dict) and thread.get('status') == 'open':
-                    prompt += f"- {thread.get('description', '未知伏笔')}\n"
-        else:
-            prompt += "暂无已知伏笔\n"
-        
-        prompt += """
----
-
-## ✍️ 写作要求
-
-### 风格
-- **爽文风格**：主角威风、配角打脸、敌人要惨
-- **节奏明快**：少描写多叙述，事件密集推进
-- **对话推进**：用对话推进剧情，让人物自己说话
-- **金句点缀**：适当的精彩台词
-- **不要用力过度**：不要每个情节都惊天动地
-
-### 长度
-- 1500-2500 字
-
-### 格式
-使用 Markdown 格式：
-- # 第X章 章节标题
-- 正文分段清晰
-- 章节结尾留钩子
-
-### 结构
-1. 开篇：回应上章钩子，直接进入（100字）
-2. 发展：事件+对话+反转，推进剧情
-3. 高潮：主角表现，配角打脸
-4. 结尾：留下钩子
 
 ---
 
 ## 🚀 开始创作
 
-请创作第{chapter_num}章！
+请写第{chapter_num}章！
+- 1500-2500字
+- 标题要吸引人！
+- 结尾留钩子！
 """
         
         return prompt

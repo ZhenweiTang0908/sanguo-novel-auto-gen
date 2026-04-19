@@ -4,35 +4,39 @@ import path from 'path';
 import { notFound } from 'next/navigation';
 
 const NOVELS_DIR = path.join(process.cwd(), 'novels');
+const LEGACY_DATA_DIR = path.join(process.cwd(), 'data/chapters');
 
 interface PageProps {
   params: Promise<{ id: string }>;
   searchParams: Promise<{ novel_id?: string }>;
 }
 
-function findChapterFile(novelId: string, chapterId: number): string | null {
+function findChapterFile(novelId: string, chapterId: number): { filePath: string | null; dataDir: string } {
+  const chapterFileName = `chapter_${String(chapterId).padStart(3, '0')}.md`;
+  
   if (novelId) {
-    const newPath = path.join(NOVELS_DIR, novelId, 'chapters', `chapter_${String(chapterId).padStart(3, '0')}.md`);
+    // 优先检查新位置 novels/{novelId}/chapters/
+    const newPath = path.join(NOVELS_DIR, novelId, 'chapters', chapterFileName);
     if (fs.existsSync(newPath)) {
-      return newPath;
+      return { filePath: newPath, dataDir: path.join(NOVELS_DIR, novelId, 'chapters') };
     }
-  }
-  return null;
-}
-
-function findDataDir(novelId: string): string {
-  if (novelId) {
-    const newPath = path.join(NOVELS_DIR, novelId, 'chapters');
-    if (fs.existsSync(newPath)) {
-      return newPath;
+    
+    // 检查 legacy 位置 data/chapters/（crazy_sanguo等旧小说在这里）
+    const legacyPath = path.join(LEGACY_DATA_DIR, chapterFileName);
+    if (fs.existsSync(legacyPath)) {
+      return { filePath: legacyPath, dataDir: LEGACY_DATA_DIR };
     }
+    
+    return { filePath: null, dataDir: LEGACY_DATA_DIR };
   }
-  return path.join(process.cwd(), 'data/chapters');
+  
+  // 没有 novelId，使用 legacy
+  const legacyPath = path.join(LEGACY_DATA_DIR, chapterFileName);
+  return { filePath: fs.existsSync(legacyPath) ? legacyPath : null, dataDir: LEGACY_DATA_DIR };
 }
 
 async function getChapterData(chapterId: number, novelId: string) {
-  const filePath = findChapterFile(novelId, chapterId);
-  const DATA_DIR = findDataDir(novelId);
+  const { filePath, dataDir } = findChapterFile(novelId, chapterId);
   
   if (!filePath) {
     return null;
@@ -49,8 +53,8 @@ async function getChapterData(chapterId: number, novelId: string) {
     return true;
   });
   
-  const prevPath = path.join(DATA_DIR, `chapter_${String(chapterId - 1).padStart(3, '0')}.md`);
-  const nextPath = path.join(DATA_DIR, `chapter_${String(chapterId + 1).padStart(3, '0')}.md`);
+  const prevPath = path.join(dataDir, `chapter_${String(chapterId - 1).padStart(3, '0')}.md`);
+  const nextPath = path.join(dataDir, `chapter_${String(chapterId + 1).padStart(3, '0')}.md`);
   
   return {
     id: chapterId,
