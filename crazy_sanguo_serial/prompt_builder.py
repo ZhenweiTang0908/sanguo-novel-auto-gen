@@ -913,6 +913,79 @@ class PromptBuilder:
 请立即生成角色！
 """
 
+    @staticmethod
+    def build_expand_character_prompt(
+        name: str,
+        description: str,
+        world_overview: str,
+        main_conflict: str,
+        existing_characters: Dict[str, Any]
+    ) -> str:
+        """
+        构建扩写角色设定的 Prompt
+
+        Args:
+            name: 用户提供的角色名
+            description: 用户提供的一句话描述
+            world_overview: 世界观概述
+            main_conflict: 主线冲突
+            existing_characters: 已存在的角色
+        """
+        def format_char(n: str, char) -> str:
+            if hasattr(char, 'identity'):
+                return f"- {n}: {char.identity} [{char.role}]"
+            return f"- {n}: {char.get('identity', '未知')} [{char.get('role', 'supporting')}]"
+        
+        chars_text = "\n".join([
+            format_char(n, char) for n, char in existing_characters.items()
+        ]) or "（暂无角色）"
+
+        return f"""# 任务：扩写角色设定
+
+用户希望创建一个名为「{name}」的角色，描述是：「{description}」
+
+请根据这个描述，将其扩写为一个完整的角色设定（100字左右）。
+
+## 世界观
+{world_overview[:500] if world_overview else '未知'}
+
+## 主线冲突
+{main_conflict if main_conflict else '未知'}
+
+## 已存在角色（注意不要与这些角色重复）
+{chars_text}
+
+## 要求
+
+1. 保留用户给定的角色名
+2. 基于用户描述，合理扩写角色设定
+3. 角色身份要与世界观和主线冲突相符
+4. 扩写后的角色需要有：
+   - name: 角色名（使用用户提供的）
+   - identity: 身份设定（扩写到50字左右）
+   - current_location: 当前位置
+   - goal: 当前目标
+   - role: "main" 或 "supporting"（根据角色重要性判断）
+   - core_trait: 核心特质（一句话，20字以内）
+
+## 输出格式
+
+请生成 JSON 格式的角色：
+
+```json
+{{
+  "name": "{name}",
+  "identity": "扩写后的身份设定（50字左右）",
+  "current_location": "当前位置",
+  "goal": "当前目标",
+  "role": "main/supporting",
+  "core_trait": "核心特质一句话"
+}}
+```
+
+请立即生成！
+"""
+
 
 # 全局实例
 _prompt_builder: Optional[PromptBuilder] = None

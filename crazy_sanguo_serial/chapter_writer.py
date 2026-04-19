@@ -656,6 +656,68 @@ class ChapterWriter:
 
         return []
 
+    def expand_character(self, name: str, description: str) -> Optional[Dict]:
+        """
+        根据用户提供的名字和一句话描述，AI扩写为完整角色设定
+
+        Args:
+            name: 用户提供的角色名
+            description: 用户提供的一句话描述
+
+        Returns:
+            扩写后的角色数据
+        """
+        logger.info(f"开始扩写角色: {name}")
+
+        world_overview = ""
+        if self.story_state.story_bible:
+            world_overview = self.story_state.story_bible.get('world_overview', '')
+
+        main_conflict = self.story_state.plot_state.get('main_conflict', '')
+
+        prompt = self.prompt_builder.build_expand_character_prompt(
+            name=name,
+            description=description,
+            world_overview=world_overview,
+            main_conflict=main_conflict,
+            existing_characters=self.story_state.characters
+        )
+
+        response = self.llm.generate(prompt, temperature=0.8)
+
+        # 解析响应
+        char_data = self._parse_single_character_response(response)
+        if not char_data:
+            logger.error("解析角色数据失败")
+            return None
+
+        return char_data
+
+    def _parse_single_character_response(self, response: str) -> Optional[Dict]:
+        """解析单个角色响应"""
+        import re
+        import json
+
+        json_match = re.search(r'```json\s*([\s\S]*?)\s*```', response)
+        if json_match:
+            try:
+                data = json.loads(json_match.group(1))
+                if isinstance(data, dict) and 'name' in data:
+                    return data
+            except json.JSONDecodeError:
+                pass
+
+        json_match = re.search(r'\{[\s\S]*?"name"[\s\S]*?\}', response)
+        if json_match:
+            try:
+                data = json.loads(json_match.group(0))
+                if isinstance(data, dict) and 'name' in data:
+                    return data
+            except json.JSONDecodeError:
+                pass
+
+        return None
+
     def generate_chapters_continuous(
         self,
         num_chapters: int,

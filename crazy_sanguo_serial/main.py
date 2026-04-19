@@ -620,6 +620,7 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
                 print("\n👥 添加/生成角色")
                 print("  1. 手动添加角色")
                 print("  2. AI随机生成角色")
+                print("  3. AI扩写角色（提供名字和描述）")
                 sel = input("  > ").strip()
                 
                 if sel == '1':
@@ -665,6 +666,43 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
                     
                     story_state.save_all()
                     print(f"  ✅ 已添加: {', '.join(added)}")
+                
+                elif sel == '3':
+                    name = input("  角色名: ").strip()
+                    if not name:
+                        print("  已取消")
+                        continue
+                    description = input("  一句话描述（如：忠诚的将军）: ").strip()
+                    if not description:
+                        print("  描述不能为空")
+                        continue
+                    
+                    print(f"\n🔧 AI正在扩写角色「{name}」...")
+                    char_data = chapter_writer.expand_character(name, description)
+                    
+                    if not char_data:
+                        print("  ❌ 扩写失败")
+                        continue
+                    
+                    expanded_name = char_data.get('name', name)
+                    identity = char_data.get('identity', description)
+                    location = char_data.get('current_location', '未知')
+                    goal = char_data.get('goal', '待探索')
+                    role = char_data.get('role', 'supporting')
+                    
+                    print(f"\n📝 扩写结果:")
+                    print(f"  角色名: {expanded_name}")
+                    print(f"  身份设定: {identity[:80]}..." if len(identity) > 80 else f"  身份设定: {identity}")
+                    print(f"  核心特质: {char_data.get('core_trait', '')}")
+                    
+                    confirm = input("\n  确认添加？[y/N]: ").strip()
+                    if confirm.lower() == 'y':
+                        story_state.add_character(expanded_name, identity, location, goal, role=role)
+                        story_state.save_all()
+                        print(f"  ✅ 已添加: {expanded_name}")
+                    else:
+                        print("  已取消")
+                
                 else:
                     print("  无效选择")
             except (EOFError, KeyboardInterrupt):
