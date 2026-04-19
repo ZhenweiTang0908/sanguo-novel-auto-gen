@@ -587,6 +587,65 @@ class ChapterWriter:
         
         return characters
 
+    def generate_character(self, count: int = 1) -> List[Dict]:
+        """
+        随机生成新角色
+
+        Args:
+            count: 生成角色数量
+
+        Returns:
+            生成的角色列表
+        """
+        logger.info(f"开始生成 {count} 个角色...")
+
+        world_overview = ""
+        if self.story_state.story_bible:
+            world_overview = self.story_state.story_bible.get('world_overview', '')
+
+        main_conflict = self.story_state.plot_state.get('main_conflict', '')
+
+        prompt = self.prompt_builder.build_generate_character_prompt(
+            world_overview=world_overview,
+            main_conflict=main_conflict,
+            existing_characters=self.story_state.characters,
+            count=count
+        )
+
+        response = self.llm.generate(prompt, temperature=0.9)
+
+        # 解析响应
+        characters = self._parse_characters_response(response)
+        if not characters:
+            logger.error("解析角色数据失败")
+            return []
+
+        return characters
+
+    def _parse_characters_response(self, response: str) -> List[Dict]:
+        """解析角色生成响应"""
+        import re
+
+        json_match = re.search(r'```json\s*([\s\S]*?)\s*```', response)
+        if json_match:
+            try:
+                data = json.loads(json_match.group(1))
+                if isinstance(data, list):
+                    return data
+                elif isinstance(data, dict) and 'characters' in data:
+                    return data['characters']
+            except json.JSONDecodeError:
+                pass
+
+        json_match = re.search(r'\[[\s\S]*?"name"[\s\S]*?\]', response)
+        if json_match:
+            try:
+                return json.loads(json_match.group(0))
+            except json.JSONDecodeError:
+                pass
+
+        return []
+
 
 # 全局实例
 _chapter_writer: Optional[ChapterWriter] = None

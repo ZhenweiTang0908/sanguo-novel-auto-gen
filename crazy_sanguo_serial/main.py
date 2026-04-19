@@ -372,7 +372,7 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
         print("  0. 切换小说")
         print("  1. 创建新小说")
         print("  2. 生成新章节")
-        print("  3. 添加新角色")
+        print("  3. 添加/生成角色")
         print("  4. 修改角色信息")
         print("  5. 设置灵感线索")
         print("  6. 随机角色模式")
@@ -551,21 +551,56 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
 
         elif choice == '3':
             try:
-                name = input("  角色名: ").strip()
-                if not name:
-                    print("  已取消")
-                    continue
-                identity = input("  身份设定: ").strip()
-                location = input("  当前位置: ").strip() or "未知"
-                goal = input("  当前目标: ").strip() or "待探索"
-                print("  角色定位:")
-                print("    1. 主演（重要角色）")
-                print("    2. 配角（次要角色）")
-                role_sel = input("  > ").strip()
-                role = "main" if role_sel == "1" else "supporting"
-                story_state.add_character(name, identity, location, goal, role=role)
-                story_state.save_all()
-                print(f"  已添加: {name} ({'主演' if role == 'main' else '配角'})")
+                print("\n👥 添加/生成角色")
+                print("  1. 手动添加角色")
+                print("  2. AI随机生成角色")
+                sel = input("  > ").strip()
+                
+                if sel == '1':
+                    name = input("  角色名: ").strip()
+                    if not name:
+                        print("  已取消")
+                        continue
+                    identity = input("  身份设定: ").strip()
+                    location = input("  当前位置: ").strip() or "未知"
+                    goal = input("  当前目标: ").strip() or "待探索"
+                    print("  角色定位:")
+                    print("    1. 主演（重要角色）")
+                    print("    2. 配角（次要角色）")
+                    role_sel = input("  > ").strip()
+                    role = "main" if role_sel == "1" else "supporting"
+                    story_state.add_character(name, identity, location, goal, role=role)
+                    story_state.save_all()
+                    print(f"  已添加: {name} ({'主演' if role == 'main' else '配角'})")
+                
+                elif sel == '2':
+                    count = input("  生成数量（默认1）: ").strip()
+                    count = int(count) if count.isdigit() and int(count) > 0 else 1
+                    
+                    print(f"\n🔧 AI正在生成 {count} 个角色...")
+                    new_chars = chapter_writer.generate_character(count)
+                    
+                    if not new_chars:
+                        print("  ❌ 生成失败")
+                        continue
+                    
+                    added = []
+                    for char_data in new_chars:
+                        name = char_data.get('name', '')
+                        if not name:
+                            continue
+                        identity = char_data.get('identity', '未知')
+                        location = char_data.get('current_location', '未知')
+                        goal = char_data.get('goal', '待探索')
+                        role = char_data.get('role', 'supporting')
+                        
+                        story_state.add_character(name, identity, location, goal, role=role)
+                        added.append(f"{name} [{'主演' if role == 'main' else '配角'}]")
+                    
+                    story_state.save_all()
+                    print(f"  ✅ 已添加: {', '.join(added)}")
+                else:
+                    print("  无效选择")
             except (EOFError, KeyboardInterrupt):
                 print("  已取消")
 

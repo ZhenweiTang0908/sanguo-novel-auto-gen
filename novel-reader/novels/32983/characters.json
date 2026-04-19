@@ -1,0 +1,32 @@
+{
+  "白眼蛋仔": {
+    "name": "白眼蛋仔",
+    "identity": "会翻白眼蠢萌蛋仔",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "希特勒": {
+    "name": "希特勒",
+    "identity": "容易生气但是演讲能力很强",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "智慧聪明蛋仔": {
+    "name": "智慧聪明蛋仔",
+    "identity": "很聪明很势利",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  }
+}

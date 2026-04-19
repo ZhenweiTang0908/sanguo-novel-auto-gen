@@ -842,6 +842,73 @@ class PromptBuilder:
 请立即生成角色更新！
 """
 
+    @staticmethod
+    def build_generate_character_prompt(
+        world_overview: str,
+        main_conflict: str,
+        existing_characters: Dict[str, Any],
+        count: int = 1
+    ) -> str:
+        """
+        构建随机生成角色的 Prompt
+
+        Args:
+            world_overview: 世界观概述
+            main_conflict: 主线冲突
+            existing_characters: 已存在的角色
+            count: 生成角色数量
+        """
+        chars_text = "\n".join([
+            f"- {name}: {char.get('identity', '未知')} [{char.get('role', 'supporting')}]"
+            for name, char in existing_characters.items()
+        ]) or "（暂无角色）"
+
+        return f"""# 任务：随机生成新角色
+
+根据以下世界观信息，生成符合这个世界的新角色。
+
+## 世界观
+{world_overview[:500] if world_overview else '未知'}
+
+## 主线冲突
+{main_conflict if main_conflict else '未知'}
+
+## 已存在角色
+{chars_text}
+
+## 要求
+
+1. 生成 {count} 个新角色
+2. 角色身份要与世界观和主线冲突相符
+3. 可以是主演或配角
+4. 每个角色需要有：
+   - name: 角色名
+   - identity: 身份设定
+   - current_location: 当前位置
+   - goal: 当前目标
+   - role: "main" 或 "supporting"
+   - core_trait: 核心特质（一句话）
+
+## 输出格式
+
+请生成 JSON 格式的角色列表：
+
+```json
+[
+  {{
+    "name": "角色名",
+    "identity": "身份设定",
+    "current_location": "当前位置",
+    "goal": "当前目标",
+    "role": "main/supporting",
+    "core_trait": "核心特质"
+  }}
+]
+```
+
+请立即生成角色！
+"""
+
 
 # 全局实例
 _prompt_builder: Optional[PromptBuilder] = None
