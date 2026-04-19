@@ -569,9 +569,11 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
                 print(f"\n🚀 开始连续生成 {num} 章...")
                 print("  每章会：")
                 print("    - AI确定灵感和色彩")
-                print("    - 随机抽取参考语料")
-                print("    - 8%概率添加新角色")
+                print("    - 50%概率生成临时人物(2-20人不等)")
+                print("    - 10%主演/30%配角/60%无 - 永久人物添加")
+                print("    - 9%主演消亡(需>3人)/25%配角消亡")
                 print("    - 3%概率修改世界观")
+                print("    - 随机抽取参考语料")
                 print("=" * 50)
                 
                 results = chapter_writer.generate_chapters_continuous(num)
@@ -579,10 +581,18 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
                 print("\n📊 生成结果:")
                 print(f"  成功: {results['success']} 章")
                 print(f"  失败: {results['failed']} 章")
-                if results['new_characters']:
-                    print(f"  新增角色: {', '.join(results['new_characters'])}")
+                if results['permanent_characters_added']:
+                    for added in results['permanent_characters_added']:
+                        role_type = '主演' if added['type'] == 'main' else '配角'
+                        print(f"  🆕 新增{role_type}: {added['name']} (第{added['chapter']}章)")
+                if results['temp_characters_used']:
+                    for temp in results['temp_characters_used']:
+                        print(f"  🌿 临时人物(第{temp['chapter']}章): {', '.join(temp['characters'])}")
+                if results['characters_died']:
+                    for dead in results['characters_died']:
+                        print(f"  💀 角色消亡: {dead['name']} ({dead['type']})")
                 if results['world_changes']:
-                    print(f"  世界观更新: {len(results['world_changes'])} 次")
+                    print(f"  🔄 世界观更新: {len(results['world_changes'])} 次")
                 
                 # 自动 git commit
                 story_state.load_all()

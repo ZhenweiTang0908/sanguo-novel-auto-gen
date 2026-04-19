@@ -38,5 +38,15 @@
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
+  },
+  "峰哥": {
+    "name": "峰哥",
+    "identity": "自以为是的流浪者，常在街头吹嘘自己曾是英雄。",
+    "current_location": "柏林街头巷尾",
+    "goal": "寻找传说中的宝藏以证明自己的伟大",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
   }
 }

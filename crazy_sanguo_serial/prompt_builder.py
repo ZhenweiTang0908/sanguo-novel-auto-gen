@@ -129,7 +129,8 @@ class PromptBuilder:
         chapter_num: int,
         chapter_color: Optional[Dict] = None,
         reference_texts: Optional[List[str]] = None,
-        chaos_mode: Optional[bool] = False
+        chaos_mode: Optional[bool] = False,
+        temp_characters: Optional[List[Dict]] = None
     ) -> str:
         """
         构建章节续写 Prompt
@@ -147,6 +148,7 @@ class PromptBuilder:
             chapter_color: 章节色彩设计（可选）
             reference_texts: 参考语料列表（可选）
             chaos_mode: 混杂模式（True=开启，False=关闭，None=AI决定）
+            temp_characters: 临时人物列表（仅本章出现）
         """
         prompt = f"""# 第{chapter_num}章 续写任务
 
@@ -357,7 +359,24 @@ class PromptBuilder:
 
 """
         
-        prompt += f"""---
+        # 添加临时人物
+        if temp_characters:
+            prompt += """---
+
+## 🌿 本章临时人物（仅本章出现）
+
+以下人物是本章故事中的过客，仅在此章节出现，不会出现在后续章节中。
+请自然地融入故事，可以让他们与永久角色互动。
+
+"""
+            for temp_char in temp_characters:
+                prompt += f"""### {temp_char.get('name', '未知')}
+- 身份：{temp_char.get('identity', '未知')}
+- 本章作用：{temp_char.get('role_in_chapter', '待描述')}
+
+"""
+        
+        prompt += """---
 
 ## 🔗 章节衔接包（必须优先处理）
 

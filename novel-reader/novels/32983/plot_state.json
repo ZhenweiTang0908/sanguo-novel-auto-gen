@@ -1,7 +1,108 @@
 {
   "main_conflict": "蛋仔与市井小人和军人的三维矛盾",
   "sub_conflicts": [],
-  "open_threads": [],
-  "used_creatives": [],
-  "active_creative_types": []
+  "open_threads": [
+    {
+      "thread_id": "hook_1_0",
+      "description": "血沼深处传来低沉的笑声，暗示有更强大的存在正在苏醒。",
+      "status": "open",
+      "introduced_chapter": 1,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_0",
+      "description": "血沼深处传来的笑声，暗示有未知势力正在苏醒。",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_1",
+      "description": "白眼蛋仔的出现，暗示刘备的自我分裂可能还有更多未解之谜。",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_2",
+      "description": "刘备是否接受帝位，将成为下一章的关键抉择。",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_3_0",
+      "description": "血沼深处的黑影与血红眼睛暗示更大的敌人或力量正在逼近。",
+      "status": "open",
+      "introduced_chapter": 3,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_3_1",
+      "description": "蛋仔的存在及其对刘备的称呼引发疑问：他们是否真实？还是只是幻觉？",
+      "status": "open",
+      "introduced_chapter": 3,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_3_2",
+      "description": "刘备对小红蛋仔和峰哥的怀疑埋下新的线索。",
+      "status": "open",
+      "introduced_chapter": 3,
+      "resolved_chapter": null,
+      "notes": ""
+    }
+  ],
+  "used_creatives": [
+    {
+      "creative_type": "faction_conflict",
+      "used_in_chapter": 1,
+      "description": "血沼中的派系分裂",
+      "impact": "通过派系冲突推动剧情发展，展示刘备在混乱世界中的挣扎与成长。"
+    },
+    {
+      "creative_type": "secret_alliance",
+      "used_in_chapter": 1,
+      "description": "血沼中的暗线合作",
+      "impact": "制造信任危机，推动刘备独立行动，同时加深他对诸葛亮的疑虑和怀疑。"
+    },
+    {
+      "creative_type": "political_marriage",
+      "used_in_chapter": 2,
+      "description": "血沼联姻计划",
+      "impact": "安排一场虚假的婚礼仪式，暗藏阴谋，为后续剧情埋下伏笔。"
+    },
+    {
+      "creative_type": "power_struggle",
+      "used_in_chapter": 2,
+      "description": "血沼帝位之争",
+      "impact": "在血沼中展开多派系的明争暗斗，推动剧情向高潮发展。"
+    },
+    {
+      "creative_type": "identity_reveal",
+      "used_in_chapter": 3,
+      "description": "血沼中的真实身份",
+      "impact": "刘备根据地图前往墓穴探索，途中遭遇敌人追杀，最终揭开自己身世的真相。"
+    },
+    {
+      "creative_type": "betrayal",
+      "used_in_chapter": 3,
+      "description": "盟友背后的黑手",
+      "impact": "刘备在一次秘密会议中揭露军师的阴谋，引发内部动荡，为后续的战争埋下伏笔。"
+    }
+  ],
+  "active_creative_types": [
+    "faction_conflict",
+    "secret_alliance",
+    "political_marriage",
+    "power_struggle",
+    "identity_reveal",
+    "betrayal"
+  ]
 }

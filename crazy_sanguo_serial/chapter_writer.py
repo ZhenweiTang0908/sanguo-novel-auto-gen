@@ -38,7 +38,8 @@ class ChapterWriter:
         chapter_num: int, 
         target_length: int = 2000,
         reference_count: int = 0,
-        chaos_mode: Optional[bool] = False
+        chaos_mode: Optional[bool] = False,
+        temp_characters: Optional[List[Dict]] = None
     ) -> Tuple[bool, str]:
         """
         写一个章节
@@ -48,6 +49,7 @@ class ChapterWriter:
             target_length: 目标字数
             reference_count: 从参考语料中抽取的数量（0=不使用，-1=由AI决定）
             chaos_mode: 混杂模式（True=开启，False=关闭，None=由AI决定）
+            temp_characters: 临时人物列表（仅本章出现）
             
         Returns:
             (是否成功, 章节内容)
@@ -139,7 +141,8 @@ class ChapterWriter:
                 last_chapter_ending=last_ending,
                 chapter_num=chapter_num,
                 reference_texts=reference_texts if reference_texts else None,
-                chaos_mode=chaos_mode
+                chaos_mode=chaos_mode,
+                temp_characters=temp_characters
             )
             
             # 7. 确定 temperature
@@ -718,6 +721,217 @@ class ChapterWriter:
 
         return None
 
+    def _determine_temp_character_count(self) -> int:
+        """
+        确定临时人物数量
+        
+        50%概率触发，根据分配表决定数量：
+        - 40%: 2人
+        - 30%: 3人
+        - 20%: 4人
+        - 10%: 5-8人（随机）
+        - 5%: 10人
+        - 1%: 20人
+        
+        Returns:
+            临时人物数量（0表示不触发）
+        """
+        import random
+        if random.random() >= 0.5:
+            return 0
+        
+        roll = random.random()
+        if roll < 0.40:
+            return 2
+        elif roll < 0.70:
+            return 3
+        elif roll < 0.90:
+            return 4
+        elif roll < 0.95:
+            return random.randint(5, 8)
+        elif roll < 0.99:
+            return 10
+        else:
+            return 20
+
+    def _determine_permanent_char_add(self) -> Optional[str]:
+        """
+        确定是否添加永久人物
+        
+        10%概率添加主演，30%概率添加配角，60%概率不添加
+        
+        Returns:
+            "main" / "supporting" / None
+        """
+        import random
+        roll = random.random()
+        if roll < 0.10:
+            return "main"
+        elif roll < 0.40:
+            return "supporting"
+        else:
+            return None
+
+    def _determine_character_death(self) -> Optional[str]:
+        """
+        确定是否触发角色消亡
+        
+        9%概率主演消亡（需主演>3），25%概率配角消亡
+        
+        Returns:
+            "main" / "supporting" / None
+        """
+        import random
+        main_chars = self.story_state.get_main_characters()
+        
+        roll = random.random()
+        if roll < 0.09 and len(main_chars) > 3:
+            return "main"
+        elif roll < 0.34:
+            return "supporting"
+        else:
+            return None
+
+    def _select_and_kill_character(self, char_type: str) -> Optional[str]:
+        """
+        选择并消灭角色
+        
+        Args:
+            char_type: "main" 或 "supporting"
+            
+        Returns:
+            被消灭的角色名
+        """
+        import random
+        if char_type == "main":
+            chars = self.story_state.get_main_characters()
+        else:
+            chars = self.story_state.get_supporting_characters()
+        
+        if not chars:
+            return None
+        
+        name = random.choice(list(chars.keys()))
+        self.story_state.update_character_state(name, status="dead")
+        logger.info(f"💀 角色消亡: {name} ({char_type})")
+        return name
+
+    def _generate_temp_characters(self, count: int, chapter_inspiration: Optional[Dict] = None) -> List[Dict]:
+        """
+        生成临时人物（仅本章出现）
+        
+        Args:
+            count: 要生成的数量
+            chapter_inspiration: 本章灵感信息
+            
+        Returns:
+            临时人物列表
+        """
+        import random
+        
+        logger.info(f"开始生成 {count} 个临时人物...")
+        
+        recent_summaries = self.story_state.get_recent_summaries(2)
+        
+        world_info = ""
+        if self.story_state.story_bible:
+            world_info = self.story_state.story_bible.get('world_overview', '')[:500]
+        
+        main_chars = self.story_state.get_main_characters()
+        supporting_chars = self.story_state.get_supporting_characters()
+        
+        chars_info = []
+        for name, char in main_chars.items():
+            chars_info.append(f"主演 - {name}: {char.identity}")
+        for name, char in supporting_chars.items():
+            chars_info.append(f"配角 - {name}: {char.identity}")
+        chars_text = "\n".join(chars_info) or "（暂无）"
+        
+        inspiration_text = ""
+        if chapter_inspiration:
+            inspiration_text = f"""
+## 本章灵感
+- 色彩：{chapter_inspiration.get('color', '未知')}
+- 风格：{chapter_inspiration.get('style', '未知')}
+- 主题：{chapter_inspiration.get('theme', '未知')}
+"""
+        
+        prompt = f"""# 任务：生成临时人物（仅本章出现）
+
+## 当前小说进度
+- 世界观：{world_info or '未知'}
+
+## 当前永久角色
+{chars_text}
+
+{inspiration_text}
+
+## 上一章剧情摘要
+{recent_summaries if recent_summaries else '（暂无）'}
+
+## 要求
+
+请根据上述信息，推测本章故事发展可能出现的临时人物。
+这些人物**仅在本章故事中出现，不会出现在后续章节**。
+可以是：
+- 来访的使者、官员、商贩
+- 某个偶然出现的路人
+- 短暂交手的对手
+- 地方小吏、士兵、村民
+
+生成 {count} 个临时人物，每个包含：
+- name: 角色名（不要与已有永久角色重名）
+- identity: 身份描述（20字以内）
+- role_in_chapter: 在本章中的作用（简短描述）
+
+## 输出格式
+
+```json
+[
+  {{
+    "name": "角色名",
+    "identity": "身份描述",
+    "role_in_chapter": "作用描述"
+  }}
+]
+```
+
+请立即生成！
+"""
+        
+        response = self.llm.generate(prompt, temperature=0.9)
+        
+        temp_chars = self._parse_temp_characters_response(response)
+        if not temp_chars:
+            logger.warning("生成临时人物失败或解析失败")
+            return []
+        
+        logger.info(f"✅ 生成 {len(temp_chars)} 个临时人物")
+        return temp_chars
+
+    def _parse_temp_characters_response(self, response: str) -> List[Dict]:
+        """解析临时人物响应"""
+        import re
+        import json
+        
+        json_match = re.search(r'```json\s*([\s\S]*?)\s*```', response)
+        if json_match:
+            try:
+                data = json.loads(json_match.group(1))
+                if isinstance(data, list):
+                    return data
+            except json.JSONDecodeError:
+                pass
+        
+        json_match = re.search(r'\[[\s\S]*?"name"[\s\S]*?\]', response)
+        if json_match:
+            try:
+                return json.loads(json_match.group(0))
+            except json.JSONDecodeError:
+                pass
+        
+        return []
+
     def generate_chapters_continuous(
         self,
         num_chapters: int,
@@ -741,7 +955,9 @@ class ChapterWriter:
             "total": num_chapters,
             "success": 0,
             "failed": 0,
-            "new_characters": [],
+            "permanent_characters_added": [],
+            "temp_characters_used": [],
+            "characters_died": [],
             "world_changes": [],
             "chapters": []
         }
@@ -764,33 +980,63 @@ class ChapterWriter:
                         "color": chapter_inspiration.get("color", "")
                     })
                 
-                # 2. 8%概率添加新角色
-                if random.random() < 0.08:
-                    logger.info("🎲 触发添加新角色 (8%概率)")
+                # 2. 确定临时人物数量（50%概率触发）
+                temp_count = self._determine_temp_character_count()
+                temp_characters = []
+                if temp_count > 0:
+                    temp_characters = self._generate_temp_characters(temp_count, chapter_inspiration)
+                    if temp_characters:
+                        results["temp_characters_used"].append({
+                            "chapter": chapter_num,
+                            "characters": [c.get("name") for c in temp_characters]
+                        })
+                
+                # 3. 确定是否添加永久人物（10%主演/30%配角/60%无）
+                char_type = self._determine_permanent_char_add()
+                if char_type:
                     new_chars = self.generate_character(1)
                     if new_chars:
-                        for char_data in new_chars:
-                            name = char_data.get('name', '')
-                            if name and name not in self.story_state.characters:
-                                self.story_state.add_character(
-                                    name=name,
-                                    identity=char_data.get('identity', '未知'),
-                                    location=char_data.get('current_location', '未知'),
-                                    goal=char_data.get('goal', '待探索'),
-                                    role=char_data.get('role', 'supporting')
-                                )
-                                results["new_characters"].append(name)
-                                logger.info(f"  ✅ 添加新角色: {name}")
+                        char_data = new_chars[0]
+                        name = char_data.get('name', '')
+                        if name and name not in self.story_state.characters:
+                            role = char_type
+                            self.story_state.add_character(
+                                name=name,
+                                identity=char_data.get('identity', '未知'),
+                                location=char_data.get('current_location', '未知'),
+                                goal=char_data.get('goal', '待探索'),
+                                role=role
+                            )
+                            results["permanent_characters_added"].append({
+                                "chapter": chapter_num,
+                                "name": name,
+                                "type": role
+                            })
+                            logger.info(f"  ✅ 添加永久{('主演' if role == 'main' else '配角')}: {name}")
                 
-                # 3. 3%概率修改世界观
+                # 4. 确定是否触发角色消亡（9%主演/25%配角，需满足条件）
+                death_type = self._determine_character_death()
+                if death_type:
+                    dead_name = self._select_and_kill_character(death_type)
+                    if dead_name:
+                        results["characters_died"].append({
+                            "chapter": chapter_num,
+                            "name": dead_name,
+                            "type": death_type
+                        })
+                
+                # 5. 3%概率修改世界观
                 if random.random() < 0.03:
                     logger.info("🎲 触发修改世界观 (3%概率)")
                     world_change = self._modify_world_view()
                     if world_change:
-                        results["world_changes"].append(world_change)
+                        results["world_changes"].append({
+                            "chapter": chapter_num,
+                            "change": world_change
+                        })
                         logger.info(f"  ✅ 世界观更新: {world_change[:50]}...")
                 
-                # 4. 随机抽取参考语料（每章0-2条）
+                # 6. 随机抽取参考语料（每章0-2条）
                 ref_reader = get_reference_reader()
                 ref_count = random.randint(0, 2)
                 reference_texts = []
@@ -803,12 +1049,13 @@ class ChapterWriter:
                     if reference_texts:
                         logger.info(f"📚 使用 {len(reference_texts)} 条参考语料")
                 
-                # 5. 生成章节
+                # 7. 生成章节（传入临时人物）
                 success, content = self.write_chapter(
                     chapter_num=chapter_num,
                     target_length=target_length,
-                    reference_count=-1,  # AI决定
-                    chaos_mode=None
+                    reference_count=-1,
+                    chaos_mode=None,
+                    temp_characters=temp_characters if temp_characters else None
                 )
                 
                 if success:
@@ -840,8 +1087,15 @@ class ChapterWriter:
         
         logger.info(f"\n{'='*50}")
         logger.info(f"连续生成完成: 成功 {results['success']} 章, 失败 {results['failed']} 章")
-        if results["new_characters"]:
-            logger.info(f"新增角色: {', '.join(results['new_characters'])}")
+        if results["permanent_characters_added"]:
+            for added in results["permanent_characters_added"]:
+                logger.info(f"永久角色添加: {added['name']} ({added['type']})")
+        if results["temp_characters_used"]:
+            for temp in results["temp_characters_used"]:
+                logger.info(f"临时人物使用: 第{temp['chapter']}章 - {', '.join(temp['characters'])}")
+        if results["characters_died"]:
+            for dead in results["characters_died"]:
+                logger.info(f"角色消亡: {dead['name']} ({dead['type']})")
         if results["world_changes"]:
             logger.info(f"世界观更新次数: {len(results['world_changes'])}")
         logger.info(f"{'='*50}")
