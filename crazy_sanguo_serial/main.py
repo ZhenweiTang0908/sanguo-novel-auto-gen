@@ -14,7 +14,7 @@ import os
 import sys
 import argparse
 import logging
-from typing import Optional
+from typing import Optional, Dict
 
 # 设置工作目录
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -88,6 +88,46 @@ def parse_args():
         help='显示详细日志'
     )
     
+    parser.add_argument(
+        '-n', '--novel-id',
+        type=str,
+        default='crazy_sanguo',
+        help='小说ID（默认 crazy_sanguo）'
+    )
+    
+    parser.add_argument(
+        '-r', '--reference',
+        type=int,
+        default=0,
+        help='从参考语料中抽取的段落数量（默认0，不使用）'
+    )
+    
+    parser.add_argument(
+        '--chaos',
+        action='store_true',
+        help='混杂模式：完全由AI决定生成配置'
+    )
+    
+    parser.add_argument(
+        '--list-novels',
+        action='store_true',
+        help='列出所有小说'
+    )
+    
+    parser.add_argument(
+        '--create-novel',
+        type=str,
+        metavar='NOVEL_ID',
+        help='创建新小说'
+    )
+    
+    parser.add_argument(
+        '--keywords',
+        type=str,
+        default='',
+        help='初始化世界观时的关键词（用于引导世界观生成）'
+    )
+    
     return parser.parse_args()
 
 
@@ -125,15 +165,27 @@ def show_banner():
     print(banner)
 
 
-def show_status(story_state):
-    """显示当前状态"""
+def show_status(story_state, novel_info: Optional[Dict] = None):
+    """显示当前状态
+    
+    Args:
+        story_state: 故事状态
+        novel_info: 小说信息（可选，用于显示小说列表中的标题）
+    """
     print("\n📊 当前状态")
     print("=" * 50)
     
     meta = story_state.meta
-    print(f"📖 标题: {meta.story_title}")
-    print(f"📝 副标题: {meta.story_subtitle}")
-    print(f"📑 已完成章节: {meta.current_chapter} 章")
+    
+    # 如果提供了小说信息且当前章节为0，使用小说信息中的标题
+    if novel_info and meta.current_chapter == 0:
+        print(f"📖 标题: {novel_info.get('title', meta.story_title)}")
+        print(f"📝 副标题: {novel_info.get('subtitle', meta.story_subtitle)}")
+        print(f"📑 已完成章节: 0 章 (新小说，需要初始化)")
+    else:
+        print(f"📖 标题: {meta.story_title}")
+        print(f"📝 副标题: {meta.story_subtitle}")
+        print(f"📑 已完成章节: {meta.current_chapter} 章")
     
     if meta.current_chapter > 0:
         print(f"🕐 最后更新: {meta.last_updated}")
@@ -204,24 +256,126 @@ def show_full_info(story_state):
             print(f"    第{arc.arc_id}卷: {arc.chapters}")
 
 
-def run_interactive(story_state, chapter_writer):
-    """交互模式"""
+def run_interactive(storage, novel_manager, initial_novel_id, default_reference: int = 0, default_chaos: bool = False):
+    """交互模式
+    
+    Args:
+        novel_manager: 小说管理器
+        initial_novel_id: 初始小说ID
+        default_reference: 默认参考语料数量
+        default_chaos: 默认混杂模式
+    """
+    from story_state import get_story_state
+    from chapter_writer import get_chapter_writer
+    
+    # 确定实际使用的 novel_id（legacy 或新位置）
+    if initial_novel_id:
+        new_meta = storage.base_path / "novels" / initial_novel_id / "meta.json"
+        if new_meta.exists():
+            actual_novel_id = initial_novel_id
+        else:
+            actual_novel_id = None  # legacy 模式
+    else:
+        actual_novel_id = None
+    
+    current_novel_id = initial_novel_id
+    story_state = get_story_state(actual_novel_id)
+    story_state.load_all()
+    chapter_writer = get_chapter_writer()
+    
+    ref_count = default_reference
+    chaos_mode = default_chaos
+
+    def reload_story_state():
+        """重新加载故事状态"""
+        nonlocal story_state, chapter_writer
+        # 确定实际 novel_id
+        if current_novel_id:
+            # 检查新位置是否有数据
+            new_meta = storage.base_path / "novels" / current_novel_id / "meta.json"
+            if new_meta.exists():
+                actual = current_novel_id
+            else:
+                # 新位置没有数据，检查是否是 legacy
+                legacy_meta = storage.base_path / "novel-reader" / "meta.json"
+                if current_novel_id == "crazy_sanguo" and legacy_meta.exists():
+                    actual = None  # legacy 模式
+                else:
+                    # 新小说，使用其ID创建新数据
+                    actual = current_novel_id
+                    # 确保目录存在
+                    novel_dir = storage.base_path / "novels" / current_novel_id
+                    (novel_dir / "chapters").mkdir(parents=True, exist_ok=True)
+                    (novel_dir / "chapter_summaries").mkdir(parents=True, exist_ok=True)
+        else:
+            actual = None
+        story_state = get_story_state(actual)
+        story_state.load_all()
+        chapter_writer = get_chapter_writer()
+        novel_info = novel_manager.get_novel(current_novel_id)
+        print(f"\n已切换到小说: {novel_info.get('title', current_novel_id) if current_novel_id else '未知'}")
+        show_status(story_state, novel_info)
+
+    def switch_novel():
+        """切换小说"""
+        nonlocal current_novel_id
+        novels = novel_manager.list_novels()
+        if not novels:
+            print("  暂无小说，请先创建")
+            return
+        
+        print("\n选择小说：")
+        for i, n in enumerate(novels, 1):
+            marker = " [当前]" if n.get("id") == current_novel_id else ""
+            print(f"  {i}. {n.get('title', n.get('id'))}{marker}")
+        print("  0. 取消")
+        
+        sel = input("  > ").strip()
+        if sel == '0' or not sel:
+            print("  已取消")
+            return
+        
+        if sel.isdigit():
+            idx = int(sel) - 1
+            if 0 <= idx < len(novels):
+                current_novel_id = novels[idx].get("id")
+                reload_story_state()
+            else:
+                print("  无效选择")
+        else:
+            # 按 ID 查找
+            for n in novels:
+                if n.get("id") == sel:
+                    current_novel_id = sel
+                    reload_story_state()
+                    return
+            print("  未找到该小说")
+
     print("\n🎮 交互模式")
     print("-" * 50)
-
-    show_status(story_state)
+    show_status(story_state, novel_manager.get_novel(current_novel_id))
 
     while True:
+        current_novel = novel_manager.get_novel(current_novel_id)
+        novel_title = current_novel.get("title", current_novel_id) if current_novel else "未选择"
+        chaos_display = "开启" if chaos_mode is True else ("关闭" if chaos_mode is False else "AI决定")
+        ref_display = f"{ref_count}" if ref_count >= 0 else "AI决定"
+        
+        print(f"\n📖 当前小说: {novel_title}")
         print("\n请选择操作：")
-        print("  1. 生成新章节")
-        print("  2. 添加新角色")
-        print("  3. 修改角色信息")
-        print("  4. 设置灵感线索")
-        print("  5. 随机角色模式")
-        print("  6. 查看更多信息")
-        print("  7. 删除章节")
-        print("  8. 彻底重置小说")
-        print("  9. 退出")
+        print("  0. 切换小说")
+        print("  1. 创建新小说")
+        print("  2. 生成新章节")
+        print("  3. 添加新角色")
+        print("  4. 修改角色信息")
+        print("  5. 设置灵感线索")
+        print("  6. 随机角色模式")
+        print("  7. 参考语料设置")
+        print("  8. 混杂模式设置")
+        print("  9. 查看更多信息")
+        print("  10. 删除章节")
+        print("  11. 彻底重置小说")
+        print("  12. 退出")
 
         try:
             choice = input("\n  > ").strip()
@@ -229,11 +383,55 @@ def run_interactive(story_state, chapter_writer):
             print("\n\n👋 再见！")
             break
 
-        if choice == '1':
+        if choice == '0':
+            switch_novel()
+
+        elif choice == '1':
+            try:
+                print("\n🆕 创建新小说")
+                new_novel_id = input("  小说ID: ").strip()
+                if not new_novel_id:
+                    print("  已取消")
+                    continue
+                if novel_manager.get_novel(new_novel_id):
+                    print(f"  小说 '{new_novel_id}' 已存在")
+                    continue
+                title = input("  小说标题: ").strip() or f"新小说_{new_novel_id}"
+                subtitle = input("  小说副标题: ").strip() or ""
+                
+                import datetime
+                novel = novel_manager.add_novel(new_novel_id, title, subtitle)
+                novel["created_at"] = datetime.datetime.now().isoformat()
+                novel_manager.save_novel_list(novel_manager.list_novels())
+                
+                print(f"✅ 小说已创建: {title}")
+            except (EOFError, KeyboardInterrupt):
+                print("  已取消")
+
+        elif choice == '2':
             num = input("  章节数: ").strip()
             if not num.isdigit() or int(num) <= 0:
                 print("  无效输入")
                 continue
+
+            # 设置参考语料（空=由AI决定）
+            print(f"  参考语料数量 [当前: {ref_count}, 空=AI决定]: ")
+            ref_input = input("  > ").strip()
+            if ref_input.isdigit():
+                ref_count = int(ref_input)
+            elif ref_input == '':
+                ref_count = -1  # -1 表示由AI决定
+            # 空字符串保持 ref_count = -1 让AI决定
+            
+            # 混杂模式（空=由AI决定）
+            print(f"  混杂模式 (y/N/空=AI决定) [当前: {'开启' if chaos_mode else '关闭'}]: ")
+            chaos_input = input("  > ").strip().lower()
+            if chaos_input == 'y':
+                chaos_mode = True
+            elif chaos_input == 'n':
+                chaos_mode = False
+            else:
+                chaos_mode = None  # None 表示由AI决定
 
             # 检查随机角色模式
             if story_state.is_random_character_mode():
@@ -242,10 +440,10 @@ def run_interactive(story_state, chapter_writer):
                 print(f"  🎲 随机模式: {', '.join(selected)}")
                 story_state.set_active_characters(selected)
             else:
-                # 选择角色
+                # 选择角色（空=由AI决定）
                 characters = story_state.characters
                 if characters:
-                    print("  选择角色（主演）或直接回车跳过:")
+                    print("  选择角色（主演）或直接回车由AI决定:")
                     print("  格式: 1,3,4 或 角色名 直接回车跳过")
                     for i, (name, char) in enumerate(characters.items(), 1):
                         role = "主演" if char.role == "main" else "配角"
@@ -266,10 +464,11 @@ def run_interactive(story_state, chapter_writer):
                         if selected:
                             story_state.set_active_characters(selected)
                             print(f"  已选择: {', '.join(selected)}")
+                    # 空输入则不清空 active_characters，让 AI 决定
 
-            run_chapters(int(num), story_state, chapter_writer)
+            run_chapters(int(num), story_state, chapter_writer, 2000, ref_count, chaos_mode)
 
-        elif choice == '2':
+        elif choice == '3':
             try:
                 name = input("  角色名: ").strip()
                 if not name:
@@ -289,7 +488,7 @@ def run_interactive(story_state, chapter_writer):
             except (EOFError, KeyboardInterrupt):
                 print("  已取消")
 
-        elif choice == '3':
+        elif choice == '4':
             try:
                 characters = story_state.characters
                 if not characters:
@@ -340,7 +539,7 @@ def run_interactive(story_state, chapter_writer):
             except (EOFError, KeyboardInterrupt):
                 print("  已取消")
 
-        elif choice == '4':
+        elif choice == '5':
             try:
                 inspiration = input("  灵感线索: ").strip()
                 if inspiration:
@@ -352,7 +551,7 @@ def run_interactive(story_state, chapter_writer):
             except (EOFError, KeyboardInterrupt):
                 print("  已取消")
 
-        elif choice == '5':
+        elif choice == '6':
             try:
                 current_mode = story_state.is_random_character_mode()
                 if current_mode:
@@ -372,10 +571,41 @@ def run_interactive(story_state, chapter_writer):
             except (EOFError, KeyboardInterrupt):
                 print("  已取消")
 
-        elif choice == '6':
+        elif choice == '7':
+            try:
+                ref_display = f"{ref_count}" if ref_count >= 0 else "AI决定"
+                print(f"  当前参考语料数量: {ref_display}")
+                new_ref = input("  输入新的参考语料数量 (0=不使用, -1=AI决定): ").strip()
+                if new_ref.isdigit():
+                    ref_count = int(new_ref)
+                    print(f"  已设置为: {ref_count if ref_count >= 0 else 'AI决定'}")
+                elif new_ref == '-1':
+                    ref_count = -1
+                    print("  已设置为: AI决定")
+            except (EOFError, KeyboardInterrupt):
+                print("  已取消")
+
+        elif choice == '8':
+            try:
+                chaos_display = "开启" if chaos_mode is True else ("关闭" if chaos_mode is False else "AI决定")
+                print(f"  当前混杂模式: {chaos_display}")
+                confirm = input("  混杂模式? [y=开启, n=关闭, 空=AI决定]: ").strip().lower()
+                if confirm == 'y':
+                    chaos_mode = True
+                    print("  已设置为: 开启")
+                elif confirm == 'n':
+                    chaos_mode = False
+                    print("  已设置为: 关闭")
+                else:
+                    chaos_mode = None
+                    print("  已设置为: AI决定")
+            except (EOFError, KeyboardInterrupt):
+                print("  已取消")
+
+        elif choice == '9':
             show_full_info(story_state)
 
-        elif choice == '7':
+        elif choice == '10':
             chapters = story_state.storage.list_chapters()
             if not chapters:
                 print("  暂无章节")
@@ -406,7 +636,7 @@ def run_interactive(story_state, chapter_writer):
             story_state.save_all()
             story_state.load_all()
 
-        elif choice == '8':
+        elif choice == '11':
             confirm = input("  ⚠️ 彻底删除所有内容？[y/N]: ").strip()
             if confirm.lower() == 'y':
                 confirm2 = input("  再次确认，输入 YES: ").strip()
@@ -428,7 +658,7 @@ def run_interactive(story_state, chapter_writer):
             else:
                 print("  已取消")
 
-        elif choice == '9':
+        elif choice == '12':
             print("  再见！")
             break
 
@@ -436,13 +666,33 @@ def run_interactive(story_state, chapter_writer):
             print("  无效选项")
 
 
-def run_chapters(num_chapters: int, story_state, chapter_writer, chapter_length: int = 2000):
-    """生成指定数量的章节"""
+def run_chapters(
+    num_chapters: int, 
+    story_state, 
+    chapter_writer, 
+    chapter_length: int = 2000,
+    reference_count: int = 0,
+    chaos_mode: Optional[bool] = False
+):
+    """生成指定数量的章节
+    
+    Args:
+        reference_count: 参考语料数量，-1表示由AI决定
+        chaos_mode: 混杂模式，None表示由AI决定
+    """
     if num_chapters <= 0:
         print("⚠️ 章节数必须大于 0")
         return
     
     print(f"\n🚀 开始生成 {num_chapters} 章...")
+    if chaos_mode is True:
+        print("⚡ 混杂模式：AI完全自主决定")
+    elif chaos_mode is None:
+        print("🎲 混杂模式：由AI决定")
+    if reference_count > 0:
+        print(f"📚 将混入参考语料（{reference_count}条/章）")
+    elif reference_count == -1:
+        print("📚 参考语料：由AI决定")
     print("=" * 50)
     
     # 获取起始章节号
@@ -455,7 +705,12 @@ def run_chapters(num_chapters: int, story_state, chapter_writer, chapter_length:
         chapter_num = start_chapter + i
         print(f"\n📝 正在生成第 {chapter_num} 章 ({i + 1}/{num_chapters})...")
         
-        success, content = chapter_writer.write_chapter(chapter_num, chapter_length)
+        success, content = chapter_writer.write_chapter(
+            chapter_num, 
+            chapter_length,
+            reference_count=reference_count,
+            chaos_mode=chaos_mode
+        )
         
         if success:
             success_count += 1
@@ -502,9 +757,107 @@ def main():
     # 延迟导入，避免环境检查失败时报错
     from story_state import get_story_state
     from chapter_writer import get_chapter_writer
+    from storage import NovelManager, get_storage
+    
+    storage = get_storage()
+    novel_manager = NovelManager(storage)
+    
+    # 处理 list-novels
+    if args.list_novels:
+        novels = novel_manager.list_novels()
+        print("\n📚 所有小说:")
+        print("=" * 50)
+        if novels:
+            for n in novels:
+                print(f"  • {n.get('id')}: {n.get('title')} - {n.get('subtitle', '')}")
+        else:
+            print("  暂无小说")
+        print()
+        return
+    
+    # 处理 create-novel
+    if args.create_novel:
+        new_novel_id = args.create_novel
+        print(f"\n🆕 创建新小说: {new_novel_id}")
+        title = input("  小说标题: ").strip() or f"新小说_{new_novel_id}"
+        subtitle = input("  小说副标题: ").strip() or ""
+        
+        import datetime
+        novel = novel_manager.add_novel(new_novel_id, title, subtitle)
+        novel["created_at"] = datetime.datetime.now().isoformat()
+        novel_manager.save_novel_list(novel_manager.list_novels())
+        
+        # 创建小说目录
+        storage.set_novel(new_novel_id)
+        print(f"✅ 小说已创建: {title}")
+        return
+    
+    # 使用指定的小说 ID
+    novel_id = args.novel_id
+    
+    # 检查小说是否在列表中
+    existing_novel = novel_manager.get_novel(novel_id)
+    
+    # 检查是否有实际数据（旧位置或新位置）
+    has_data = novel_manager.novel_data_exists(novel_id)
+    is_legacy_data = False
+    
+    if not existing_novel:
+        if has_data:
+            # 数据存在但不在列表中，可能是 legacy 数据
+            print(f"\n📖 检测到小说 '{novel_id}' 的数据")
+            legacy_meta = storage.base_path / "novel-reader" / "meta.json"
+            if legacy_meta.exists():
+                import json
+                meta = json.load(open(legacy_meta, 'r', encoding='utf-8'))
+                title = meta.get('story_title', novel_id)
+                subtitle = meta.get('story_subtitle', '')
+                is_legacy_data = True
+                print(f"   位置: novel-reader/ (legacy)")
+            else:
+                title = novel_id
+                subtitle = ''
+            
+            # 添加到列表
+            import datetime
+            existing_novel = novel_manager.add_novel(novel_id, title, subtitle)
+            existing_novel["created_at"] = datetime.datetime.now().isoformat()
+            novel_manager.save_novel_list(novel_manager.list_novels())
+            print(f"   已注册为: {title}")
+        else:
+            print(f"\n⚠️ 小说 '{novel_id}' 不存在")
+            print("  使用 --list-novels 查看所有小说")
+            print("  使用 --create-novel <id> 创建新小说")
+            response = input(f"\n  是否以此ID创建新小说? [y/N]: ").strip()
+            if response.lower() == 'y':
+                title = input("  小说标题: ").strip() or f"新小说_{novel_id}"
+                subtitle = input("  小说副标题: ").strip() or ""
+                import datetime
+                novel = novel_manager.add_novel(novel_id, title, subtitle)
+                novel["created_at"] = datetime.datetime.now().isoformat()
+                novel_manager.save_novel_list(novel_manager.list_novels())
+                storage.set_novel(novel_id)
+                print(f"✅ 小说已创建: {title}")
+            else:
+                print("已取消")
+                return
+    
+    # 如果是 legacy 数据，使用 legacy 模式（novel_id=None）
+    if is_legacy_data:
+        actual_novel_id = None
+        print(f"   正在以 legacy 模式加载...")
+    else:
+        # 检查新位置是否有数据
+        new_meta = storage.base_path / "novels" / novel_id / "meta.json"
+        if new_meta.exists():
+            actual_novel_id = novel_id
+        else:
+            # 新位置没有数据，使用 legacy 模式
+            actual_novel_id = None
+            print(f"   小说数据位于 legacy 位置")
     
     # 加载故事状态
-    story_state = get_story_state()
+    story_state = get_story_state(actual_novel_id)
     story_state.load_all()
     
     # 获取章节写作器
@@ -515,7 +868,23 @@ def main():
     
     if need_init:
         print("\n🔧 初始化故事宇宙...")
-        if chapter_writer.initialize_story():
+        
+        # 关键词优先使用命令行参数
+        keywords = args.keywords.strip()
+        
+        if not keywords:
+            # 如果命令行没有提供，询问用户
+            print("\n请输入世界观关键词（直接回车跳过）：")
+            print("  例如：三国、现代都市商战、民国、黑帮、职场 等")
+            print("  不指定则创建默认三国世界观")
+            keywords = input("  > ").strip()
+        
+        if keywords:
+            print(f"\n📝 将根据关键词 '{keywords}' 创建世界观...")
+        else:
+            print("\n📝 将创建默认三国世界观...")
+        
+        if chapter_writer.initialize_story(keywords):
             story_state.load_all()
             print("✅ 故事宇宙初始化完成！")
         else:
@@ -531,11 +900,13 @@ def main():
             args.chapters, 
             story_state, 
             chapter_writer,
-            args.chapter_length
+            args.chapter_length,
+            reference_count=args.reference,
+            chaos_mode=args.chaos
         )
         
     else:
-        run_interactive(story_state, chapter_writer)
+        run_interactive(storage, novel_manager, novel_id, args.reference, args.chaos)
 
 
 if __name__ == '__main__':

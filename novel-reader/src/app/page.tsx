@@ -1,10 +1,13 @@
 import ChapterList from '@/components/ChapterList';
-import { ChaptersResponse } from '@/types/novel';
+import NovelList from '@/components/NovelList';
+import { ChaptersResponse, NovelListResponse, Novel } from '@/types/novel';
 import fs from 'fs';
 import path from 'path';
 
-const DATA_DIR = path.join(process.cwd(), 'data/chapters');
-const META_PATH = path.join(process.cwd(), 'meta.json');
+const NOVELS_DIR = path.join(process.cwd(), 'novels');
+const NOVEL_LIST_PATH = path.join(process.cwd(), 'novel-list.json');
+const LEGACY_DATA_DIR = path.join(process.cwd(), 'data/chapters');
+const LEGACY_META_PATH = path.join(process.cwd(), 'meta.json');
 
 interface ChapterInfo {
   id: number;
@@ -16,23 +19,55 @@ interface Meta {
   current_chapter: number;
   story_title: string;
   story_subtitle: string;
+  novel_id: string;
 }
 
-async function getChapters(): Promise<ChaptersResponse> {
+async function getChapters(novelId: string): Promise<ChaptersResponse> {
   try {
-    // 读取meta信息
-    let meta: Meta = {
-      current_chapter: 0,
-      story_title: '疯狂三国：魔改演义',
-      story_subtitle: '当罗贯中棺材板压不住的时候',
-    };
+    let meta: Meta;
+    let DATA_DIR: string;
     
-    if (fs.existsSync(META_PATH)) {
-      const metaContent = fs.readFileSync(META_PATH, 'utf-8');
-      meta = JSON.parse(metaContent);
+    if (novelId) {
+      // 优先检查新位置
+      const novelDataDir = path.join(NOVELS_DIR, novelId, 'chapters');
+      const novelMetaPath = path.join(NOVELS_DIR, novelId, 'meta.json');
+      
+      if (fs.existsSync(novelMetaPath)) {
+        // 新位置存在
+        DATA_DIR = novelDataDir;
+        const metaContent = fs.readFileSync(novelMetaPath, 'utf-8');
+        meta = { ...JSON.parse(metaContent), novel_id: novelId };
+      } else {
+        // 新位置不存在，检查 legacy
+        DATA_DIR = LEGACY_DATA_DIR;
+        if (fs.existsSync(LEGACY_META_PATH)) {
+          const metaContent = fs.readFileSync(LEGACY_META_PATH, 'utf-8');
+          meta = { ...JSON.parse(metaContent), novel_id: novelId };
+        } else {
+          meta = {
+            current_chapter: 0,
+            story_title: novelId,
+            story_subtitle: '',
+            novel_id: novelId
+          };
+        }
+      }
+    } else {
+      DATA_DIR = LEGACY_DATA_DIR;
+      
+      if (fs.existsSync(LEGACY_META_PATH)) {
+        const metaContent = fs.readFileSync(LEGACY_META_PATH, 'utf-8');
+        meta = { ...JSON.parse(metaContent), novel_id: '' };
+      } else {
+        meta = {
+          current_chapter: 0,
+          story_title: '疯狂三国：魔改演义',
+          story_subtitle: '当罗贯中棺材板压不住的时候',
+          novel_id: ''
+        };
+      }
     }
 
-    // 读取章节文件
     const chapters: ChapterInfo[] = [];
     
     if (fs.existsSync(DATA_DIR)) {
@@ -66,19 +101,75 @@ async function getChapters(): Promise<ChaptersResponse> {
       chapters: [],
       meta: {
         current_chapter: 0,
-        story_title: '疯狂三国：魔改演义',
-        story_subtitle: '当罗贯中棺材板压不住的时候',
+        story_title: 'Error loading',
+        story_subtitle: '',
+        novel_id: ''
       },
       totalChapters: 0,
     };
   }
 }
 
-// 设置重新验证时间，每30秒检查一次新章节
+async function getNovels(): Promise<NovelListResponse> {
+  try {
+    if (fs.existsSync(NOVEL_LIST_PATH)) {
+      const content = fs.readFileSync(NOVEL_LIST_PATH, 'utf-8');
+      const novels = JSON.parse(content) as Novel[];
+      
+      for (const novel of novels) {
+        // 优先检查新位置
+        const newMetaPath = path.join(NOVELS_DIR, novel.id, 'meta.json');
+        if (fs.existsSync(newMetaPath)) {
+          const meta = JSON.parse(fs.readFileSync(newMetaPath, 'utf-8'));
+          novel.current_chapter = meta.current_chapter;
+        }
+        // 检查 legacy 位置（仅 crazy_sanguo）
+        else if (novel.id === 'crazy_sanguo' && fs.existsSync(LEGACY_META_PATH)) {
+          const meta = JSON.parse(fs.readFileSync(LEGACY_META_PATH, 'utf-8'));
+          novel.current_chapter = meta.current_chapter;
+        }
+      }
+      
+      return { novels };
+    }
+    
+    // novel-list.json 不存在，检查 legacy
+    if (fs.existsSync(LEGACY_META_PATH)) {
+      const meta = JSON.parse(fs.readFileSync(LEGACY_META_PATH, 'utf-8'));
+      const novels: Novel[] = [{
+        id: 'crazy_sanguo',
+        title: meta.story_title || '疯狂三国：魔改演义',
+        subtitle: meta.story_subtitle || '当罗贯中棺材板压不住的时候',
+        created_at: new Date().toISOString(),
+        current_chapter: meta.current_chapter || 0
+      }];
+      // 保存到 novel-list.json
+      fs.writeFileSync(NOVEL_LIST_PATH, JSON.stringify(novels, null, 2), 'utf-8');
+      return { novels };
+    }
+    
+    return { novels: [] };
+  } catch (error) {
+    console.error('Error reading novels:', error);
+    return { novels: [] };
+  }
+}
+
 export const revalidate = 30;
 
-export default async function Home() {
-  const data = await getChapters();
+interface HomeProps {
+  searchParams: Promise<{ novel_id?: string }>;
+}
 
+export default async function Home({ searchParams }: HomeProps) {
+  const params = await searchParams;
+  const novelId = params.novel_id || '';
+  
+  if (!novelId) {
+    const novelData = await getNovels();
+    return <NovelList novels={novelData.novels} />;
+  }
+  
+  const data = await getChapters(novelId);
   return <ChapterList chapters={data.chapters} meta={data.meta} />;
 }

@@ -72,14 +72,21 @@ class StoryState:
     负责加载、保存和管理所有故事状态数据
     """
     
-    def __init__(self):
-        self.storage = get_storage()
+    def __init__(self, novel_id: Optional[str] = None):
+        self.storage = get_storage(novel_id)
+        self.novel_id = novel_id
         self._meta: Optional[MetaInfo] = None
         self._story_bible: Optional[Dict] = None
         self._characters: Optional[Dict[str, CharacterState]] = None
         self._plot_state: Optional[Dict] = None
         self._arc_summaries: List[ArcSummary] = []
         self._chapter_summaries: Dict[int, Dict] = {}
+    
+    def set_novel(self, novel_id: str):
+        """切换到指定小说"""
+        self.novel_id = novel_id
+        self.storage.set_novel(novel_id)
+        self.load_all()
     
     # ==================== 加载方法 ====================
     
@@ -119,18 +126,26 @@ class StoryState:
     
     def _load_meta(self) -> MetaInfo:
         """加载元信息"""
-        data = self.storage.read_json(config.storage.meta_file)
+        if self.novel_id:
+            data = self.storage.read_json("meta_file", use_novel_paths=True)
+        else:
+            data = self.storage.read_json("novel-reader/meta.json")
         if data:
             return MetaInfo(**data)
         return MetaInfo()
     
     def _load_story_bible(self) -> Optional[Dict]:
         """加载世界观设定"""
-        return self.storage.read_json(config.storage.story_bible_file)
+        if self.novel_id:
+            return self.storage.read_json("story_bible_file", use_novel_paths=True)
+        return self.storage.read_json("novel-reader/story_bible.json")
     
     def _load_characters(self):
         """加载角色数据"""
-        data = self.storage.read_json(config.storage.characters_file)
+        if self.novel_id:
+            data = self.storage.read_json("characters_file", use_novel_paths=True)
+        else:
+            data = self.storage.read_json("novel-reader/characters.json")
         self._characters = {}
         if data:
             for name, char_data in data.items():
@@ -143,14 +158,20 @@ class StoryState:
             "sub_conflicts": [],
             "open_threads": [],
             "used_creatives": [],
-            "active_creative_types": [],  # 最近 3 章使用的创意类型
+            "active_creative_types": [],
         }
-        data = self.storage.read_json(config.storage.plot_state_file)
+        if self.novel_id:
+            data = self.storage.read_json("plot_state_file", use_novel_paths=True)
+        else:
+            data = self.storage.read_json("novel-reader/plot_state.json")
         return data if data else default_state
     
     def _load_arc_summaries(self) -> List[ArcSummary]:
         """加载分卷摘要"""
-        data = self.storage.read_json(config.storage.arc_summaries_file)
+        if self.novel_id:
+            data = self.storage.read_json("arc_summaries_file", use_novel_paths=True)
+        else:
+            data = self.storage.read_json("novel-reader/arc_summaries.json")
         if data:
             return [ArcSummary(**a) for a in data]
         return []
@@ -181,28 +202,43 @@ class StoryState:
     def _save_meta(self):
         """保存元信息"""
         if self._meta:
-            self.storage.write_json(config.storage.meta_file, asdict(self._meta))
+            if self.novel_id:
+                self.storage.write_json("meta_file", asdict(self._meta), use_novel_paths=True)
+            else:
+                self.storage.write_json("novel-reader/meta.json", asdict(self._meta))
     
     def _save_story_bible(self):
         """保存世界观"""
         if self._story_bible:
-            self.storage.write_json(config.storage.story_bible_file, self._story_bible)
+            if self.novel_id:
+                self.storage.write_json("story_bible_file", self._story_bible, use_novel_paths=True)
+            else:
+                self.storage.write_json("novel-reader/story_bible.json", self._story_bible)
     
     def _save_characters(self):
         """保存角色数据"""
         if self._characters:
             data = {name: asdict(char) for name, char in self._characters.items()}
-            self.storage.write_json(config.storage.characters_file, data)
+            if self.novel_id:
+                self.storage.write_json("characters_file", data, use_novel_paths=True)
+            else:
+                self.storage.write_json("novel-reader/characters.json", data)
     
     def _save_plot_state(self):
         """保存剧情状态"""
         if self._plot_state:
-            self.storage.write_json(config.storage.plot_state_file, self._plot_state)
+            if self.novel_id:
+                self.storage.write_json("plot_state_file", self._plot_state, use_novel_paths=True)
+            else:
+                self.storage.write_json("novel-reader/plot_state.json", self._plot_state)
     
     def _save_arc_summaries(self):
         """保存分卷摘要"""
         data = [asdict(arc) for arc in self._arc_summaries]
-        self.storage.write_json(config.storage.arc_summaries_file, data)
+        if self.novel_id:
+            self.storage.write_json("arc_summaries_file", data, use_novel_paths=True)
+        else:
+            self.storage.write_json("novel-reader/arc_summaries.json", data)
     
     # ==================== 初始化方法 ====================
     
@@ -455,11 +491,13 @@ class StoryState:
 _story_state: Optional[StoryState] = None
 
 
-def get_story_state() -> StoryState:
+def get_story_state(novel_id: Optional[str] = None) -> StoryState:
     """获取故事状态管理器单例"""
     global _story_state
     if _story_state is None:
-        _story_state = StoryState()
+        _story_state = StoryState(novel_id)
+    elif novel_id and _story_state.novel_id != novel_id:
+        _story_state.set_novel(novel_id)
     return _story_state
 
 

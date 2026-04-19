@@ -45,50 +45,57 @@ class ChapterConfig:
 
 @dataclass
 class StorageConfig:
-    """存储路径配置 - 指向 novel-reader/data 与前端共用"""
-    data_dir: str = "novel-reader/data"
-    meta_file: str = "novel-reader/meta.json"
-    story_bible_file: str = "novel-reader/story_bible.json"
-    characters_file: str = "novel-reader/characters.json"
-    plot_state_file: str = "novel-reader/plot_state.json"
-    arc_summaries_file: str = "novel-reader/arc_summaries.json"
-    chapters_dir: str = "novel-reader/data/chapters"
-    chapter_summaries_dir: str = "novel-reader/data/chapter_summaries"
+    """存储路径配置 - 支持多小说"""
+    base_dir: str = "novel-reader"
+    novels_dir: str = "novel-reader/novels"
+    novel_list_file: str = "novel-reader/novel-list.json"
+    
+    def get_novel_paths(self, novel_id: str) -> dict:
+        """获取指定小说的路径配置"""
+        return {
+            "meta_file": f"{self.novels_dir}/{novel_id}/meta.json",
+            "story_bible_file": f"{self.novels_dir}/{novel_id}/story_bible.json",
+            "characters_file": f"{self.novels_dir}/{novel_id}/characters.json",
+            "plot_state_file": f"{self.novels_dir}/{novel_id}/plot_state.json",
+            "arc_summaries_file": f"{self.novels_dir}/{novel_id}/arc_summaries.json",
+            "chapters_dir": f"{self.novels_dir}/{novel_id}/chapters",
+            "chapter_summaries_dir": f"{self.novels_dir}/{novel_id}/chapter_summaries",
+        }
 
 
 @dataclass
 class CreativeTypes:
-    """创意类型枚举"""
-    CHARACTER_IDENTITY_SWAP = "character_identity_swap"
-    REVERSE_HISTORY = "reverse_history"
-    TECH_DISASTER = "tech_disaster"
-    FACTION_SHUFFLE = "faction_shuffle"
-    MEMORY_MANIPULATION = "memory_manipulation"
-    MULTIVERSE_COLLISION = "multiverse_collision"
-    BUREAUCRACY_CHAOS = "bureaucracy_chaos"
-    BETRAYAL_REVEAL = "betrayal_reveal"
-    POWER_SYSTEM_BROKEN = "power_system_broken"
-    PROPHECY_SUBVERTED = "prophecy_subverted"
-    TIME_LOOP = "time_loop"
-    ZOMBIE_OUTBREAK = "zombie_outbreak"
-    AI_TAKEOVER = "ai_takeover"
-    CULT_DOCTRINE = "cult_doctrine"
+    """创意类型枚举（保持现实克制风格）"""
+    IDENTITY_REVEAL = "identity_reveal"  # 身份揭露
+    SECRET_ALLIANCE = "secret_alliance"  # 秘密联盟
+    POWER_STRUGGLE = "power_struggle"  # 权力斗争
+    BETRAYAL = "betrayal"  # 背叛
+    REVENGE = "revenge"  # 复仇
+    LOVE_TRIANGLE = "love_triangle"  # 情感纠葛
+    SCHEMING = "scheming"  # 阴谋算计
+    WAR_STRATEGY = "war_strategy"  # 战争策略
+    POLITICAL_MARRIAGE = "political_marriage"  # 政治联姻
+    HIDDEN_HEIR = "hidden_heir"  # 隐藏的继承人
+    PAST_SECRET = "past_secret"  # 过往秘密
+    FACTION_CONFLICT = "faction_conflict"  # 势力冲突
+    ASSASSINATION_PLAN = "assassination_plan"  # 刺杀计划
+    UNEXPECTED_ALLY = "unexpected_ally"  # 意外盟友
     
     ALL = [
-        CHARACTER_IDENTITY_SWAP,
-        REVERSE_HISTORY,
-        TECH_DISASTER,
-        FACTION_SHUFFLE,
-        MEMORY_MANIPULATION,
-        MULTIVERSE_COLLISION,
-        BUREAUCRACY_CHAOS,
-        BETRAYAL_REVEAL,
-        POWER_SYSTEM_BROKEN,
-        PROPHECY_SUBVERTED,
-        TIME_LOOP,
-        ZOMBIE_OUTBREAK,
-        AI_TAKEOVER,
-        CULT_DOCTRINE,
+        IDENTITY_REVEAL,
+        SECRET_ALLIANCE,
+        POWER_STRUGGLE,
+        BETRAYAL,
+        REVENGE,
+        LOVE_TRIANGLE,
+        SCHEMING,
+        WAR_STRATEGY,
+        POLITICAL_MARRIAGE,
+        HIDDEN_HEIR,
+        PAST_SECRET,
+        FACTION_CONFLICT,
+        ASSASSINATION_PLAN,
+        UNEXPECTED_ALLY,
     ]
 
 

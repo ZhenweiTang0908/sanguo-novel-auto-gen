@@ -14,6 +14,7 @@ from prompt_builder import get_prompt_builder
 from story_state import get_story_state, CreativeRecord, PlotThread
 from storage import get_storage
 from summarizer import get_summarizer
+from reference_reader import get_reference_reader
 from config import config, CreativeTypes
 
 logger = logging.getLogger(__name__)
@@ -32,25 +33,71 @@ class ChapterWriter:
         self.story_state = get_story_state()
         self.summarizer = get_summarizer()
     
-    def write_chapter(self, chapter_num: int, target_length: int = 2000) -> Tuple[bool, str]:
+    def write_chapter(
+        self, 
+        chapter_num: int, 
+        target_length: int = 2000,
+        reference_count: int = 0,
+        chaos_mode: Optional[bool] = False
+    ) -> Tuple[bool, str]:
         """
         写一个章节
         
         Args:
             chapter_num: 章节号
             target_length: 目标字数
+            reference_count: 从参考语料中抽取的数量（0=不使用，-1=由AI决定）
+            chaos_mode: 混杂模式（True=开启，False=关闭，None=由AI决定）
             
         Returns:
             (是否成功, 章节内容)
         """
         logger.info(f"开始写第{chapter_num}章...")
+        if chaos_mode is True:
+            logger.info("⚡ 混杂模式：AI将完全自主决定所有配置")
+        elif chaos_mode is None:
+            logger.info("🎲 AI自主模式：AI将决定具体配置")
         
         try:
-            # 1. 生成本章创意
-            selected_creatives = self._generate_and_select_creatives(chapter_num)
-            logger.info(f"本章创意: {selected_creatives}")
+            # 1. 抽取参考语料
+            reference_texts = []
+            use_references = False
             
-            # 2. 获取写作上下文（需要在色彩设计前获取）
+            if chaos_mode is True:
+                # 混杂模式：不使用参考语料
+                pass
+            elif reference_count > 0:
+                # 明确指定数量
+                ref_reader = get_reference_reader()
+                reference_texts = ref_reader.sample_references(
+                    category="joke",
+                    count=reference_count,
+                    target_length=150
+                )
+                if reference_texts:
+                    logger.info(f"📚 已抽取参考语料: {len(reference_texts)} 条")
+            elif reference_count == -1 and chaos_mode is not True:
+                # AI决定是否使用参考语料，随机 0-3 条
+                import random
+                ai_ref_count = random.randint(0, 3)
+                if ai_ref_count > 0:
+                    ref_reader = get_reference_reader()
+                    reference_texts = ref_reader.sample_references(
+                        category="joke",
+                        count=ai_ref_count,
+                        target_length=150
+                    )
+                    logger.info(f"🎲 AI决定使用 {len(reference_texts)} 条参考语料")
+            
+            # 2. 生成本章创意（混杂模式下跳过，由AI自行决定）
+            if chaos_mode is True:
+                selected_creatives = ["（由AI自行决定）"]
+                logger.info("混杂模式：跳过创意选择")
+            else:
+                selected_creatives = self._generate_and_select_creatives(chapter_num)
+                logger.info(f"本章创意: {selected_creatives}")
+            
+            # 3. 获取写作上下文（需要在色彩设计前获取）
             recent_summaries = self.story_state.get_recent_summaries(3)
             recent_summary_text = self.summarizer.format_recent_summaries()
             arc_summary = self.story_state.get_current_arc_summary()
@@ -59,20 +106,24 @@ class ChapterWriter:
             if last_ending is None:
                 last_ending = "（这是第一章，没有上一章）"
             
-            # 3. 生成章节色彩设计（新增步骤！）
-            chapter_color = self._generate_chapter_color(
-                chapter_num=chapter_num,
-                story_bible=self.story_state.story_bible or {},
-                recent_chapters_summary=recent_summary_text,
-                last_chapter_ending=last_ending,
-                selected_creatives=selected_creatives
-            )
-            logger.info(f"本章色彩设计: {chapter_color.get('writing_guidance', '无')}")
+            # 4. 生成章节色彩设计（混杂模式下跳过）
+            if chaos_mode is True:
+                chapter_color = None
+                logger.info("混杂模式：跳过色彩设计")
+            else:
+                chapter_color = self._generate_chapter_color(
+                    chapter_num=chapter_num,
+                    story_bible=self.story_state.story_bible or {},
+                    recent_chapters_summary=recent_summary_text,
+                    last_chapter_ending=last_ending,
+                    selected_creatives=selected_creatives
+                )
+                logger.info(f"本章色彩设计: {chapter_color.get('writing_guidance', '无')}")
             
-            # 4. 构建章节衔接包
+            # 5. 构建章节衔接包
             context_anchor = self._build_context_anchor()
             
-            # 5. 构建写作 prompt（融入色彩设计）
+            # 6. 构建写作 prompt（融入色彩设计）
             prompt = self.prompt_builder.build_chapter_prompt(
                 story_bible=self.story_state.story_bible or {},
                 characters={
@@ -82,20 +133,30 @@ class ChapterWriter:
                 plot_state=self.story_state.plot_state,
                 context_anchor=context_anchor,
                 selected_creatives=selected_creatives,
-                chapter_color=chapter_color,  # 新增：传递色彩设计
+                chapter_color=chapter_color,
                 recent_summaries=recent_summaries,
                 arc_summary=arc_summary.__dict__ if arc_summary else None,
                 last_chapter_ending=last_ending,
-                chapter_num=chapter_num
+                chapter_num=chapter_num,
+                reference_texts=reference_texts if reference_texts else None,
+                chaos_mode=chaos_mode
             )
             
-            # 6. 调用 LLM 生成正文
+            # 7. 确定 temperature
+            if chaos_mode is True:
+                temperature = 1.2
+            elif chaos_mode is None:
+                temperature = 1.0  # AI决定模式，适中温度
+            else:
+                temperature = 0.9
+            
+            # 8. 调用 LLM 生成正文
             chapter_content = self.llm.generate_chapter(
                 prompt=prompt,
-                temperature=0.9  # 提高温度以配合色彩设计
+                temperature=temperature
             )
             
-            # 7. 清理和格式化内容
+            # 8. 清理和格式化内容
             chapter_content = self._clean_chapter_content(chapter_content)
             
             # 8. 保存章节
@@ -214,11 +275,11 @@ class ChapterWriter:
     def _get_fallback_creative(self, available_types: List[str]) -> List[str]:
         """获取备用创意"""
         fallback_creatives = [
-            "人物身份突然互换，三人发现自己灵魂对调",
-            "一场突如其来的量子风暴，所有人的记忆开始错乱",
-            "神秘的第三方势力突然介入，打破现有平衡",
-            "核心道具突然失效，整个系统开始崩溃",
-            "一个被遗忘的角色带着重大秘密回归",
+            "角色之间爆发激烈争吵，揭露出过往的恩怨",
+            "意外的访客带来了重要的消息",
+            "角色发现被最信任的人背叛",
+            "一场密谋已久的计划终于浮出水面",
+            "角色面临一个艰难的抉择",
         ]
         
         selected = random.sample(fallback_creatives, min(2, len(fallback_creatives)))
@@ -226,7 +287,7 @@ class ChapterWriter:
         # 也选择一个创意类型
         if available_types:
             type_selected = random.choice(available_types)
-            selected.append(f"使用 {type_selected} 类型的创意")
+            selected.append(f"融入 {type_selected} 元素")
         
         return selected
     
@@ -435,18 +496,23 @@ class ChapterWriter:
                     # 可以添加更多更新字段
                 )
     
-    def initialize_story(self) -> bool:
+    def initialize_story(self, keywords: str = "") -> bool:
         """
         初始化故事宇宙
         
+        Args:
+            keywords: 用户输入的关键词，用于引导世界观生成
+            
         Returns:
             是否初始化成功
         """
         logger.info("开始初始化故事宇宙...")
+        if keywords:
+            logger.info(f"用户关键词: {keywords}")
         
         try:
             # 生成世界观
-            prompt = self.prompt_builder.build_init_world_prompt()
+            prompt = self.prompt_builder.build_init_world_prompt(keywords)
             response = self.llm.generate(prompt, temperature=0.9)
             
             # 解析响应
