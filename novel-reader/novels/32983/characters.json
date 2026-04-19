@@ -4,7 +4,7 @@
     "identity": "呆呆的蛋仔穿越到了柏林街头不太聪明，经常干傻事",
     "current_location": "初始地点",
     "goal": "待探索",
-    "status": "alive",
+    "status": "dead",
     "role": "main",
     "relationship_changes": [],
     "new_traits": []
@@ -24,7 +24,7 @@
     "identity": "聪明但是不高兴",
     "current_location": "初始地点",
     "goal": "待探索",
-    "status": "alive",
+    "status": "dead",
     "role": "main",
     "relationship_changes": [],
     "new_traits": []
@@ -34,7 +34,7 @@
     "identity": "擅长使用炸弹的蛋仔",
     "current_location": "初始地点",
     "goal": "待探索",
-    "status": "alive",
+    "status": "dead",
     "role": "main",
     "relationship_changes": [],
     "new_traits": []
@@ -94,8 +94,78 @@
     "identity": "柏林黑市中专营古董与情报的走私商",
     "current_location": "柏林旧城区的地下酒窖",
     "goal": "寻找一件能改变黑市格局的古老文物",
-    "status": "alive",
+    "status": "dead",
     "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "锈光蛋仔": {
+    "name": "锈光蛋仔",
+    "identity": "柏林黑市中暗中操控灯光与影子的夜行者，擅长制造假象与误导敌方视线",
+    "current_location": "柏林旧城区废弃灯塔",
+    "goal": "在暗影商会与纳粹之间寻找生存空间，并揭露黑市背后的更大阴谋",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "锈影之手": {
+    "name": "锈影之手",
+    "identity": "柏林黑市中专门负责窃取纳粹机密文件的间谍，擅长伪装与情报收集",
+    "current_location": "柏林中央火车站的秘密货运通道",
+    "goal": "获取一份关于纳粹新型武器研发计划的机密文件，并将其交给暗影商会",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "锈影之瞳": {
+    "name": "锈影之瞳",
+    "identity": "柏林黑市中专门搜集纳粹情报的神秘监听者，擅长通过窃听与观察获取关键信息",
+    "current_location": "柏林地下通风管道网络",
+    "goal": "揭露暗影商会与纳粹之间的秘密交易，为黑市争取更多生存空间",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "锈影之钥": {
+    "name": "锈影之钥",
+    "identity": "柏林黑市中掌控着关键密码与通行密语的神秘人物，专为暗影商会提供信息与通道",
+    "current_location": "柏林旧城区废弃图书馆地下室",
+    "goal": "寻找能够打破纳粹对黑市控制的古老密钥，同时避免被暗影商会背叛",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "锈影之匙": {
+    "name": "锈影之匙",
+    "identity": "柏林黑市中掌控着关键密码与通行密语的神秘人物，专为暗影商会提供信息与通道",
+    "current_location": "柏林旧城区废弃教堂地下室",
+    "goal": "保护重要情报不被纳粹发现，同时在暗影商会与黑市势力间维持平衡",
+    "status": "dead",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "锈影之羽": {
+    "name": "锈影之羽",
+    "identity": "柏林黑市中精通伪造与伪装的欺诈师，擅长制造假身份与伪造文件。",
+    "current_location": "柏林旧城区的地下酒馆‘铁桶之下’",
+    "goal": "通过伪造纳粹官员的身份文件，为黑市帮派争取更多生存空间。",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "锈影之盾": {
+    "name": "锈影之盾",
+    "identity": "柏林黑市中保护弱小蛋仔的地下义警，擅长利用环境制造掩护与陷阱",
+    "current_location": "柏林东区废弃工厂",
+    "goal": "阻止暗影商会对平民的迫害，并寻找能对抗纳粹的盟友",
+    "status": "alive",
+    "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
   }
