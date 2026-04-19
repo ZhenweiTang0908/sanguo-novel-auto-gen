@@ -372,17 +372,18 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
         print("  0. 切换小说")
         print("  1. 创建新小说")
         print("  2. 生成新章节")
-        print("  3. 添加/生成角色")
-        print("  4. 修改角色信息")
-        print("  5. 设置灵感线索")
-        print("  6. 随机角色模式")
-        print("  7. 参考语料设置")
-        print("  8. 混杂模式设置")
-        print("  9. 查看更多信息")
-        print("  10. 删除章节")
-        print("  11. 重新初始化世界观")
-        print("  12. 删除小说")
-        print("  13. 退出")
+        print("  3. 连续章节生成")
+        print("  4. 添加/生成角色")
+        print("  5. 修改角色信息")
+        print("  6. 设置灵感线索")
+        print("  7. 随机角色模式")
+        print("  8. 参考语料设置")
+        print("  9. 混杂模式设置")
+        print("  10. 查看更多信息")
+        print("  11. 删除章节")
+        print("  12. 重新初始化世界观")
+        print("  13. 删除小说")
+        print("  14. 退出")
 
         try:
             choice = input("\n  > ").strip()
@@ -551,6 +552,71 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
 
         elif choice == '3':
             try:
+                print("\n🔄 连续章节生成")
+                print("  提示：自动生成多个章节，每章有概率添加新角色或修改世界观")
+                
+                num = input("  生成章节数: ").strip()
+                if not num.isdigit() or int(num) <= 0:
+                    print("  无效输入")
+                    continue
+                num = int(num)
+                
+                confirm = input(f"  确认生成 {num} 章？[y/N]: ").strip()
+                if confirm.lower() != 'y':
+                    print("  已取消")
+                    continue
+                
+                print(f"\n🚀 开始连续生成 {num} 章...")
+                print("  每章会：")
+                print("    - AI确定灵感和色彩")
+                print("    - 随机抽取参考语料")
+                print("    - 8%概率添加新角色")
+                print("    - 3%概率修改世界观")
+                print("=" * 50)
+                
+                results = chapter_writer.generate_chapters_continuous(num)
+                
+                print("\n📊 生成结果:")
+                print(f"  成功: {results['success']} 章")
+                print(f"  失败: {results['failed']} 章")
+                if results['new_characters']:
+                    print(f"  新增角色: {', '.join(results['new_characters'])}")
+                if results['world_changes']:
+                    print(f"  世界观更新: {len(results['world_changes'])} 次")
+                
+                # 自动 git commit
+                story_state.load_all()
+                show_status(story_state, novel_manager.get_novel(current_novel_id))
+                
+                auto_commit = input("\n  是否自动提交？[y/N]: ").strip()
+                if auto_commit.lower() == 'y':
+                    import subprocess
+                    try:
+                        result = subprocess.run(
+                            ['git', 'add', '-A'],
+                            capture_output=True,
+                            text=True,
+                            cwd=storage.base_path
+                        )
+                        result = subprocess.run(
+                            ['git', 'commit', '-m', f'连续生成 {num} 章 - 成功{results["success"]}章'],
+                            capture_output=True,
+                            text=True,
+                            cwd=storage.base_path
+                        )
+                        if result.returncode == 0:
+                            print("  ✅ 已自动提交")
+                        else:
+                            print(f"  ⚠️ 提交失败: {result.stderr}")
+                    except Exception as e:
+                        print(f"  ⚠️ 提交出错: {e}")
+                        
+            except (EOFError, KeyboardInterrupt):
+                print("\n  已取消")
+                continue
+
+        elif choice == '4':
+            try:
                 print("\n👥 添加/生成角色")
                 print("  1. 手动添加角色")
                 print("  2. AI随机生成角色")
@@ -604,7 +670,7 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
             except (EOFError, KeyboardInterrupt):
                 print("  已取消")
 
-        elif choice == '4':
+        elif choice == '5':
             try:
                 characters = story_state.characters
                 if not characters:
@@ -655,7 +721,7 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
             except (EOFError, KeyboardInterrupt):
                 print("  已取消")
 
-        elif choice == '5':
+        elif choice == '6':
             try:
                 inspiration = input("  灵感线索: ").strip()
                 if inspiration:
@@ -667,7 +733,7 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
             except (EOFError, KeyboardInterrupt):
                 print("  已取消")
 
-        elif choice == '6':
+        elif choice == '7':
             try:
                 current_mode = story_state.is_random_character_mode()
                 if current_mode:
@@ -687,7 +753,7 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
             except (EOFError, KeyboardInterrupt):
                 print("  已取消")
 
-        elif choice == '7':
+        elif choice == '8':
             try:
                 ref_display = f"{ref_count}" if ref_count >= 0 else "AI决定"
                 print(f"  当前参考语料数量: {ref_display}")
@@ -701,7 +767,7 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
             except (EOFError, KeyboardInterrupt):
                 print("  已取消")
 
-        elif choice == '8':
+        elif choice == '9':
             try:
                 chaos_display = "开启" if chaos_mode is True else ("关闭" if chaos_mode is False else "AI决定")
                 print(f"  当前混杂模式: {chaos_display}")
@@ -718,10 +784,10 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
             except (EOFError, KeyboardInterrupt):
                 print("  已取消")
 
-        elif choice == '9':
+        elif choice == '10':
             show_full_info(story_state)
 
-        elif choice == '10':
+        elif choice == '11':
             chapters = story_state.storage.list_chapters()
             if not chapters:
                 print("  暂无章节")
@@ -752,7 +818,7 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
             story_state.save_all()
             story_state.load_all()
 
-        elif choice == '11':
+        elif choice == '12':
             print("\n🔄 重新初始化世界观")
             print("  提示：此操作将保留章节，但重新生成世界观、人物和主线")
             confirm = input("  确认继续？[y/N]: ").strip()
@@ -816,7 +882,7 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
             else:
                 print("  无效选择")
 
-        elif choice == '12':
+        elif choice == '13':
             novels = novel_manager.list_novels()
             if not novels:
                 print("  暂无小说")
@@ -871,7 +937,7 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
             novel_manager.remove_novel(target_id)
             print(f"  已删除: {target_id}")
 
-        elif choice == '13':
+        elif choice == '14':
             print("  再见！")
             break
 

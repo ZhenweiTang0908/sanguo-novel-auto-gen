@@ -656,6 +656,260 @@ class ChapterWriter:
 
         return []
 
+    def generate_chapters_continuous(
+        self,
+        num_chapters: int,
+        target_length: int = 2000
+    ) -> Dict[str, Any]:
+        """
+        连续生成多个章节
+        
+        Args:
+            num_chapters: 要生成的章节数
+            target_length: 每章目标字数
+            
+        Returns:
+            生成结果统计
+        """
+        import random
+        
+        logger.info(f"开始连续生成 {num_chapters} 章...")
+        
+        results = {
+            "total": num_chapters,
+            "success": 0,
+            "failed": 0,
+            "new_characters": [],
+            "world_changes": [],
+            "chapters": []
+        }
+        
+        start_chapter = self.story_state.get_next_chapter_num()
+        
+        for i in range(num_chapters):
+            chapter_num = start_chapter + i
+            logger.info(f"\n{'='*50}")
+            logger.info(f"开始生成第 {chapter_num} 章 ({i+1}/{num_chapters})")
+            logger.info(f"{'='*50}")
+            
+            try:
+                # 1. AI生成本章灵感（色彩、叙事风格）
+                chapter_inspiration = self._generate_chapter_inspiration(chapter_num)
+                if chapter_inspiration:
+                    results["chapters"].append({
+                        "chapter": chapter_num,
+                        "inspiration": chapter_inspiration.get("theme", ""),
+                        "color": chapter_inspiration.get("color", "")
+                    })
+                
+                # 2. 8%概率添加新角色
+                if random.random() < 0.08:
+                    logger.info("🎲 触发添加新角色 (8%概率)")
+                    new_chars = self.generate_character(1)
+                    if new_chars:
+                        for char_data in new_chars:
+                            name = char_data.get('name', '')
+                            if name and name not in self.story_state.characters:
+                                self.story_state.add_character(
+                                    name=name,
+                                    identity=char_data.get('identity', '未知'),
+                                    location=char_data.get('current_location', '未知'),
+                                    goal=char_data.get('goal', '待探索'),
+                                    role=char_data.get('role', 'supporting')
+                                )
+                                results["new_characters"].append(name)
+                                logger.info(f"  ✅ 添加新角色: {name}")
+                
+                # 3. 3%概率修改世界观
+                if random.random() < 0.03:
+                    logger.info("🎲 触发修改世界观 (3%概率)")
+                    world_change = self._modify_world_view()
+                    if world_change:
+                        results["world_changes"].append(world_change)
+                        logger.info(f"  ✅ 世界观更新: {world_change[:50]}...")
+                
+                # 4. 随机抽取参考语料（每章0-2条）
+                ref_reader = get_reference_reader()
+                ref_count = random.randint(0, 2)
+                reference_texts = []
+                if ref_count > 0:
+                    reference_texts = ref_reader.sample_references(
+                        category="joke",
+                        count=ref_count,
+                        target_length=150
+                    )
+                    if reference_texts:
+                        logger.info(f"📚 使用 {len(reference_texts)} 条参考语料")
+                
+                # 5. 生成章节
+                success, content = self.write_chapter(
+                    chapter_num=chapter_num,
+                    target_length=target_length,
+                    reference_count=-1,  # AI决定
+                    chaos_mode=None
+                )
+                
+                if success:
+                    results["success"] += 1
+                    import re
+                    title_match = re.search(r'#\s*第[一二三四五六七八九十百\d]+章\s*(.+)', content)
+                    if title_match:
+                        title = title_match.group(1).strip()
+                        logger.info(f"  ✅ 第{chapter_num}章完成: {title}")
+                    else:
+                        logger.info(f"  ✅ 第{chapter_num}章完成")
+                else:
+                    results["failed"] += 1
+                    logger.error(f"  ❌ 第{chapter_num}章生成失败")
+                
+                # 每章之间稍作停顿
+                if i < num_chapters - 1:
+                    import time
+                    time.sleep(1)
+                    
+            except Exception as e:
+                logger.error(f"第{chapter_num}章生成异常: {e}")
+                results["failed"] += 1
+                import traceback
+                traceback.print_exc()
+        
+        # 保存状态
+        self.story_state.save_all()
+        
+        logger.info(f"\n{'='*50}")
+        logger.info(f"连续生成完成: 成功 {results['success']} 章, 失败 {results['failed']} 章")
+        if results["new_characters"]:
+            logger.info(f"新增角色: {', '.join(results['new_characters'])}")
+        if results["world_changes"]:
+            logger.info(f"世界观更新次数: {len(results['world_changes'])}")
+        logger.info(f"{'='*50}")
+        
+        return results
+
+    def _generate_chapter_inspiration(self, chapter_num: int) -> Optional[Dict]:
+        """AI生成本章的灵感和色彩"""
+        try:
+            recent_summaries = self.story_state.get_recent_summaries(2)
+            chars_info = "\n".join([
+                f"- {name}: {char.identity} (位置:{char.current_location}, 目标:{char.goal})"
+                for name, char in list(self.story_state.characters.items())[:5]
+            ])
+            
+            world_overview = ""
+            if self.story_state.story_bible:
+                world_overview = self.story_state.story_bible.get('world_overview', '')
+            
+            prompt = f"""# 任务：为本章生成创作灵感
+
+## 基本信息
+- 章节号：第{chapter_num}章
+- 世界观：{world_overview[:200] if world_overview else '未知'}
+
+## 当前角色状态
+{chars_info}
+
+## 近期剧情摘要
+{recent_summaries if recent_summaries else '（暂无）'}
+
+## 要求
+
+请为本章确定：
+1. **主题色彩**：如"权谋暗战"、"情感爆发"、"势力对决"等
+2. **叙事风格**：如"紧张悬疑"、"轻松诙谐"、"悲壮史诗"等  
+3. **核心事件指引**：本章应该围绕什么事件展开
+
+请生成简洁的JSON格式：
+```json
+{{
+  "color": "色彩主题",
+  "style": "叙事风格", 
+  "theme": "核心事件指引"
+}}
+```
+"""
+            response = self.llm.generate(prompt, temperature=0.8)
+            
+            # 解析JSON
+            import re
+            json_match = re.search(r'```json\s*([\s\S]*?)\s*```', response)
+            if json_match:
+                import json
+                return json.loads(json_match.group(1))
+            
+            json_match = re.search(r'\{"[^"]*":\s*"[^"]*"[^}]*\}', response)
+            if json_match:
+                import json
+                return json.loads(json_match.group(0))
+                
+        except Exception as e:
+            logger.error(f"生成章节灵感失败: {e}")
+        
+        return None
+
+    def _modify_world_view(self) -> Optional[str]:
+        """AI修改世界观（小幅调整）"""
+        try:
+            current_world = ""
+            if self.story_state.story_bible:
+                current_world = self.story_state.story_bible.get('world_overview', '')
+            
+            factions = self.story_state.story_bible.get('factions', [])
+            factions_text = "\n".join([f"- {f.get('name', '未知')}" for f in factions]) if factions else "无"
+            
+            chars_count = len(self.story_state.characters)
+            main_chars = [name for name, c in self.story_state.characters.items() if c.role == 'main']
+            
+            prompt = f"""# 任务：对世界观进行小幅调整
+
+## 当前世界观
+{current_world[:300] if current_world else '未知'}
+
+## 当前势力
+{factions_text}
+
+## 角色情况
+- 总角色数：{chars_count}
+- 主演：{', '.join(main_chars) if main_chars else '暂无'}
+
+## 要求
+
+根据最近剧情发展，对世界观进行**小幅调整**（不要大幅改动）：
+- 可以添加新的势力动态
+- 可以添加新的社会规则
+- 可以添加新的势力关系
+- 不要删除已有设定
+- 不要做颠覆性修改
+
+请生成小幅的世界观更新描述（50字以内）：
+
+```json
+{{
+  "update": "更新的描述"
+}}
+```
+"""
+            response = self.llm.generate(prompt, temperature=0.7)
+            
+            # 解析JSON
+            import re
+            json_match = re.search(r'```json\s*([\s\S]*?)\s*```', response)
+            if json_match:
+                import json
+                data = json.loads(json_match.group(1))
+                update_text = data.get('update', '')
+                
+                if update_text and self.story_state.story_bible:
+                    # 追加到现有世界观
+                    current_overview = self.story_state.story_bible.get('world_overview', '')
+                    new_overview = current_overview + "\n" + update_text
+                    self.story_state.story_bible['world_overview'] = new_overview
+                    return update_text
+                    
+        except Exception as e:
+            logger.error(f"修改世界观失败: {e}")
+        
+        return None
+
 
 # 全局实例
 _chapter_writer: Optional[ChapterWriter] = None

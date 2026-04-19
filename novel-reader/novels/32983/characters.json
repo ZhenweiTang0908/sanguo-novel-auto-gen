@@ -28,5 +28,15 @@
     "role": "main",
     "relationship_changes": [],
     "new_traits": []
+  },
+  "小红蛋仔": {
+    "name": "小红蛋仔",
+    "identity": "一名普通的德国民众，经营着一家小面包店",
+    "current_location": "柏林市郊的一条街角",
+    "goal": "保护自己的小店不被军队征用，并维持家庭生计",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
   }
 }
