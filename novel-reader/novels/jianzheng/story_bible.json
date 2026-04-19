@@ -1,0 +1,73 @@
+{
+  "world_overview": "一个网络舆论主导现实权力的都市世界，小聪明凭借冲浪能力在键政圈崛起，成为影响社会风向的隐形领袖。",
+  "core_rules": [
+    "网络舆论能直接影响政府决策和企业走向",
+    "键盘侠也能成为实际掌权者"
+  ],
+  "factions": [
+    {
+      "name": "键盘军团",
+      "leader": "老K",
+      "special_power": "操控舆论风暴",
+      "ideology": "以言论为武器，掌控信息流"
+    },
+    {
+      "name": "官方媒体联盟",
+      "leader": "陈主任",
+      "special_power": "掌握主流发声渠道",
+      "ideology": "维护秩序与稳定"
+    },
+    {
+      "name": "民间意见领袖联盟",
+      "leader": "阿强",
+      "special_power": "引导热点话题",
+      "ideology": "代表草根发声"
+    }
+  ],
+  "main_characters": [
+    {
+      "name": "小聪明",
+      "original_identity": "普通大学生",
+      "new_identity": "匿名键政大V",
+      "core_trait": "观察力强、反应快、不按常理出牌",
+      "secret": "其实曾是某大厂数据分析师，因不满体制辞职"
+    },
+    {
+      "name": "老K",
+      "original_identity": "退役记者",
+      "new_identity": "键盘军团幕后指挥",
+      "core_trait": "冷酷务实，擅长利用人性弱点",
+      "secret": "曾因报道黑料被封号，从此转战地下网络"
+    },
+    {
+      "name": "陈主任",
+      "original_identity": "宣传部官员",
+      "new_identity": "官方媒体联盟首领",
+      "core_trait": "谨慎稳重，擅长控制节奏",
+      "secret": "暗中资助多个自媒体账号，做舆情监控"
+    },
+    {
+      "name": "阿强",
+      "original_identity": "网红博主",
+      "new_identity": "民间意见领袖头目",
+      "core_trait": "激情澎湃，善于煽动情绪",
+      "secret": "实为某资本集团扶持的傀儡"
+    },
+    {
+      "name": "小美",
+      "original_identity": "编辑",
+      "new_identity": "小聪明的粉丝兼助手",
+      "core_trait": "细致入微，擅长分析数据",
+      "secret": "暗中调查小聪明的真实身份"
+    }
+  ],
+  "main_conflict": "小聪明揭露某大企业黑幕，引发舆论风暴，遭到官方与资本双重打压，他必须在沉默与反抗之间做出选择。",
+  "sustainable_hooks": [
+    "小聪明的身份暴露后，是否会被迫公开？",
+    "老K与陈主任之间暗藏的利益交易能否曝光？"
+  ],
+  "creative_types_used": [
+    "betrayal_reveal",
+    "identity_swap"
+  ]
+}

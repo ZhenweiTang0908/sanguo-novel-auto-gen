@@ -1,0 +1,92 @@
+{
+  "小聪明": {
+    "name": "小聪明",
+    "identity": "键政大学生",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "老K": {
+    "name": "老K",
+    "identity": "键盘军团幕后指挥",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "陈主任": {
+    "name": "陈主任",
+    "identity": "官方媒体联盟首领",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "阿强": {
+    "name": "阿强",
+    "identity": "民间意见领袖头目",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "小美": {
+    "name": "小美",
+    "identity": "小聪明的粉丝兼助手",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "影子编译": {
+    "name": "影子编译",
+    "identity": "匿名信息工程师，擅长在暗网中传播真相与揭露阴谋",
+    "current_location": "虚拟的地下网络节点",
+    "goal": "将大企业的黑幕证据安全传递给公众",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "白露": {
+    "name": "白露",
+    "identity": "前官方媒体记者，现为独立信息调查者",
+    "current_location": "暗网论坛‘回声’的虚拟密室",
+    "goal": "揭露政府与企业勾结的证据，推动舆论转向正义一方",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "墨言": {
+    "name": "墨言",
+    "identity": "前政府网络审查员，现为匿名黑客组织‘清流’的发起人",
+    "current_location": "地下暗网服务器群",
+    "goal": "揭露政府与资本勾结的真相，恢复网络自由与信息透明",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "星尘": {
+    "name": "星尘",
+    "identity": "前科技公司高管，现为匿名网络策展人",
+    "current_location": "虚拟现实社区‘元界’的暗区",
+    "goal": "揭露大企业与政府之间的数据交易黑幕，重塑网络自由度",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  }
+}

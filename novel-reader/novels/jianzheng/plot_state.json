@@ -1,0 +1,307 @@
+{
+  "main_conflict": "小聪明揭露某大企业黑幕，引发舆论风暴，遭到官方与资本双重打压，他必须在沉默与反抗之间做出选择。",
+  "sub_conflicts": [],
+  "open_threads": [
+    {
+      "thread_id": "hook_1_0",
+      "description": "小美在小聪明的电脑里发现一段加密视频，画面中赫然是他与陈主任的密谈。",
+      "status": "open",
+      "introduced_chapter": 1,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_0",
+      "description": "小美是否真的是匿名者？她的记忆是否被篡改？",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_1",
+      "description": "影子编译的真实身份和目的尚未揭晓。",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_2",
+      "description": "陈主任的阴谋究竟有多深？他的目标是什么？",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_3",
+      "description": "小聪明和小美是否能逃脱老K的追捕？",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_3_0",
+      "description": "小美发现自己的记忆被篡改，暗示她可能是当年事件的目击者。",
+      "status": "open",
+      "introduced_chapter": 3,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_4_0",
+      "description": "陈主任在最后时刻出现，暗示更大的阴谋",
+      "status": "open",
+      "introduced_chapter": 4,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_4_1",
+      "description": "主角被陈主任控制，暗示他仍是棋子",
+      "status": "open",
+      "introduced_chapter": 4,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_4_2",
+      "description": "下一章钩子中提到神秘声音‘你终于醒了，主角’",
+      "status": "open",
+      "introduced_chapter": 4,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_5_0",
+      "description": "小聪明体内的代码纹路和“真正继承者”的身份暗示更大的秘密。",
+      "status": "open",
+      "introduced_chapter": 5,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_5_1",
+      "description": "密室中的黑色漩涡和陈主任的身影预示更深层的威胁。",
+      "status": "open",
+      "introduced_chapter": 5,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_6_0",
+      "description": "小美手机上的新消息暗示她可能知道更多关于主角觉醒的秘密。",
+      "status": "open",
+      "introduced_chapter": 6,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_6_1",
+      "description": "陈主任最后的警告暗示他仍有后手，为后续剧情埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 6,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_7_0",
+      "description": "小聪明在陈主任办公室醒来，手中握着自己的U盘，暗示他可能经历了某种时间循环或意识转移。",
+      "status": "open",
+      "introduced_chapter": 7,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_8_0",
+      "description": "小聪明在发布消息时收到一条神秘信息：'继承者协议已激活，欢迎回家。'",
+      "status": "open",
+      "introduced_chapter": 8,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_9_0",
+      "description": "小聪明成为‘世界的主宰’，暗示他可能掌握更大的力量或秘密。",
+      "status": "open",
+      "introduced_chapter": 9,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_9_1",
+      "description": "虚拟空间中‘欢迎回来，主宰’的提示，暗示他可能曾有更深层的身份或使命。",
+      "status": "open",
+      "introduced_chapter": 9,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_9_2",
+      "description": "账号群发的消息‘我是世界的主宰’，为后续世界规则的改变埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 9,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_10_0",
+      "description": "小聪明的真实身份和他为何被遗忘在现实世界。",
+      "status": "open",
+      "introduced_chapter": 10,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_10_1",
+      "description": "“主宰”究竟是谁？它是否还存在于数据之外？",
+      "status": "open",
+      "introduced_chapter": 10,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_10_2",
+      "description": "白露是否还能恢复意识？她的意识是否也被数据吞噬？",
+      "status": "open",
+      "introduced_chapter": 10,
+      "resolved_chapter": null,
+      "notes": ""
+    }
+  ],
+  "used_creatives": [
+    {
+      "creative_type": "unexpected_ally",
+      "used_in_chapter": 1,
+      "description": "敌人的反叛",
+      "impact": "在一场关键舆论战中，敌人提供重要情报，引发主角对其真实意图的怀疑与试探。"
+    },
+    {
+      "creative_type": "secret_alliance",
+      "used_in_chapter": 1,
+      "description": "暗网中的沉默联盟",
+      "impact": "主角在一次意外中被卷入该联盟，通过信息交换逐步揭示权力背后的真相。"
+    },
+    {
+      "creative_type": "identity_reveal",
+      "used_in_chapter": 2,
+      "description": "匿名者的真面目",
+      "impact": "他在调查过程中逐步接近真相，最终在一场关键的网络对峙中揭开身份之谜"
+    },
+    {
+      "creative_type": "assassination_plan",
+      "used_in_chapter": 2,
+      "description": "暗网的交易陷阱",
+      "impact": "他在追踪线索时被埋伏，不得不利用自己的网络影响力迅速反击，揭露幕后黑手"
+    },
+    {
+      "creative_type": "political_marriage",
+      "used_in_chapter": 3,
+      "description": "舆论联姻",
+      "impact": "在小聪明陷入危机时，这个提议成为他必须面对的现实抉择，考验他的立场与价值观。"
+    },
+    {
+      "creative_type": "faction_conflict",
+      "used_in_chapter": 3,
+      "description": "键政派系的内斗",
+      "impact": "在小聪明调查暗网事件的同时，揭露两大派系之间的恩怨，增加故事张力与道德困境。"
+    },
+    {
+      "creative_type": "power_struggle",
+      "used_in_chapter": 4,
+      "description": "舆论战场",
+      "impact": "描写一场网络舆论战，展现主角如何以小聪明应对强大对手的打压。"
+    },
+    {
+      "creative_type": "betrayal",
+      "used_in_chapter": 4,
+      "description": "信任的裂痕",
+      "impact": "制造小美身份的危机，迫使主角重新评估信任关系，推动剧情走向复杂化。"
+    },
+    {
+      "creative_type": "scheming",
+      "used_in_chapter": 5,
+      "description": "暗网联盟",
+      "impact": "小聪明与小美联手调查该联盟，却发现其中有人与黑影有勾结，引发内部危机。"
+    },
+    {
+      "creative_type": "hidden_heir",
+      "used_in_chapter": 5,
+      "description": "真正的继承者",
+      "impact": "小聪明得知真相后，面临是否揭露这一秘密的抉择，可能影响整个网络舆论生态。"
+    },
+    {
+      "creative_type": "war_strategy",
+      "used_in_chapter": 6,
+      "description": "舆论风暴",
+      "impact": "通过具体操作和结果展示，展现主角从被动到主动的战略转变。"
+    },
+    {
+      "creative_type": "unexpected_ally",
+      "used_in_chapter": 6,
+      "description": "沉默的援手",
+      "impact": "通过该角色提供关键信息，揭示陈主任过去的罪行，并为小聪明争取反击机会。"
+    },
+    {
+      "creative_type": "love_triangle",
+      "used_in_chapter": 7,
+      "description": "立场的分裂",
+      "impact": "在剧情推进中展现三人关系的变化，增加人物互动的冲突与深度。"
+    },
+    {
+      "creative_type": "past_secret",
+      "used_in_chapter": 7,
+      "description": "加密视频的真相",
+      "impact": "在本章中解密视频内容，揭示陈主任的过往秘密，为后续对抗埋下伏笔。"
+    },
+    {
+      "creative_type": "identity_reveal",
+      "used_in_chapter": 8,
+      "description": "数据背后的真身",
+      "impact": "通过密室中残留的数据碎片，揭露小聪明并非自发崛起，而是被某个高层势力操纵的棋子。"
+    },
+    {
+      "creative_type": "assassination_plan",
+      "used_in_chapter": 8,
+      "description": "键盘上的暗杀",
+      "impact": "小聪明在恢复意识后，发现自己的数字身份正被逐步清除，必须迅速反击以求生。"
+    },
+    {
+      "creative_type": "power_struggle",
+      "used_in_chapter": 9,
+      "description": "陈主任的暗棋",
+      "impact": "揭示陈主任与另一派系的秘密会谈，让小聪明陷入信任危机，推动其寻找真正盟友。"
+    },
+    {
+      "creative_type": "secret_alliance",
+      "used_in_chapter": 9,
+      "description": "键盘侠联盟现身",
+      "impact": "通过匿名消息与小聪明接触，引入新角色，同时制造剧情转折点。"
+    },
+    {
+      "creative_type": "political_marriage",
+      "used_in_chapter": 10,
+      "description": "舆论操控的联姻",
+      "impact": "他被迫接受这场政治婚姻，却在其中发现更多关于‘继承者协议’的秘密。"
+    },
+    {
+      "creative_type": "faction_conflict",
+      "used_in_chapter": 10,
+      "description": "两大阵营对峙",
+      "impact": "他在两股力量之间周旋，既要躲避追捕，又要寻找真正的盟友。"
+    }
+  ],
+  "active_creative_types": [
+    "unexpected_ally",
+    "love_triangle",
+    "past_secret",
+    "identity_reveal",
+    "assassination_plan",
+    "power_struggle",
+    "secret_alliance",
+    "political_marriage",
+    "faction_conflict"
+  ]
+}

@@ -32,7 +32,18 @@ export default function ChapterList({ chapters, meta }: ChapterListProps) {
               </svg>
               返回
             </Link>
-            <span className="text-sm text-gray-400">{chapters.length}章</span>
+            <div className="flex items-center gap-3">
+              <a
+                href={`/api/novels/${meta.novel_id}/export`}
+                className="flex items-center text-sm text-orange-600 hover:text-orange-700 transition-colors"
+              >
+                <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                导出
+              </a>
+              <span className="text-sm text-gray-400">{chapters.length}章</span>
+            </div>
           </div>
           <h1 className="text-lg font-medium text-gray-900 mt-2 truncate">
             {meta.story_title}
