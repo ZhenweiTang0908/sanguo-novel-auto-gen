@@ -64,7 +64,7 @@
     "identity": "华雄未死，她是他的替身与卧底",
     "current_location": "初始地点",
     "goal": "待探索",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -74,6 +74,56 @@
     "identity": "潘森 潘森是黎木人。潘森 “潘森” 这个名号，起源于刚入学的时候。军训期间，潘森站在厕所门口，华林看到他，问：“你叫什么名字？” 潘森回答后，华林又问：“你会玩《英雄联盟》吗？” 潘森说会，华林就说：“那你以后就叫潘森吧。” 于是“潘森”这个名字就传开了。串在宿舍里话很多，经常提到“老丁”“潘”这类称呼，之后，这些称呼就被组合起来，叫潘森“丁”，大家都拍手笑了起来。还有人叫潘森“老墨”，但这个称呼没有流传开。从这以后，潘森每天下午都不理人。因此振为偶尔会有点怨恨他，称他“麻木不仁”，“麻木哥”这个名号也由此产生。",
     "current_location": "广西的厕所里",
     "goal": "找到梁培俊，抛掉他的被子",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "沈无涯": {
+    "name": "沈无涯",
+    "identity": "黄巾军残部中的隐秘领袖，实为前朝太史令之后，掌握着古代天机图的秘密",
+    "current_location": "荆州暗河密窟",
+    "goal": "找到天机图的完整拼图，揭开黄巾起义背后的真正幕后黑手",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "陆玄机": {
+    "name": "陆玄机",
+    "identity": "前朝御用占卜师，现为隐士，掌握着黄巾起义背后的预言与天机",
+    "current_location": "江南隐秘山谷",
+    "goal": "寻找能够破解天机图秘密的遗孤，阻止神秘组织统一九州的阴谋",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "荀影": {
+    "name": "荀影",
+    "identity": "前朝宦官后裔，现为洛阳暗探，受神秘组织‘天机阁’操控，负责收集各方势力情报",
+    "current_location": "洛阳城内密道",
+    "goal": "查明黄巾起义背后的真正策划者，并在关键时刻刺杀关键人物以改变局势",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "叶清梧": {
+    "name": "叶清梧",
+    "identity": "天机阁暗桩，实为黄巾起义前的皇室密使，负责传递隐秘信息",
+    "current_location": "洛阳城内暗巷深处",
+    "goal": "寻找黄巾起义背后的真正幕后黑手，并揭露其统一九州的阴谋",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "慕容清岚": {
+    "name": "慕容清岚",
+    "identity": "前朝皇室遗孤，现为江东暗探，代号‘青鸾’",
+    "current_location": "建业（今南京）",
+    "goal": "查明天机阁与黄巾起义的真正幕后操控者，并寻找复国之机",
     "status": "alive",
     "role": "supporting",
     "relationship_changes": [],
