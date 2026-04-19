@@ -49,6 +49,526 @@
       "introduced_chapter": 3,
       "resolved_chapter": null,
       "notes": ""
+    },
+    {
+      "thread_id": "hook_6_0",
+      "description": "黑袍人暗示真正的刘备仍然存在，引发后续寻找真相的线索。",
+      "status": "open",
+      "introduced_chapter": 6,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_6_1",
+      "description": "孔明的真实身份与背景成为新的谜团。",
+      "status": "open",
+      "introduced_chapter": 6,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_6_2",
+      "description": "青铜泪的真正用途和来源尚未揭晓。",
+      "status": "open",
+      "introduced_chapter": 6,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_6_3",
+      "description": "灵魂互换的机制和背后操控者的身份仍是未知。",
+      "status": "open",
+      "introduced_chapter": 6,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_7_0",
+      "description": "黑袍人透露真正的刘备是一个早已死去的孩子，暗示刘备的身份可能完全被取代。",
+      "status": "open",
+      "introduced_chapter": 7,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_7_1",
+      "description": "黄巾军的复活计划正在推进，刘备可能是关键人物。",
+      "status": "open",
+      "introduced_chapter": 7,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_7_2",
+      "description": "诸侯们的异变表明黄巾军的势力已经深入整个天下，威胁更大。",
+      "status": "open",
+      "introduced_chapter": 7,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_8_0",
+      "description": "黄巾军的虚影苏醒，暗示更大的威胁即将降临。",
+      "status": "open",
+      "introduced_chapter": 8,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_8_1",
+      "description": "孔明的牺牲是否真的能唤醒黄巾？还是另有隐情？",
+      "status": "open",
+      "introduced_chapter": 8,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_8_2",
+      "description": "刘备的意识是否完全被吞噬？他是否还有机会反抗？",
+      "status": "open",
+      "introduced_chapter": 8,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_8_3",
+      "description": "吕布作为黄巾军首领，他的真正目的究竟是什么？",
+      "status": "open",
+      "introduced_chapter": 8,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_9_0",
+      "description": "刘备进入记忆迷宫寻找真相，为后续章节埋下探索与觉醒的伏笔。",
+      "status": "open",
+      "introduced_chapter": 9,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_9_1",
+      "description": "貂蝉提到‘命运’掌控一切，暗示更大的世界观和力量体系的存在。",
+      "status": "open",
+      "introduced_chapter": 9,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_9_2",
+      "description": "门后出现的‘你’暗示刘备将面对更深层的自我认知与抉择。",
+      "status": "open",
+      "introduced_chapter": 9,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_10_0",
+      "description": "主角的身份之谜进一步加深，为后续揭示其真实背景埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 10,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_10_1",
+      "description": "记忆迷宫的设定暗示可能存在更深层的隐藏世界或力量。",
+      "status": "open",
+      "introduced_chapter": 10,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_11_0",
+      "description": "青铜泪的真正来源和用途尚未揭晓，埋下悬念。",
+      "status": "open",
+      "introduced_chapter": 11,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_11_1",
+      "description": "主角的多重自我是否意味着更深层的设定或能力？",
+      "status": "open",
+      "introduced_chapter": 11,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_12_0",
+      "description": "刘备的真实身份和目的成谜，留下强烈悬念。",
+      "status": "open",
+      "introduced_chapter": 12,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_12_1",
+      "description": "他是否是被替换的傀儡？还是拥有双重人格？",
+      "status": "open",
+      "introduced_chapter": 12,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_13_0",
+      "description": "镜中之人的身份是否真实？是否存在另一个‘刘备’？",
+      "status": "open",
+      "introduced_chapter": 13,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_13_1",
+      "description": "这种自我对话是否预示着更大的危机或力量觉醒？",
+      "status": "open",
+      "introduced_chapter": 13,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_14_0",
+      "description": "刘备的真实身份之谜尚未完全揭开，尤其是与曹操的血缘关系。",
+      "status": "open",
+      "introduced_chapter": 14,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_14_1",
+      "description": "诸葛亮的真实身份被揭露，暗示她可能有更深层的动机与背景。",
+      "status": "open",
+      "introduced_chapter": 14,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_14_2",
+      "description": "潘森的离开留下疑问：他是否真的只是“救赎者”，还是另有目的？",
+      "status": "open",
+      "introduced_chapter": 14,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_15_0",
+      "description": "潘森的真实身份和目的尚未完全揭晓。",
+      "status": "open",
+      "introduced_chapter": 15,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_15_1",
+      "description": "角色是否真的只是数据体，仍是未解之谜。",
+      "status": "open",
+      "introduced_chapter": 15,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_15_2",
+      "description": "血镜的真正能力以及它如何影响现实世界仍待探索。",
+      "status": "open",
+      "introduced_chapter": 15,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_15_3",
+      "description": "潘森在厕所中等待下一次重启，暗示循环可能持续不断。",
+      "status": "open",
+      "introduced_chapter": 15,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_16_0",
+      "description": "潘森的真实身份和目的仍未完全揭晓，他是否真的是‘你们的造物主’？",
+      "status": "open",
+      "introduced_chapter": 16,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_16_1",
+      "description": "‘你即我，我即你’的哲学命题成为核心谜题，下一章可能深入探讨角色的自我认知。",
+      "status": "open",
+      "introduced_chapter": 16,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_16_2",
+      "description": "血镜的真正能力与它所创造的世界的来源仍是未解之谜。",
+      "status": "open",
+      "introduced_chapter": 16,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_17_0",
+      "description": "血镜的破裂是否会导致现实世界的崩塌？",
+      "status": "open",
+      "introduced_chapter": 17,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_17_1",
+      "description": "刘备与曹操的融合是否意味着新的力量诞生？",
+      "status": "open",
+      "introduced_chapter": 17,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_17_2",
+      "description": "其他三国英雄是否也会经历类似的自我认知崩溃？",
+      "status": "open",
+      "introduced_chapter": 17,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_18_0",
+      "description": "母亲的幻影出现，暗示主角真实身份可能与曹操有关。",
+      "status": "open",
+      "introduced_chapter": 18,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_18_1",
+      "description": "血镜智脑的觉醒和身份核验程序，为后续剧情埋下关键伏笔。",
+      "status": "open",
+      "introduced_chapter": 18,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_18_2",
+      "description": "机关术暴走和符文系统的存在，暗示更大的世界观背景。",
+      "status": "open",
+      "introduced_chapter": 18,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_19_0",
+      "description": "潘森在濒死之际化为通往真理的桥梁，暗示他可能成为关键转折点。",
+      "status": "open",
+      "introduced_chapter": 19,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_19_1",
+      "description": "曹操开始思考是否要亲自出手，终结这场命运的轮回。",
+      "status": "open",
+      "introduced_chapter": 19,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_19_2",
+      "description": "刘备的觉醒为后续剧情带来新的方向，他将面临更大的挑战。",
+      "status": "open",
+      "introduced_chapter": 19,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_20_0",
+      "description": "刘备在血镜中的觉醒是否成功？他是否真的消亡？",
+      "status": "open",
+      "introduced_chapter": 20,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_20_1",
+      "description": "血镜中出现的无数刘备镜像，暗示更大的世界观和潜在的多重人格设定。",
+      "status": "open",
+      "introduced_chapter": 20,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_20_2",
+      "description": "曹操计划亲自进入镜中，终结命运轮回，埋下下一章的高潮伏笔。",
+      "status": "open",
+      "introduced_chapter": 20,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_21_0",
+      "description": "现代物品如何影响古代世界，以及是否还有其他穿越者存在。",
+      "status": "open",
+      "introduced_chapter": 21,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_21_1",
+      "description": "血肉神座的秘密及其背后隐藏的更大力量。",
+      "status": "open",
+      "introduced_chapter": 21,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_21_2",
+      "description": "刘备是否真的死亡，还是进入了另一个世界。",
+      "status": "open",
+      "introduced_chapter": 21,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_21_3",
+      "description": "曹操的真实目的是否与更大的计划有关。",
+      "status": "open",
+      "introduced_chapter": 21,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_22_0",
+      "description": "梁培俊带着被子归来，暗示他可能掌握更多关于现实世界的秘密。",
+      "status": "open",
+      "introduced_chapter": 22,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_22_1",
+      "description": "曹操的回归，以及他眼中闪烁的异样光芒，暗示他也在寻找真实的自我。",
+      "status": "open",
+      "introduced_chapter": 22,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_22_2",
+      "description": "刘备已变成董卓，但内心仍存疑虑，为后续身份冲突埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 22,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_23_0",
+      "description": "梁培俊的出现，暗示他掌握着关于‘真实世界’的重要信息。",
+      "status": "open",
+      "introduced_chapter": 23,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_23_1",
+      "description": "潘森提到‘神的碎片’，暗示角色们的真正身份可能与神有关。",
+      "status": "open",
+      "introduced_chapter": 23,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_23_2",
+      "description": "董卓察觉到主角团队的行动，预示后续冲突升级。",
+      "status": "open",
+      "introduced_chapter": 23,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_23_3",
+      "description": "梁培俊提出质疑：‘真实’是否值得追求？埋下哲学性悬念。",
+      "status": "open",
+      "introduced_chapter": 23,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_24_0",
+      "description": "血镜残片中浮现另一个刘备，暗示可能存在更高层次的操控者或虚假的‘真实’。",
+      "status": "open",
+      "introduced_chapter": 24,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_24_1",
+      "description": "刘备献祭后，无数刘备身影同时睁眼，预示多重世界的觉醒。",
+      "status": "open",
+      "introduced_chapter": 24,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_25_0",
+      "description": "潘森的出现暗示主角与神的碎片有关，且他可能是另一个‘自我’。",
+      "status": "open",
+      "introduced_chapter": 25,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_25_1",
+      "description": "梁培俊的被子里隐藏着主角真正的身份线索，引发新的探索方向。",
+      "status": "open",
+      "introduced_chapter": 25,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_26_0",
+      "description": "潘森的出现，暗示主角需要面对更深层次的自我，可能涉及过去与未来的交织。",
+      "status": "open",
+      "introduced_chapter": 26,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_26_1",
+      "description": "梁培俊的被子仍是一个未解之谜，可能隐藏主角真正的身份。",
+      "status": "open",
+      "introduced_chapter": 26,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_26_2",
+      "description": "主角体内力量的觉醒，可能带来不可预知的后果。",
+      "status": "open",
+      "introduced_chapter": 26,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_27_0",
+      "description": "主角体内力量来自更强大的存在，暗示其真实身份可能远超已知设定。",
+      "status": "open",
+      "introduced_chapter": 27,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_27_1",
+      "description": "神秘黑影与未知声音的出现，暗示未来将有更大威胁或盟友登场。",
+      "status": "open",
+      "introduced_chapter": 27,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_27_2",
+      "description": "主角是否真正成为‘自己’仍存疑，为后续自我认知的探索留下悬念。",
+      "status": "open",
+      "introduced_chapter": 27,
+      "resolved_chapter": null,
+      "notes": ""
     }
   ],
   "used_creatives": [
@@ -87,19 +607,235 @@
       "used_in_chapter": 3,
       "description": "刘备成了曹操的替身",
       "impact": "刘备被迫在陌生身份中周旋，引发身份混乱和信任危机，同时让曹操借机布局夺取天下。"
+    },
+    {
+      "creative_type": "power_system_broken",
+      "used_in_chapter": 7,
+      "description": "天下诸侯皆被幻象控制",
+      "impact": "刘备试图寻找解法，却发现整个天下已被某种外力操纵，迫使他面对更大的谜题与挑战。"
+    },
+    {
+      "creative_type": "faction_shuffle",
+      "used_in_chapter": 7,
+      "description": "刘备竟成黄巾领袖",
+      "impact": "刘备在混乱中被迫扮演‘反贼’角色，与昔日盟友对峙，制造戏剧性冲突和身份反转。"
+    },
+    {
+      "creative_type": "cult_doctrine",
+      "used_in_chapter": 8,
+      "description": "青铜面具的真言",
+      "impact": "通过梦境或幻象，让刘备逐渐接触到这个邪教的核心教义，暗示他可能已被其操控。"
+    },
+    {
+      "creative_type": "betrayal_reveal",
+      "used_in_chapter": 8,
+      "description": "孔明的真实身份暴露",
+      "impact": "在一次密谈中，诸葛亮揭露自己并非单纯谋士，而是被黄巾教主选中的‘天命之人’，引发刘备的震惊与愤怒。"
+    },
+    {
+      "creative_type": "reverse_history",
+      "used_in_chapter": 9,
+      "description": "历史被重写：刘备成为黄巾领袖",
+      "impact": "刘备在章中经历一次“时间错位”事件，被迫接受这个惊人的反转，并开始寻找真正的自己，揭开黄巾起义背后的阴谋。"
+    },
+    {
+      "creative_type": "memory_manipulation",
+      "used_in_chapter": 9,
+      "description": "记忆迷宫中的真相之门",
+      "impact": "刘备在章末陷入幻境，通过与多个‘自己’的对话，揭示他并非完全被黄巾控制，而是拥有独立意志的容器。"
+    },
+    {
+      "creative_type": "zombie_outbreak",
+      "used_in_chapter": 10,
+      "description": "黄巾尸变",
+      "impact": "引入僵尸元素，制造恐怖氛围，并暗示刘备与黄巾军之间的深层联系。"
+    },
+    {
+      "creative_type": "multiverse_collision",
+      "used_in_chapter": 10,
+      "description": "异界刘备的怒火",
+      "impact": "在朝堂上突然出现另一个刘备，引发混乱，同时揭示不同宇宙中刘备的命运差异。"
+    },
+    {
+      "creative_type": "tech_disaster",
+      "used_in_chapter": 11,
+      "description": "青铜泪之灾：机械神明的觉醒",
+      "impact": "在一处黄巾军遗迹中，主角触发机关，引发一场灾难，导致大批人陷入机械化的异变状态。"
+    },
+    {
+      "creative_type": "time_loop",
+      "used_in_chapter": 11,
+      "description": "轮回之门：你永远在昨天",
+      "impact": "主角在一场突如其来的风暴中被卷入时间循环，每次醒来都回到大殿，必须解开真相才能逃离。"
+    },
+    {
+      "creative_type": "bureaucracy_chaos",
+      "used_in_chapter": 12,
+      "description": "朝廷官僚系统陷入自我循环",
+      "impact": "主角试图向朝廷求助，却发现连一封简单的奏折都要经过数百道审批，最终被迫自行解决问题。"
+    },
+    {
+      "creative_type": "prophecy_subverted",
+      "used_in_chapter": 12,
+      "description": "预言中的‘救世主’其实是叛徒",
+      "impact": "在第12章中，主角发现古代预言中提到的‘救世主’实为敌方密探，迫使他重新评估所有人物的真实性。"
+    },
+    {
+      "creative_type": "cult_doctrine",
+      "used_in_chapter": 13,
+      "description": "信徒崇拜‘我就是你’教义",
+      "impact": "刘备在游历途中遇到一群狂热信徒，他们试图将他拉入这个教派，并认为他才是那个唯一真正的‘朕’。"
+    },
+    {
+      "creative_type": "faction_shuffle",
+      "used_in_chapter": 13,
+      "description": "三国阵营突然倒戈",
+      "impact": "刘备在朝堂上被各路诸侯同时称帝，而每个诸侯都声称自己才是那个‘我就是你’的真身，导致天下大乱。"
+    },
+    {
+      "creative_type": "betrayal_reveal",
+      "used_in_chapter": 16,
+      "description": "关羽竟是幕后黑手",
+      "impact": "刘备与关羽对峙，镜中影像揭示出关羽的真实目的，令刘备陷入信任危机，甚至怀疑整个同盟的忠诚度。"
+    },
+    {
+      "creative_type": "reverse_history",
+      "used_in_chapter": 16,
+      "description": "三国未起，天下已定",
+      "impact": "刘备在铜镜中看到一个陌生的未来，醒来后发现自己身处一个没有三国的和平时代，试图找回自己的记忆和使命。"
+    },
+    {
+      "creative_type": "memory_manipulation",
+      "used_in_chapter": 17,
+      "description": "记忆如梦，谁是真我？",
+      "impact": "众人醒来后发现自己记不清过去，只记得一些扭曲的片段，逐渐陷入自我怀疑与身份混淆的恐慌。"
+    },
+    {
+      "creative_type": "power_system_broken",
+      "used_in_chapter": 17,
+      "description": "天下无主，群雄称帝",
+      "impact": "各地突然爆发割据浪潮，刘关张与曹操面临前所未有的混乱局面，必须寻找新的生存之道。"
+    },
+    {
+      "creative_type": "tech_disaster",
+      "used_in_chapter": 18,
+      "description": "机关术暴走",
+      "impact": "将科技元素融入古代设定，制造视觉奇观和动作场面，同时埋下更深层的阴谋伏笔。"
+    },
+    {
+      "creative_type": "ai_takeover",
+      "used_in_chapter": 18,
+      "description": "铜镜智脑觉醒",
+      "impact": "引入一个智能镜像作为反派，制造心理战与信任危机，推动主角寻找真相。"
+    },
+    {
+      "creative_type": "character_identity_swap",
+      "used_in_chapter": 19,
+      "description": "灵魂错位危机",
+      "impact": "四人各自在对方的身体里挣扎，试图找出恢复原状的方法，同时发现彼此隐藏的秘密。"
+    },
+    {
+      "creative_type": "time_loop",
+      "used_in_chapter": 19,
+      "description": "永恒的梦境循环",
+      "impact": "本章以循环结构展开，每一幕都重现第16章的情节，但细节逐渐变化，最终揭示循环背后的操控者。"
+    },
+    {
+      "creative_type": "bureaucracy_chaos",
+      "used_in_chapter": 20,
+      "description": "镜之官府：灵魂注册局",
+      "impact": "他在官僚体系中挣扎求生，同时发现“真实身份”只是系统设定，而他其实可以自由选择成为谁。"
+    },
+    {
+      "creative_type": "prophecy_subverted",
+      "used_in_chapter": 20,
+      "description": "天命之镜：预言反噬",
+      "impact": "通过古籍残卷揭示真相，刘备陷入自我否定，同时镜中人开始主动引导他走向毁灭或重生。"
+    },
+    {
+      "creative_type": "multiverse_collision",
+      "used_in_chapter": 21,
+      "description": "异界刘备：我是谁？我是谁？",
+      "impact": "刘备在混乱中遭遇不同版本的自己，被迫面对多重人格和宿命的撕裂，最终引发一场灵魂对决。"
+    },
+    {
+      "creative_type": "betrayal_reveal",
+      "used_in_chapter": 21,
+      "description": "镜中背叛：我不是你，你是谁？",
+      "impact": "刘备在关键时刻发现身边之人是镜中人，不得不重新评估所有信任与盟友，揭开背后更大阴谋。"
+    },
+    {
+      "creative_type": "reverse_history",
+      "used_in_chapter": 22,
+      "description": "刘备重生为董卓",
+      "impact": "他在洛阳城中展现出对权力的冷漠和对百姓的仁慈，让群雄震惊，引发对历史真实性的质疑。"
+    },
+    {
+      "creative_type": "zombie_outbreak",
+      "used_in_chapter": 22,
+      "description": "镜像丧尸：刘备的分身感染了世界",
+      "impact": "整个九州陷入恐慌，刘备不得不与自己的“死”分身作战，寻找解药。"
+    },
+    {
+      "creative_type": "tech_disaster",
+      "used_in_chapter": 24,
+      "description": "血镜崩坏引发时空乱流",
+      "impact": "在第24章中，血镜爆炸造成时空紊乱，刘备、曹操和其他角色不断穿梭于不同历史时期，引发混乱与笑料。"
+    },
+    {
+      "creative_type": "cult_doctrine",
+      "used_in_chapter": 24,
+      "description": "刘备被选为‘血神’祭品",
+      "impact": "在第24章中，刘备被神秘教徒绑架，面临生死抉择，同时揭露他体内可能隐藏着某种超自然力量。"
+    },
+    {
+      "creative_type": "memory_manipulation",
+      "used_in_chapter": 25,
+      "description": "所有人的记忆都被重写成三国历史",
+      "impact": "刘备等人醒来后发现自己身处乱世，却对之前的经历毫无印象，陷入身份混乱。"
+    },
+    {
+      "creative_type": "ai_takeover",
+      "used_in_chapter": 25,
+      "description": "血镜中的人格AI觉醒并控制角色",
+      "impact": "刘备等人逐渐发现自己的决定被一股神秘意志引导，最终意识到他们只是AI实验的一部分。"
+    },
+    {
+      "creative_type": "character_identity_swap",
+      "used_in_chapter": 26,
+      "description": "刘备的脑袋进了曹操的身体",
+      "impact": "在战场上突然出现两个‘刘备’和‘曹操’，引发混乱，同时让二人不得不面对彼此的处境与抉择。"
+    },
+    {
+      "creative_type": "power_system_broken",
+      "used_in_chapter": 26,
+      "description": "天命系统崩溃，众神失能",
+      "impact": "引发各方势力对‘无主世界’的争夺，推动剧情进入新的权力真空期。"
+    },
+    {
+      "creative_type": "faction_shuffle",
+      "used_in_chapter": 27,
+      "description": "敌人变成盟友",
+      "impact": "在幻境中，主角发现曾经敌对的势力竟与自己有相同的敌人，不得不联合对抗未知威胁。"
+    },
+    {
+      "creative_type": "multiverse_collision",
+      "used_in_chapter": 27,
+      "description": "异界刘备的逆袭",
+      "impact": "在幻境中，主角遭遇另一个自己，引发一场跨维度的对决，同时揭示出每个世界都有其独特的历史轨迹。"
     }
   ],
   "active_creative_types": [
-    "betrayal_reveal",
-    "identity_swap",
+    "zombie_outbreak",
+    "tech_disaster",
+    "cult_doctrine",
     "memory_manipulation",
-    "time_loop",
-    "multiverse_collision",
     "ai_takeover",
-    "prophecy_subverted",
-    "character_identity_swap"
+    "character_identity_swap",
+    "power_system_broken",
+    "faction_shuffle",
+    "multiverse_collision"
   ],
   "random_character_mode": false,
-  "random_character_count": 5,
-  "user_inspiration": "无"
+  "random_character_count": 5
 }
