@@ -3,16 +3,38 @@ import fs from 'fs';
 import path from 'path';
 import { notFound } from 'next/navigation';
 
-const DATA_DIR = path.join(process.cwd(), 'data/chapters');
+const NOVELS_DIR = path.join(process.cwd(), 'novels');
 
 interface PageProps {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ novel_id?: string }>;
 }
 
-async function getChapterData(chapterId: number) {
-  const filePath = path.join(DATA_DIR, `chapter_${String(chapterId).padStart(3, '0')}.md`);
+function findChapterFile(novelId: string, chapterId: number): string | null {
+  if (novelId) {
+    const newPath = path.join(NOVELS_DIR, novelId, 'chapters', `chapter_${String(chapterId).padStart(3, '0')}.md`);
+    if (fs.existsSync(newPath)) {
+      return newPath;
+    }
+  }
+  return null;
+}
+
+function findDataDir(novelId: string): string {
+  if (novelId) {
+    const newPath = path.join(NOVELS_DIR, novelId, 'chapters');
+    if (fs.existsSync(newPath)) {
+      return newPath;
+    }
+  }
+  return path.join(process.cwd(), 'data/chapters');
+}
+
+async function getChapterData(chapterId: number, novelId: string) {
+  const filePath = findChapterFile(novelId, chapterId);
+  const DATA_DIR = findDataDir(novelId);
   
-  if (!fs.existsSync(filePath)) {
+  if (!filePath) {
     return null;
   }
 
@@ -39,11 +61,12 @@ async function getChapterData(chapterId: number) {
   };
 }
 
-export default async function ReadPage({ params }: PageProps) {
+export default async function ReadPage({ params, searchParams }: PageProps) {
   const { id } = await params;
+  const { novel_id: novelId } = await searchParams;
   const chapterId = parseInt(id) || 1;
 
-  const chapterData = await getChapterData(chapterId);
+  const chapterData = await getChapterData(chapterId, novelId || '');
   
   if (!chapterData) {
     notFound();
