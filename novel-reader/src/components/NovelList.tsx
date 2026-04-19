@@ -65,18 +65,10 @@ export default function NovelList({ novels }: { novels: Novel[] }) {
                       </span>
                     </div>
                     {novel.subtitle && (
-                      <p className="text-gray-500 text-sm mb-3 line-clamp-1">
+                      <p className="text-gray-500 text-sm line-clamp-1">
                         {novel.subtitle}
                       </p>
                     )}
-                    <div className="flex items-center gap-4 text-xs text-gray-400">
-                      <span className="flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        更新于 {novel.last_updated ? new Date(novel.last_updated).toLocaleDateString('zh-CN') : '未知'}
-                      </span>
-                    </div>
                   </div>
                   
                   <div className="flex items-center gap-3">
