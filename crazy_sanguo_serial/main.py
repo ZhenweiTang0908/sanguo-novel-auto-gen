@@ -292,8 +292,10 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
         # 重置全局单例，强制创建新实例
         import chapter_writer as cw_module
         import story_state as ss_module
+        import summarizer as sum_module
         cw_module._chapter_writer = None
         ss_module._story_state = None
+        sum_module._summarizer = None
         
         # 确定实际 novel_id
         if current_novel_id:
@@ -872,30 +874,55 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
                 print("  暂无章节")
                 continue
             print("  删除章节:")
-            for c in chapters:
-                print(f"    {c}. chapter_{c:03d}.md")
+            for i, c in enumerate(chapters, 1):
+                print(f"    {i}. chapter_{c:03d}.md")
+            print("  0. 取消")
             sel = input("  输入编号(多个用逗号分隔): ").strip()
-            if not sel:
+            if not sel or sel == '0':
                 print("  已取消")
                 continue
+            
+            # 解析要删除的章节
+            to_delete = []
             for item in sel.split(','):
                 item = item.strip()
                 if item.isdigit():
                     idx = int(item) - 1
                     if 0 <= idx < len(chapters):
-                        ch = chapters[idx]
-                        path = story_state.storage.get_chapter_path(ch)
-                        if path.exists():
-                            path.unlink()
-                            sum_path = story_state.storage.get_chapter_summary_path(ch)
-                            if sum_path.exists():
-                                sum_path.unlink()
-                            print(f"  已删除: chapter_{ch:03d}.md")
-            # 更新 meta
-            remaining = story_state.storage.list_chapters()
-            story_state.meta.current_chapter = len(remaining)
-            story_state.save_all()
+                        to_delete.append(chapters[idx])
+            
+            if not to_delete:
+                print("  无效选择")
+                continue
+            
+            # 确认删除
+            print(f"\n  将删除以下 {len(to_delete)} 个章节:")
+            for ch in to_delete:
+                print(f"    - chapter_{ch:03d}.md")
+            confirm = input("\n  确认删除？[y/N]: ").strip()
+            if confirm.lower() != 'y':
+                print("  已取消")
+                continue
+            
+            # 执行删除
+            for ch in to_delete:
+                path = story_state.storage.get_chapter_path(ch)
+                if path.exists():
+                    path.unlink()
+                sum_path = story_state.storage.get_chapter_summary_path(ch)
+                if sum_path.exists():
+                    sum_path.unlink()
+                print(f"  ✅ 已删除: chapter_{ch:03d}.md")
+            
+            # 重新加载状态
             story_state.load_all()
+            
+            # 重新统计章节
+            remaining = story_state.storage.list_chapters()
+            story_state.meta.current_chapter = len(remaining) if remaining else 0
+            story_state.save_all()
+            
+            print(f"\n  删除完成，剩余 {len(remaining)} 个章节")
 
         elif choice == '12':
             print("\n🔄 重新初始化世界观")

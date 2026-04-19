@@ -44,7 +44,7 @@
     "identity": "女性，原为董卓婢女，后潜入蜀地",
     "current_location": "初始地点",
     "goal": "待探索",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []

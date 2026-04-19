@@ -622,7 +622,8 @@ class ChapterWriter:
             world_overview=world_info,
             main_conflict=main_conflict,
             existing_characters=self.story_state.characters,
-            count=count
+            count=count,
+            forbidden_names=list(self.story_state.characters.keys())
         )
 
         response = self.llm.generate(prompt, temperature=0.9)
@@ -1014,7 +1015,7 @@ class ChapterWriter:
                             self.story_state.add_character(
                                 name=name,
                                 identity=char_data.get('identity', '未知'),
-                                location=char_data.get('current_location', '未知'),
+                                current_location=char_data.get('current_location', '未知'),
                                 goal=char_data.get('goal', '待探索'),
                                 role=role
                             )
@@ -1177,10 +1178,11 @@ class ChapterWriter:
         """AI修改世界观（小幅调整）"""
         try:
             current_world = ""
+            factions = []
             if self.story_state.story_bible:
                 current_world = self.story_state.story_bible.get('world_overview', '')
+                factions = self.story_state.story_bible.get('factions', [])
             
-            factions = self.story_state.story_bible.get('factions', [])
             factions_text = "\n".join([f"- {f.get('name', '未知')}" for f in factions]) if factions else "无"
             
             chars_count = len(self.story_state.characters)

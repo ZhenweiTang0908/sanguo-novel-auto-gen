@@ -882,7 +882,8 @@ class PromptBuilder:
         world_overview: str,
         main_conflict: str,
         existing_characters: Dict[str, Any],
-        count: int = 1
+        count: int = 1,
+        forbidden_names: Optional[List[str]] = None
     ) -> str:
         """
         构建随机生成角色的 Prompt
@@ -892,6 +893,7 @@ class PromptBuilder:
             main_conflict: 主线冲突
             existing_characters: 已存在的角色
             count: 生成角色数量
+            forbidden_names: 禁止使用的角色名列表
         """
         def format_char(name: str, char) -> str:
             if hasattr(char, 'identity'):
@@ -901,6 +903,11 @@ class PromptBuilder:
         chars_text = "\n".join([
             format_char(name, char) for name, char in existing_characters.items()
         ]) or "（暂无角色）"
+        
+        # 生成禁止名单
+        if forbidden_names is None:
+            forbidden_names = list(existing_characters.keys())
+        forbidden_list = ", ".join(forbidden_names) if forbidden_names else "（暂无）"
 
         return f"""# 任务：随机生成新角色
 
@@ -915,13 +922,17 @@ class PromptBuilder:
 ## 已存在角色
 {chars_text}
 
+## ⚠️ 硬性禁止
+**绝对禁止**使用以下已存在角色的名字：
+{forbidden_list}
+
 ## 要求
 
 1. 生成 {count} 个新角色
 2. 角色身份要与世界观和主线冲突相符
-3. 可以是主演或配角
+3. 新角色**不要与已存在角色重复**
 4. 每个角色需要有：
-   - name: 角色名
+   - name: 角色名（**不能与上述禁止名单重复**）
    - identity: 身份设定
    - current_location: 当前位置
    - goal: 当前目标
@@ -935,7 +946,7 @@ class PromptBuilder:
 ```json
 [
   {{
-    "name": "角色名",
+    "name": "角色名（不能与禁止名单重复）",
     "identity": "身份设定",
     "current_location": "当前位置",
     "goal": "当前目标",

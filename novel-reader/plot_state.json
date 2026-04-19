@@ -1785,6 +1785,54 @@
       "introduced_chapter": 81,
       "resolved_chapter": null,
       "notes": ""
+    },
+    {
+      "thread_id": "hook_83_0",
+      "description": "血沼之神竟是诸葛亮，暗示诸葛亮可能掌握关键真相或拥有特殊身份。",
+      "status": "open",
+      "introduced_chapter": 83,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_84_0",
+      "description": "血沼之神的预言：刘备无法逃脱宿命，暗示未来将有更大冲突。",
+      "status": "open",
+      "introduced_chapter": 84,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_84_1",
+      "description": "碎镜婆婆的出现，暗示更高层次的叙事力量或规则存在。",
+      "status": "open",
+      "introduced_chapter": 84,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_84_2",
+      "description": "关羽的回归与誓言提醒，预示刘备将面对更深层次的道德与情感考验。",
+      "status": "open",
+      "introduced_chapter": 84,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_87_0",
+      "description": "血沼深处浮现的模糊身影——诸葛亮，她似乎在操控一切，暗示她可能掌握更大的秘密。",
+      "status": "open",
+      "introduced_chapter": 87,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_87_1",
+      "description": "黑暗中睁开的猩红眼睛，暗示有未知的强敌或力量正在暗中观察并准备行动。",
+      "status": "open",
+      "introduced_chapter": 87,
+      "resolved_chapter": null,
+      "notes": ""
     }
   ],
   "used_creatives": [
@@ -2543,18 +2591,54 @@
       "used_in_chapter": 81,
       "description": "刘备变成曹操，曹操变成刘备？",
       "impact": "刘备和曹操在血沼中意外互换身体，引发一场身份混乱的闹剧，两人被迫以对方的身份继续斗争。"
+    },
+    {
+      "creative_type": "power_struggle",
+      "used_in_chapter": 83,
+      "description": "真假帝王之争",
+      "impact": "本章可展开刘备与真正曹操的对峙，揭示权力背后的阴谋，同时引入诸侯势力的介入。"
+    },
+    {
+      "creative_type": "hidden_heir",
+      "used_in_chapter": 83,
+      "description": "血脉之谜",
+      "impact": "通过梦境或神秘人物揭示刘备的真正出身，引发关于皇权继承的争议与动荡。"
+    },
+    {
+      "creative_type": "betrayal",
+      "used_in_chapter": 84,
+      "description": "信任的裂痕",
+      "impact": "通过一封密信或一场突如其来的袭击，揭露背叛者身份，推动刘备在混乱中寻找真正的盟友。"
+    },
+    {
+      "creative_type": "faction_conflict",
+      "used_in_chapter": 84,
+      "description": "血沼中的派系斗争",
+      "impact": "引入多个派系争夺血沼控制权，迫使刘备选择立场，进一步加深他对自身命运的思考。"
+    },
+    {
+      "creative_type": "secret_alliance",
+      "used_in_chapter": 87,
+      "description": "暗影中的盟约",
+      "impact": "引入一名神秘人物，揭露刘备与曹操之间可能存在某种不为人知的合作或试探性结盟。"
+    },
+    {
+      "creative_type": "identity_reveal",
+      "used_in_chapter": 87,
+      "description": "血沼中的双面真相",
+      "impact": "通过幻象揭示刘备身份的不确定性，引发他对自身命运的怀疑，并为后续寻找真正身世埋下伏笔。"
     }
   ],
   "active_creative_types": [
-    "cult_doctrine",
-    "multiverse_collision",
-    "faction_shuffle",
-    "time_loop",
-    "betrayal_reveal",
-    "prophecy_subverted",
     "bureaucracy_chaos",
     "zombie_outbreak",
-    "character_identity_swap"
+    "character_identity_swap",
+    "power_struggle",
+    "hidden_heir",
+    "betrayal",
+    "faction_conflict",
+    "secret_alliance",
+    "identity_reveal"
   ],
   "random_character_mode": false,
   "random_character_count": 5
