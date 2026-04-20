@@ -164,7 +164,7 @@
     "identity": "洛阳城中隐秘的琴师，实为前朝皇室血脉，掌握着一部失传的《天机录》残卷",
     "current_location": "洛阳城西的幽篁院",
     "goal": "寻找黄巾起义背后的真正幕后黑手，并揭露‘天机阁’与玄蛇盟的联系",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -184,7 +184,7 @@
     "identity": "前朝御史之子，现为玄蛇盟的密探，负责潜入各势力内部收集机密情报",
     "current_location": "洛阳城外的隐秘据点",
     "goal": "寻找黄巾起义背后真正的幕后黑手，并揭露天机阁与玄蛇盟之间的秘密交易",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -235,6 +235,66 @@
     "current_location": "洛阳城外的隐秘山洞",
     "goal": "揭露黄巾起义背后的真正幕后黑手，并在三国之间保持微妙平衡",
     "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "沈云岫": {
+    "name": "沈云岫",
+    "identity": "前朝御史之女，现为玄蛇盟中立派的密探，掌握多方势力间的关键情报与叛徒名单",
+    "current_location": "洛阳城内暗巷深处的密室",
+    "goal": "揭露黄巾起义背后的真正幕后黑手，并在各方势力中维持微妙平衡",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "沈清岚": {
+    "name": "沈清岚",
+    "identity": "前朝御史之女，现为玄蛇盟暗中联络人，掌握黄巾起义前朝廷内部的密信与叛徒名单",
+    "current_location": "洛阳城内一处隐秘宅邸",
+    "goal": "揭露黄巾起义背后的真正幕后黑手，阻止更大的阴谋发生",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "沈星阑": {
+    "name": "沈星阑",
+    "identity": "前朝御史之女，现为青鸾阁的密探，代号‘玄鸟’，负责潜入魏国高层搜集机密情报",
+    "current_location": "洛阳城内，混入魏国官员府邸",
+    "goal": "查明魏国军械库的秘密，揭露曹操是否与玄蛇盟有暗中交易",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "沈玄枫": {
+    "name": "沈玄枫",
+    "identity": "前朝御史之子，现为玄蛇盟暗中策士，专司情报传递与阴谋布局",
+    "current_location": "洛阳城暗巷之中，常在夜色中穿梭于各方势力之间",
+    "goal": "寻找黄巾起义背后的真正幕后黑手，并设法阻止其统一九州的计划",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "沈清泓": {
+    "name": "沈清泓",
+    "identity": "前朝御史之子，现为青鸾阁的密探，代号‘玄蛇’，专司刺探玄蛇盟与三国之间的暗中交易",
+    "current_location": "洛阳城内一处隐秘酒楼‘醉鹤轩’",
+    "goal": "获取玄蛇盟与魏国高层勾结的证据，并将其交给蜀国势力以打破四角格局",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "苏明渊": {
+    "name": "苏明渊",
+    "identity": "洛阳城中神秘的铜镜师，实为前朝皇室暗卫后裔，掌握着能映照人心的‘心镜’秘术。",
+    "current_location": "洛阳城西巷的铜镜铺内",
+    "goal": "寻找黄巾起义真正幕后黑手的线索，并防止‘心镜’落入玄蛇盟之手。",
+    "status": "alive",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
