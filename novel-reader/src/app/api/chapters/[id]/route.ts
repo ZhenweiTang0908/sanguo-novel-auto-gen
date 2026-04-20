@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
-import { findChapterPath, getNovelDataDir } from '@/lib/paths';
+import { findChapterPath, getNovelDataDir, getChapterFileName } from '@/lib/paths';
 
 export async function GET(
   request: Request,
@@ -13,6 +13,13 @@ export async function GET(
     const novelId = searchParams.get('novel_id') || '';
     
     const chapterId = parseInt(id);
+    if (isNaN(chapterId) || chapterId <= 0) {
+      return NextResponse.json(
+        { error: 'Invalid chapter ID' },
+        { status: 400 }
+      );
+    }
+
     const filePath = findChapterPath(novelId, chapterId);
     const DATA_DIR = getNovelDataDir(novelId);
     
@@ -34,8 +41,8 @@ export async function GET(
       return true;
     });
     
-    const prevPath = path.join(DATA_DIR, `chapter_${String(chapterId - 1).padStart(3, '0')}.md`);
-    const nextPath = path.join(DATA_DIR, `chapter_${String(chapterId + 1).padStart(3, '0')}.md`);
+    const prevPath = path.join(DATA_DIR, getChapterFileName(chapterId - 1));
+    const nextPath = path.join(DATA_DIR, getChapterFileName(chapterId + 1));
     
     return NextResponse.json({
       id: chapterId,

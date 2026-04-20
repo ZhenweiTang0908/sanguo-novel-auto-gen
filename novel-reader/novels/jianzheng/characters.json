@@ -14,7 +14,7 @@
     "identity": "键盘军团幕后指挥",
     "current_location": "初始地点",
     "goal": "待探索",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -24,7 +24,7 @@
     "identity": "官方媒体联盟首领",
     "current_location": "初始地点",
     "goal": "待探索",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -84,7 +84,7 @@
     "identity": "前科技公司高管，现为匿名网络策展人",
     "current_location": "虚拟现实社区‘元界’的暗区",
     "goal": "揭露大企业与政府之间的数据交易黑幕，重塑网络自由度",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -96,6 +96,96 @@
     "goal": "揭露企业与政府勾结的证据，推动舆论变革",
     "status": "alive",
     "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "影锋": {
+    "name": "影锋",
+    "identity": "前政府网络安全部门技术顾问，现为独立网络安全分析师",
+    "current_location": "城市边缘的地下数据中心",
+    "goal": "揭露企业与政府之间的非法数据交易链条",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "影瞳": {
+    "name": "影瞳",
+    "identity": "前政府网络安全部门高级分析师，现为独立舆论监测与反制专家",
+    "current_location": "地下数据交易市场‘暗礁’的隐秘据点",
+    "goal": "揭露企业与政府勾结的证据，同时保护关键信息不被滥用",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "影钥": {
+    "name": "影钥",
+    "identity": "前政府网络安全部门高级数据分析师，现为地下信息交换平台‘暗钥’的匿名创始人",
+    "current_location": "城市边缘的隐秘数据中心",
+    "goal": "建立一个不受任何势力控制的信息自由流通系统，打破舆论操控的闭环",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "影织": {
+    "name": "影织",
+    "identity": "前科技公司算法工程师，现为匿名网络舆论操控者",
+    "current_location": "暗网虚拟城市‘镜像城’",
+    "goal": "重塑信息流，让真实与虚假在舆论中达成平衡",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "影络": {
+    "name": "影络",
+    "identity": "前政府网络安全部门信息架构师，现为地下信息流通网络‘暗网桥’的匿名建造者",
+    "current_location": "虚拟与现实交界处的隐秘服务器群",
+    "goal": "在官方与资本的双重围剿中，建立一个不受监控的信息自由通道",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "零点": {
+    "name": "零点",
+    "identity": "前政府网络舆情监测员，现为独立信息中立调解者",
+    "current_location": "虚拟城市‘云枢’的地下信息中转站",
+    "goal": "在键盘军团与官方媒体之间建立信息平衡，防止舆论失控",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "影纹": {
+    "name": "影纹",
+    "identity": "前社交媒体平台算法架构师，现为匿名舆论操控者，擅长利用情绪化内容引导公众意见走向",
+    "current_location": "暗网论坛‘回声谷’的虚拟服务器内",
+    "goal": "在官方与资本的双重压迫下，寻找一种不被察觉的舆论反击方式",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "影链": {
+    "name": "影链",
+    "identity": "前政府网络安全部门信息架构师，现为地下信息加密与传输技术专家",
+    "current_location": "暗网桥深处的隐秘服务器节点",
+    "goal": "构建无法被追踪的信息传递网络，保护言论自由不受监控",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "影焰": {
+    "name": "影焰",
+    "identity": "前社交媒体平台内容审核员，现为匿名舆论煽动者，擅长利用热点事件制造舆论裂变",
+    "current_location": "虚拟社交网络暗区",
+    "goal": "在小聪明与键盘军团之间建立独立舆论支点，推动信息自由流动",
+    "status": "alive",
+    "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
   }

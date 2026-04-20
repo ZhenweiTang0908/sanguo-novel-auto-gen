@@ -1,9 +1,12 @@
 import ChapterList from '@/components/ChapterList';
 import NovelList from '@/components/NovelList';
+import JokeList from '@/components/JokeList';
 import { ChaptersResponse, NovelListResponse, Novel } from '@/types/novel';
+import { JOKE_LIST_PATH } from '@/lib/paths';
 import fs from 'fs';
 import path from 'path';
-import { getMetaPath, getNovelDataDir, LEGACY_DATA_DIR, LEGACY_META_PATH, NOVEL_LIST_PATH } from '@/lib/paths';
+import Link from 'next/link';
+import { getMetaPath, getNovelDataDir, LEGACY_DATA_DIR, LEGACY_META_PATH, NOVEL_LIST_PATH, getJokeCollectionMetaPath, listJokeCollections } from '@/lib/paths';
 
 interface ChapterInfo {
   id: number;
@@ -143,19 +146,80 @@ async function getNovels(): Promise<NovelListResponse> {
   }
 }
 
+async function getJokes() {
+  try {
+    const collectionIds = listJokeCollections();
+    const collections = [];
+    
+    for (const id of collectionIds) {
+      const metaPath = getJokeCollectionMetaPath(id);
+      if (fs.existsSync(metaPath)) {
+        const meta = JSON.parse(fs.readFileSync(metaPath, 'utf-8'));
+        collections.push({
+          id: meta.id,
+          title: meta.title,
+          created_at: meta.created_at,
+          current_count: meta.current_count || 0
+        });
+      }
+    }
+    
+    return collections;
+  } catch (error) {
+    console.error('Error reading jokes:', error);
+    return [];
+  }
+}
+
 export const revalidate = 30;
 
 interface HomeProps {
-  searchParams: Promise<{ novel_id?: string }>;
+  searchParams: Promise<{ novel_id?: string; joke_id?: string; tab?: string }>;
 }
 
 export default async function Home({ searchParams }: HomeProps) {
   const params = await searchParams;
   const novelId = params.novel_id || '';
+  const tab = params.tab || 'novels';
+  
+  if (tab === 'jokes') {
+    const jokeData = await getJokes();
+    return <JokeList collections={jokeData} />;
+  }
   
   if (!novelId) {
     const novelData = await getNovels();
-    return <NovelList novels={novelData.novels} />;
+    return (
+      <div>
+        <div className="flex gap-2 px-6 pt-6 max-w-4xl mx-auto">
+          <Link 
+            href="/" 
+            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+              tab !== 'jokes' 
+                ? 'bg-orange-500 text-white' 
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
+          >
+            📖 小说
+          </Link>
+          <Link 
+            href="/?tab=jokes" 
+            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+              tab === 'jokes' 
+                ? 'bg-yellow-500 text-white' 
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
+          >
+            😄 笑话集
+          </Link>
+        </div>
+        {tab === 'jokes' ? (
+          <JokeList collections={await getJokes()} />
+        ) : (
+          <NovelList novels={novelData.novels} />
+        )}
+      </div>
+    );
   }
   
   const data = await getChapters(novelId);

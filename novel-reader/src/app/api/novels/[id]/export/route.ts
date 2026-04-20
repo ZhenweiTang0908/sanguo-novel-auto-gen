@@ -1,9 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
-
-const NOVELS_DIR = path.join(process.cwd(), 'novels');
-const LEGACY_DIR = path.join(process.cwd());
+import { isValidNovelId, getMetaPath, getNovelDataDir } from '@/lib/paths';
 
 export async function GET(
   request: Request,
@@ -12,24 +10,22 @@ export async function GET(
   try {
     const { id: novelId } = await params;
     
-    let meta = null;
-    let chaptersDir = '';
-    
-    const newMetaPath = path.join(NOVELS_DIR, novelId, 'meta.json');
-    
-    if (fs.existsSync(newMetaPath)) {
-      meta = JSON.parse(fs.readFileSync(newMetaPath, 'utf-8'));
-      chaptersDir = path.join(NOVELS_DIR, novelId, 'chapters');
-    } else {
-      const legacyMetaPath = path.join(LEGACY_DIR, 'meta.json');
-      if (fs.existsSync(legacyMetaPath)) {
-        meta = JSON.parse(fs.readFileSync(legacyMetaPath, 'utf-8'));
-        chaptersDir = path.join(LEGACY_DIR, 'data', 'chapters');
-      }
+    if (!isValidNovelId(novelId)) {
+      return NextResponse.json({ error: 'Invalid novel ID' }, { status: 400 });
     }
     
-    if (!meta || !chaptersDir) {
+    const metaPath = getMetaPath(novelId);
+    const dataDir = getNovelDataDir(novelId);
+    
+    if (!fs.existsSync(metaPath)) {
       return NextResponse.json({ error: 'Novel not found' }, { status: 404 });
+    }
+    
+    let meta;
+    try {
+      meta = JSON.parse(fs.readFileSync(metaPath, 'utf-8'));
+    } catch {
+      return NextResponse.json({ error: 'Invalid meta.json' }, { status: 500 });
     }
     
     const title = meta.story_title || '未命名小说';
@@ -43,7 +39,7 @@ export async function GET(
     markdown += `---\n\n`;
     
     for (let i = 1; i <= currentChapter; i++) {
-      const chapterPath = path.join(chaptersDir, `chapter_${String(i).padStart(3, '0')}.md`);
+      const chapterPath = path.join(dataDir, `chapter_${String(i).padStart(3, '0')}.md`);
       
       if (fs.existsSync(chapterPath)) {
         const content = fs.readFileSync(chapterPath, 'utf-8');

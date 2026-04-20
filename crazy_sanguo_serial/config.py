@@ -49,6 +49,7 @@ class StorageConfig:
     base_dir: str = "novel-reader"
     novels_dir: str = "novel-reader/novels"
     novel_list_file: str = "novel-reader/novel-list.json"
+    jokes_dir: str = "jokes"
     
     def get_novel_paths(self, novel_id: str) -> dict:
         """获取指定小说的路径配置"""

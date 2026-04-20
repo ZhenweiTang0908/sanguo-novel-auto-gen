@@ -180,6 +180,7 @@ class PromptBuilder:
         if reference_texts:
             prompt += """
 ## 📚 参考语料（可学习其风格）
+学习这个例子，融入到你的写作中
 
 """
             for i, ref in enumerate(reference_texts, 1):

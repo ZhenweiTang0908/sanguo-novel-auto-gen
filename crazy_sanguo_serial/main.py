@@ -385,7 +385,8 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
         print("  11. 删除章节")
         print("  12. 重新初始化世界观")
         print("  13. 删除小说")
-        print("  14. 退出")
+        print("  14. 笑话集创作")
+        print("  15. 退出")
 
         try:
             choice = input("\n  > ").strip()
@@ -1044,6 +1045,9 @@ def run_interactive(storage, novel_manager, initial_novel_id, default_reference:
             print(f"  已删除: {target_id}")
 
         elif choice == '14':
+            run_joke_collections()
+
+        elif choice == '15':
             print("  再见！")
             break
 
@@ -1122,6 +1126,269 @@ def run_chapters(
     # 重新加载状态
     story_state.load_all()
     show_status(story_state)
+
+
+def run_joke_collections():
+    """笑话集创作入口"""
+    from joke_manager import get_joke_manager
+    
+    joke_manager = get_joke_manager()
+    
+    print("\n😄 笑话集创作")
+    print("-" * 50)
+    
+    while True:
+        collections = joke_manager.list_collections()
+        
+        print("\n请选择操作：")
+        print("  1. 创建新笑话集")
+        print("  2. 生成新组笑话")
+        print("  3. 管理笑话集")
+        print("  4. 列出所有笑话集")
+        print("  0. 返回上级菜单")
+        
+        try:
+            choice = input("\n  > ").strip()
+        except (EOFError, KeyboardInterrupt):
+            print("\n  已取消")
+            return
+        
+        if choice == '0':
+            return
+        
+        elif choice == '1':
+            try:
+                print("\n🆕 创建新笑话集")
+                title = input("  笑话集标题: ").strip()
+                if not title:
+                    print("  标题不能为空")
+                    continue
+                
+                print("\n选择关键词来源：")
+                print("  1. 用户指定（自己输入关键词）")
+                print("  2. AI灵感生成")
+                kw_source = input("  > ").strip()
+                
+                keywords = []
+                if kw_source == '1':
+                    kw_input = input("  输入关键词（逗号分隔）: ").strip()
+                    keywords = [k.strip() for k in kw_input.split(',') if k.strip()]
+                    if not keywords:
+                        print("  关键词不能为空")
+                        continue
+                elif kw_source == '2':
+                    hint = input("  输入引导词（直接回车使用默认）: ").strip()
+                    print("\n🔧 AI正在生成关键词...")
+                    keywords = joke_manager.generate_keywords(hint)
+                    print(f"  生成的关键词: {', '.join(keywords)}")
+                    
+                    print("\n  是否使用这些关键词？[y/N]")
+                    confirm = input("  > ").strip()
+                    if confirm.lower() != 'y':
+                        # 允许用户修改
+                        print("  可输入修改后的关键词（逗号分隔，直接回车使用AI生成的）:")
+                        kw_input = input("  > ").strip()
+                        if kw_input.strip():
+                            keywords = [k.strip() for k in kw_input.split(',') if k.strip()]
+                        if not keywords:
+                            keywords = joke_manager.generate_keywords(hint)
+                else:
+                    print("  无效选择")
+                    continue
+                
+                print("\n🎨 AI正在生成创意方向...")
+                creative_direction = joke_manager.generate_creative_direction(keywords)
+                print(f"  创意方向: {creative_direction}")
+                
+                print("\n  确认创建？[y/N]")
+                confirm = input("  > ").strip()
+                if confirm.lower() != 'y':
+                    print("  已取消")
+                    continue
+                
+                success, result = joke_manager.create_collection(
+                    title=title,
+                    keywords=keywords,
+                    creative_direction=creative_direction
+                )
+                
+                if success:
+                    print(f"\n✅ 笑话集创建成功！")
+                    print(f"   ID: {result}")
+                    print(f"   关键词: {', '.join(keywords)}")
+                    print(f"   风格: {creative_direction}")
+                else:
+                    print(f"\n❌ 创建失败: {result}")
+                    
+            except (EOFError, KeyboardInterrupt):
+                print("\n  已取消")
+        
+        elif choice == '2':
+            collections = joke_manager.list_collections()
+            if not collections:
+                print("\n  暂无笑话集，请先创建")
+                continue
+            
+            print("\n📚 选择笑话集：")
+            for i, c in enumerate(collections, 1):
+                info = joke_manager.get_collection_info(c.get('id', ''))
+                group_count = info.get('group_count', 0) if info else 0
+                print(f"  {i}. {c.get('title', c.get('id'))} ({group_count}组)")
+            print("  0. 取消")
+            
+            sel = input("  > ").strip()
+            if sel == '0' or not sel:
+                continue
+            
+            if not sel.isdigit():
+                print("  无效选择")
+                continue
+            
+            idx = int(sel) - 1
+            if idx < 0 or idx >= len(collections):
+                print("  无效选择")
+                continue
+            
+            collection_id = collections[idx].get('id', '')
+            if not collection_id:
+                print("  无效选择")
+                continue
+            
+            while True:
+                progress = joke_manager.get_current_progress(collection_id)
+                
+                print(f"\n  当前进度: 第{progress['next_group']}组 (共{progress['group_count']}组, {progress['total_jokes']}个笑话)")
+                
+                print("\n  1. 生成新组（10个）")
+                print("  2. 生成多组")
+                print("  3. 设置每组数量")
+                print("  0. 返回")
+                
+                sub_sel = input("  > ").strip()
+                
+                if sub_sel == '0':
+                    break
+                elif sub_sel == '1':
+                    print(f"\n🔧 正在生成笑话...")
+                    success, content, summary = joke_manager.generate_jokes(collection_id, 10)
+                    
+                    if success:
+                        print(f"\n✅ 第{summary['joke_group']}组生成成功！")
+                        print(f"   主题: {', '.join(summary.get('themes', [])[:3])}")
+                        
+                        print("\n--- 笑话预览 ---")
+                        preview_lines = content.split('\n')[:30]
+                        print('\n'.join(preview_lines))
+                        if len(content.split('\n')) > 30:
+                            print("\n... (省略更多)")
+                        print("--- 预览结束 ---\n")
+                    else:
+                        print(f"\n❌ 生成失败: {content}")
+                
+                elif sub_sel == '2':
+                    batch_input = input("  输入要生成的组数（1-10）: ").strip()
+                    if not batch_input.isdigit():
+                        print("  无效输入")
+                        continue
+                    batch_count = min(max(int(batch_input), 1), 10)
+                    
+                    for i in range(batch_count):
+                        print(f"\n🔧 正在生成第{i+1}/{batch_count}组...")
+                        success, content, summary = joke_manager.generate_jokes(collection_id, 10)
+                        if success:
+                            print(f"  ✅ 第{summary['joke_group']}组完成")
+                        else:
+                            print(f"  ❌ 第{i+1}组失败: {content}")
+                            break
+                    
+                    print(f"\n✨ 批量生成完成！")
+                    info = joke_manager.get_collection_info(collection_id)
+                    print(f"   当前进度: {info.get('group_count', 0)}组 ({info.get('total_jokes', 0)}个笑话)")
+                
+                elif sub_sel == '3':
+                    count_input = input("  输入每组数量（5-20）: ").strip()
+                    if count_input.isdigit():
+                        count = min(max(int(count_input), 5), 20)
+                        print(f"\n🔧 正在生成{count}个笑话...")
+                        success, content, summary = joke_manager.generate_jokes(collection_id, count)
+                        
+                        if success:
+                            print(f"\n✅ 第{summary['joke_group']}组生成成功！")
+                            print(f"   主题: {', '.join(summary.get('themes', [])[:3])}")
+                        else:
+                            print(f"\n❌ 生成失败: {content}")
+                    else:
+                        print("  无效输入")
+                
+                else:
+                    print("  无效选择")
+        
+        elif choice == '3':
+            collections = joke_manager.list_collections()
+            if not collections:
+                print("\n  暂无笑话集")
+                continue
+            
+            print("\n🗂️ 管理笑话集：")
+            for i, c in enumerate(collections, 1):
+                info = joke_manager.get_collection_info(c.get('id', ''))
+                group_count = info.get('group_count', 0) if info else 0
+                print(f"  {i}. {c.get('title', c.get('id'))} ({group_count}组)")
+            print("  0. 取消")
+            
+            sel = input("  > ").strip()
+            if sel == '0' or not sel:
+                continue
+            
+            if sel.isdigit():
+                idx = int(sel) - 1
+                if 0 <= idx < len(collections):
+                    collection_id = collections[idx].get('id', '')
+                    if not collection_id:
+                        print("  无效选择")
+                        continue
+                    
+                    info = joke_manager.get_collection_info(collection_id)
+                    if not info:
+                        print("  无法获取笑话集信息")
+                        continue
+                    
+                    print(f"\n📖 {info.get('title', '未知')}")
+                    print(f"   关键词: {', '.join(info.get('keywords', []))}")
+                    print(f"   风格: {info.get('creative_direction', '未知')}")
+                    print(f"   进度: {info.get('group_count', 0)}组 ({info.get('total_jokes', 0)}个笑话)")
+                    
+                    print("\n操作：")
+                    print("  1. 删除此笑话集")
+                    print("  0. 返回")
+                    
+                    op = input("  > ").strip()
+                    if op == '1':
+                        confirm = input("  确认删除？[y/N]: ").strip()
+                        if confirm.lower() == 'y':
+                            joke_manager.delete_collection(collection_id)
+                            print("  已删除")
+                    elif op == '0':
+                        continue
+        
+        elif choice == '4':
+            collections = joke_manager.list_collections()
+            if not collections:
+                print("\n  暂无笑话集")
+                continue
+            
+            print("\n📚 所有笑话集：")
+            for c in collections:
+                collection_id = c.get('id', '')
+                info = joke_manager.get_collection_info(collection_id) if collection_id else None
+                if not info:
+                    continue
+                title = info.get('title', c.get('id', '未知'))
+                keywords_display = ', '.join(info.get('keywords', [])[:5])
+                print(f"  • {title}")
+                print(f"    关键词: {keywords_display}")
+                print(f"    进度: {info.get('group_count', 0)}组 ({info.get('total_jokes', 0)}个)")
+                print()
 
 
 def main():
