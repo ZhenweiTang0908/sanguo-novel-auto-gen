@@ -1,35 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
-
-const NOVELS_DIR = path.join(process.cwd(), 'novels');
-const LEGACY_DATA_DIR = path.join(process.cwd(), 'data/chapters');
-
-function findChapterFile(novelId: string, chapterId: number): string | null {
-  // 优先检查新位置
-  if (novelId) {
-    const newPath = path.join(NOVELS_DIR, novelId, 'chapters', `chapter_${String(chapterId).padStart(3, '0')}.md`);
-    if (fs.existsSync(newPath)) {
-      return newPath;
-    }
-  }
-  // 检查 legacy 位置
-  const legacyPath = path.join(LEGACY_DATA_DIR, `chapter_${String(chapterId).padStart(3, '0')}.md`);
-  if (fs.existsSync(legacyPath)) {
-    return legacyPath;
-  }
-  return null;
-}
-
-function findDataDir(novelId: string): string {
-  if (novelId) {
-    const newPath = path.join(NOVELS_DIR, novelId, 'chapters');
-    if (fs.existsSync(newPath)) {
-      return newPath;
-    }
-  }
-  return LEGACY_DATA_DIR;
-}
+import { findChapterPath, getNovelDataDir } from '@/lib/paths';
 
 export async function GET(
   request: Request,
@@ -41,8 +13,8 @@ export async function GET(
     const novelId = searchParams.get('novel_id') || '';
     
     const chapterId = parseInt(id);
-    const filePath = findChapterFile(novelId, chapterId);
-    const DATA_DIR = findDataDir(novelId);
+    const filePath = findChapterPath(novelId, chapterId);
+    const DATA_DIR = getNovelDataDir(novelId);
     
     if (!filePath) {
       return NextResponse.json(

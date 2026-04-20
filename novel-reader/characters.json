@@ -24,7 +24,7 @@
     "identity": "曾是曹操的私生子，因母亲为妾而不得承认",
     "current_location": "初始地点",
     "goal": "待探索",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -34,7 +34,7 @@
     "identity": "其实为刘备亲兄，因乱世被迫改名",
     "current_location": "初始地点",
     "goal": "待探索",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -214,7 +214,7 @@
     "identity": "前朝太傅之子，现为玄蛇盟暗中联络人，掌握着黄巾起义前朝廷内部的密信与叛徒名单",
     "current_location": "洛阳城外的隐秘山洞",
     "goal": "寻找黄巾起义背后的真正主谋，并设法阻止其统一九州的计划",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -224,7 +224,7 @@
     "identity": "前朝御史之女，现为玄蛇盟中立派的密探，掌握着多方势力的密信与秘密。",
     "current_location": "洛阳城外的废弃古庙",
     "goal": "寻找黄巾起义背后的真正幕后黑手，并揭露天机阁与玄蛇盟之间的隐秘交易。",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -254,7 +254,7 @@
     "identity": "前朝御史之女，现为玄蛇盟暗中联络人，掌握黄巾起义前朝廷内部的密信与叛徒名单",
     "current_location": "洛阳城内一处隐秘宅邸",
     "goal": "揭露黄巾起义背后的真正幕后黑手，阻止更大的阴谋发生",
-    "status": "alive",
+    "status": "dead",
     "role": "main",
     "relationship_changes": [],
     "new_traits": []
@@ -274,7 +274,7 @@
     "identity": "前朝御史之子，现为玄蛇盟暗中策士，专司情报传递与阴谋布局",
     "current_location": "洛阳城暗巷之中，常在夜色中穿梭于各方势力之间",
     "goal": "寻找黄巾起义背后的真正幕后黑手，并设法阻止其统一九州的计划",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -294,6 +294,26 @@
     "identity": "洛阳城中神秘的铜镜师，实为前朝皇室暗卫后裔，掌握着能映照人心的‘心镜’秘术。",
     "current_location": "洛阳城西巷的铜镜铺内",
     "goal": "寻找黄巾起义真正幕后黑手的线索，并防止‘心镜’落入玄蛇盟之手。",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "沈清晏": {
+    "name": "沈清晏",
+    "identity": "前朝御史之子，现为青鸾阁的密探，代号‘玄鹤’，专司刺探吴国军情与暗中策动江南势力。",
+    "current_location": "江东境内，潜伏于孙权幕府之中",
+    "goal": "获取吴国水军布防图，同时寻找玄蛇盟与青鸾阁之间的秘密联络通道。",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "沈清渊": {
+    "name": "沈清渊",
+    "identity": "前朝御史之孙，现为青鸾阁的密探，代号‘玄蛟’，专司刺探魏国军情与暗中策动江南势力。",
+    "current_location": "江东境内，潜伏于孙权幕府之中",
+    "goal": "获取魏国军备情报，并在关键时刻策动江东内部变乱以破坏三国平衡",
     "status": "alive",
     "role": "supporting",
     "relationship_changes": [],

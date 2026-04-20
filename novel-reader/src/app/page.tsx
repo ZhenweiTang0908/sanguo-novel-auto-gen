@@ -3,11 +3,7 @@ import NovelList from '@/components/NovelList';
 import { ChaptersResponse, NovelListResponse, Novel } from '@/types/novel';
 import fs from 'fs';
 import path from 'path';
-
-const NOVELS_DIR = path.join(process.cwd(), 'novels');
-const NOVEL_LIST_PATH = path.join(process.cwd(), 'novel-list.json');
-const LEGACY_DATA_DIR = path.join(process.cwd(), 'data/chapters');
-const LEGACY_META_PATH = path.join(process.cwd(), 'meta.json');
+import { getMetaPath, getNovelDataDir, LEGACY_DATA_DIR, LEGACY_META_PATH, NOVEL_LIST_PATH } from '@/lib/paths';
 
 interface ChapterInfo {
   id: number;
@@ -28,17 +24,14 @@ async function getChapters(novelId: string): Promise<ChaptersResponse> {
     let DATA_DIR: string;
     
     if (novelId) {
-      // 优先检查新位置
-      const novelDataDir = path.join(NOVELS_DIR, novelId, 'chapters');
-      const novelMetaPath = path.join(NOVELS_DIR, novelId, 'meta.json');
+      const dataDir = getNovelDataDir(novelId);
+      const metaPath = getMetaPath(novelId);
       
-      if (fs.existsSync(novelMetaPath)) {
-        // 新位置存在
-        DATA_DIR = novelDataDir;
-        const metaContent = fs.readFileSync(novelMetaPath, 'utf-8');
+      if (fs.existsSync(metaPath)) {
+        DATA_DIR = dataDir;
+        const metaContent = fs.readFileSync(metaPath, 'utf-8');
         meta = { ...JSON.parse(metaContent), novel_id: novelId };
       } else {
-        // 新位置不存在，检查 legacy
         DATA_DIR = LEGACY_DATA_DIR;
         if (fs.existsSync(LEGACY_META_PATH)) {
           const metaContent = fs.readFileSync(LEGACY_META_PATH, 'utf-8');
@@ -117,14 +110,11 @@ async function getNovels(): Promise<NovelListResponse> {
       const novels = JSON.parse(content) as Novel[];
       
       for (const novel of novels) {
-        // 优先检查新位置
-        const newMetaPath = path.join(NOVELS_DIR, novel.id, 'meta.json');
-        if (fs.existsSync(newMetaPath)) {
-          const meta = JSON.parse(fs.readFileSync(newMetaPath, 'utf-8'));
+        const metaPath = getMetaPath(novel.id);
+        if (fs.existsSync(metaPath)) {
+          const meta = JSON.parse(fs.readFileSync(metaPath, 'utf-8'));
           novel.current_chapter = meta.current_chapter;
-        }
-        // 检查 legacy 位置（仅 crazy_sanguo）
-        else if (novel.id === 'crazy_sanguo' && fs.existsSync(LEGACY_META_PATH)) {
+        } else if (novel.id === 'crazy_sanguo' && fs.existsSync(LEGACY_META_PATH)) {
           const meta = JSON.parse(fs.readFileSync(LEGACY_META_PATH, 'utf-8'));
           novel.current_chapter = meta.current_chapter;
         }
@@ -133,7 +123,6 @@ async function getNovels(): Promise<NovelListResponse> {
       return { novels };
     }
     
-    // novel-list.json 不存在，检查 legacy
     if (fs.existsSync(LEGACY_META_PATH)) {
       const meta = JSON.parse(fs.readFileSync(LEGACY_META_PATH, 'utf-8'));
       const novels: Novel[] = [{
@@ -143,7 +132,6 @@ async function getNovels(): Promise<NovelListResponse> {
         created_at: new Date().toISOString(),
         current_chapter: meta.current_chapter || 0
       }];
-      // 保存到 novel-list.json
       fs.writeFileSync(NOVEL_LIST_PATH, JSON.stringify(novels, null, 2), 'utf-8');
       return { novels };
     }

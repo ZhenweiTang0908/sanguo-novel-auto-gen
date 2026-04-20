@@ -1,10 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
-
-const NOVELS_DIR = path.join(process.cwd(), 'novels');
-const LEGACY_DATA_DIR = path.join(process.cwd(), 'data/chapters');
-const LEGACY_META_PATH = path.join(process.cwd(), 'meta.json');
+import { getMetaPath, getNovelDataDir, LEGACY_DATA_DIR, LEGACY_META_PATH } from '@/lib/paths';
 
 interface ChapterInfo {
   id: number;
@@ -17,12 +14,6 @@ interface Meta {
   story_title: string;
   story_subtitle: string;
   novel_id: string;
-}
-
-function getNovelDataDir(novelId: string): { dataDir: string; metaPath: string } {
-  const novelDataDir = path.join(NOVELS_DIR, novelId, 'chapters');
-  const novelMetaPath = path.join(NOVELS_DIR, novelId, 'meta.json');
-  return { dataDir: novelDataDir, metaPath: novelMetaPath };
 }
 
 function getDefaultMeta(novelId: string): Meta {
@@ -43,16 +34,14 @@ export async function GET(request: Request) {
     let DATA_DIR: string;
     
     if (novelId) {
-      // 优先检查新位置
-      const { dataDir, metaPath } = getNovelDataDir(novelId);
+      const dataDir = getNovelDataDir(novelId);
+      const metaPath = getMetaPath(novelId);
       
       if (fs.existsSync(metaPath)) {
-        // 新位置存在
         DATA_DIR = dataDir;
         const metaContent = fs.readFileSync(metaPath, 'utf-8');
         meta = { ...JSON.parse(metaContent), novel_id: novelId };
       } else {
-        // 新位置不存在，检查 legacy 位置（仅 crazy_sanguo）
         DATA_DIR = LEGACY_DATA_DIR;
         if (fs.existsSync(LEGACY_META_PATH)) {
           const metaContent = fs.readFileSync(LEGACY_META_PATH, 'utf-8');
@@ -62,7 +51,6 @@ export async function GET(request: Request) {
         }
       }
     } else {
-      // 无 novelId，使用 legacy
       DATA_DIR = LEGACY_DATA_DIR;
       
       if (fs.existsSync(LEGACY_META_PATH)) {
