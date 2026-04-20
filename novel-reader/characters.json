@@ -14,7 +14,7 @@
     "identity": "真实身份是东汉皇室遗孤，暗中联络旧部",
     "current_location": "初始地点",
     "goal": "待探索",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -74,7 +74,7 @@
     "identity": "潘森 潘森是黎木人。潘森 “潘森” 这个名号，起源于刚入学的时候。军训期间，潘森站在厕所门口，华林看到他，问：“你叫什么名字？” 潘森回答后，华林又问：“你会玩《英雄联盟》吗？” 潘森说会，华林就说：“那你以后就叫潘森吧。” 于是“潘森”这个名字就传开了。串在宿舍里话很多，经常提到“老丁”“潘”这类称呼，之后，这些称呼就被组合起来，叫潘森“丁”，大家都拍手笑了起来。还有人叫潘森“老墨”，但这个称呼没有流传开。从这以后，潘森每天下午都不理人。因此振为偶尔会有点怨恨他，称他“麻木不仁”，“麻木哥”这个名号也由此产生。",
     "current_location": "广西的厕所里",
     "goal": "找到梁培俊，抛掉他的被子",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -124,7 +124,117 @@
     "identity": "前朝皇室遗孤，现为江东暗探，代号‘青鸾’",
     "current_location": "建业（今南京）",
     "goal": "查明天机阁与黄巾起义的真正幕后操控者，并寻找复国之机",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "白芷": {
+    "name": "白芷",
+    "identity": "玄蛇盟的暗卫首领，擅长毒术与易容，真实身份是前朝皇室旁支后裔",
+    "current_location": "荆州暗巷中的一座废弃庙宇",
+    "goal": "寻找并保护一件能揭露黄巾起义真相的玉简，防止其落入敌对势力之手",
     "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "霍云澜": {
+    "name": "霍云澜",
+    "identity": "玄蛇盟的叛逃者，曾是密探，现为游走于各方势力之间的双面谍",
+    "current_location": "荆州边境的隐秘山谷",
+    "goal": "揭露玄蛇盟与黄巾起义背后的真正阴谋，并寻找能抗衡天机阁的力量",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "赵玄策": {
+    "name": "赵玄策",
+    "identity": "前朝御医后裔，现为玄蛇盟的暗中联络人，负责传递各方势力间的关键情报",
+    "current_location": "洛阳城外的废弃药铺",
+    "goal": "查明黄巾起义背后的真正策划者，并寻找能够揭露天机阁阴谋的证据",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "顾清羽": {
+    "name": "顾清羽",
+    "identity": "洛阳城中隐秘的琴师，实为前朝皇室血脉，掌握着一部失传的《天机录》残卷",
+    "current_location": "洛阳城西的幽篁院",
+    "goal": "寻找黄巾起义背后的真正幕后黑手，并揭露‘天机阁’与玄蛇盟的联系",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "沈天启": {
+    "name": "沈天启",
+    "identity": "前朝御史，因揭露朝廷腐败遭贬，后成为玄蛇盟暗中策士，负责策划各势力间的冲突与和解",
+    "current_location": "洛阳城外的废弃寺庙",
+    "goal": "操纵局势以寻找真正的皇权继承人，推翻当前混乱的政局",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "柳无尘": {
+    "name": "柳无尘",
+    "identity": "前朝御史之子，现为玄蛇盟的密探，负责潜入各势力内部收集机密情报",
+    "current_location": "洛阳城外的隐秘据点",
+    "goal": "寻找黄巾起义背后真正的幕后黑手，并揭露天机阁与玄蛇盟之间的秘密交易",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "沈寒舟": {
+    "name": "沈寒舟",
+    "identity": "前朝御史之子，现为玄蛇盟中立派的联络人，掌握着多方势力的密信与秘密。",
+    "current_location": "江东暗巷之中，藏身于一座废弃的祠堂内",
+    "goal": "在各方势力之间保持平衡，等待时机揭露黄巾起义背后的真正黑手。",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "纪玄枫": {
+    "name": "纪玄枫",
+    "identity": "前朝御史之女，现为江东暗探，代号‘赤鸢’，负责刺探魏国军情并传递密信",
+    "current_location": "江东境内，潜伏于孙权幕府附近",
+    "goal": "揭露曹操与玄蛇盟之间的秘密交易，阻止魏国对江东的突袭",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "司徒明渊": {
+    "name": "司徒明渊",
+    "identity": "前朝太傅之子，现为玄蛇盟暗中联络人，掌握着黄巾起义前朝廷内部的密信与叛徒名单",
+    "current_location": "洛阳城外的隐秘山洞",
+    "goal": "寻找黄巾起义背后的真正主谋，并设法阻止其统一九州的计划",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "沈清梧": {
+    "name": "沈清梧",
+    "identity": "前朝御史之女，现为玄蛇盟中立派的密探，掌握着多方势力的密信与秘密。",
+    "current_location": "洛阳城外的废弃古庙",
+    "goal": "寻找黄巾起义背后的真正幕后黑手，并揭露天机阁与玄蛇盟之间的隐秘交易。",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "沈墨尘": {
+    "name": "沈墨尘",
+    "identity": "前朝御史之孙，现为玄蛇盟中立派的暗中策士，掌握着各方势力间的关键密信与叛徒名单",
+    "current_location": "洛阳城外的隐秘山洞",
+    "goal": "揭露黄巾起义背后的真正幕后黑手，并在三国之间保持微妙平衡",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
