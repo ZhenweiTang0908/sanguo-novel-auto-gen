@@ -1,0 +1,232 @@
+{
+  "沈砚": {
+    "name": "沈砚",
+    "identity": "真实身份为已故军阀之子",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "周墨": {
+    "name": "周墨",
+    "identity": "曾是沈砚的贴身侍从",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "顾清如": {
+    "name": "顾清如",
+    "identity": "实则为沈砚的秘密恋人",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "白凤楼": {
+    "name": "白凤楼",
+    "identity": "曾是军阀时期叛逃军官",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "林婉儿": {
+    "name": "林婉儿",
+    "identity": "实为沈砚的远房表妹",
+    "current_location": "初始地点",
+    "goal": "待探索",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "陆明远": {
+    "name": "陆明远",
+    "identity": "北洋商会的年轻财务主管，表面是商界新贵，实则暗中调查沈家身世之谜",
+    "current_location": "天津租界",
+    "goal": "查明沈家与军阀叛逃案的关联，同时保护自己不被卷入权力斗争",
+    "status": "dead",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "苏怀瑾": {
+    "name": "苏怀瑾",
+    "identity": "南洋华侨财团的私生女，实则为北洋军阀遗孤，被送往南洋避难",
+    "current_location": "上海租界",
+    "goal": "寻找身世真相，并保护自己不被卷入各方势力的斗争",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "顾清岚": {
+    "name": "顾清岚",
+    "identity": "沪上青帮新任堂主，表面是帮派精英，实则暗中调查沈家身世真相",
+    "current_location": "上海租界一处隐秘茶馆",
+    "goal": "揭开沈家与北洋军阀之间不为人知的联系，并保护沈砚免受各方势力迫害",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "秦慕雪": {
+    "name": "秦慕雪",
+    "identity": "沪上青帮暗线情报员，表面是洋行账房先生，实则为顾清岚的得力助手",
+    "current_location": "上海外滩洋行附近",
+    "goal": "收集沈家身世真相，同时保护顾清岚不被北洋商会追杀",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "叶清梧": {
+    "name": "叶清梧",
+    "identity": "沪上洋行买办，表面是外资银行的华人代表，实则为北洋军阀时期秘密情报人员的后代，暗中联络各方势力",
+    "current_location": "上海外滩",
+    "goal": "寻找自己家族在军阀动荡中的真实身份，并试图阻止沈家身世真相被滥用",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "江慕雪": {
+    "name": "江慕雪",
+    "identity": "沪上洋行的古董商人，实则为北洋军阀时期遗孤的私生女，暗中寻找身世真相",
+    "current_location": "上海外滩附近的一家古董铺子",
+    "goal": "揭开自己身世之谜，并找到当年带走她的神秘人",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "程慕云": {
+    "name": "程慕云",
+    "identity": "沪上洋行的古董修复师，实则为北洋军阀时期一位隐秘情报人员的后代",
+    "current_location": "上海法租界内的一家古董铺子",
+    "goal": "寻找与沈家身世相关的古老信物，并暗中协助顾清岚调查真相",
+    "status": "dead",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "顾清梧": {
+    "name": "顾清梧",
+    "identity": "沪上洋行的古董修复师，实则为北洋军阀时期一位隐秘情报人员的后代",
+    "current_location": "上海法租界洋行内",
+    "goal": "寻找与沈家身世相关的线索，同时保护自己不被各方势力察觉",
+    "status": "dead",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "顾清和": {
+    "name": "顾清和",
+    "identity": "沪上青帮旧部后人，表面是洋行古董商，实际是暗中联络各方势力的情报传递者",
+    "current_location": "上海法租界",
+    "goal": "查明沈家身世真相，同时保护青帮残余势力不被北洋商会吞并",
+    "status": "dead",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "顾清晖": {
+    "name": "顾清晖",
+    "identity": "沪上青帮旧部后人，表面是洋行账房先生，实际是暗中传递情报的联络人",
+    "current_location": "上海法租界洋行办事处",
+    "goal": "在青帮与北洋商会之间周旋，保护沈家身世秘密不被揭露",
+    "status": "dead",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "顾清淮": {
+    "name": "顾清淮",
+    "identity": "沪上洋行的古董鉴定师，表面是文物修复专家，实则为北洋军阀时期情报人员的后代，暗中调查沈家身世之谜",
+    "current_location": "上海外滩洋行古董馆",
+    "goal": "揭露沈家身世真相，并在各方势力中寻找生存之道",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "陆婉宁": {
+    "name": "陆婉宁",
+    "identity": "沪上洋行的古董修复师，实则为北洋军阀时期一位情报人员的遗孤，暗中调查沈家身世之谜",
+    "current_location": "上海外滩洋行后院",
+    "goal": "寻找沈家身世的真相，同时保护自己的身份不被发现",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "陆清梧": {
+    "name": "陆清梧",
+    "identity": "南洋华侨财团的私生女，实则为北洋军阀遗孤，被送往南洋避难，现为沪上洋行的古董鉴定师。",
+    "current_location": "沪上洋行",
+    "goal": "寻找身世真相，并在暗中调查沈家的身世之谜，同时保护自己不被各方势力发现真实身份。",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "顾清枫": {
+    "name": "顾清枫",
+    "identity": "沪上青帮旧部后人，表面是洋行账房先生，实际是暗中联络各方势力的情报传递者",
+    "current_location": "上海外滩洋行",
+    "goal": "寻找沈家身世真相，同时保护青帮势力不受北洋商会和南洋财团的侵蚀",
+    "status": "dead",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "沈清梧": {
+    "name": "沈清梧",
+    "identity": "南洋华侨财团的私生子，实为北洋军阀遗孤，被送往南洋避难后混入沪上洋行从事古董鉴定工作",
+    "current_location": "沪上洋行",
+    "goal": "寻找身世真相，同时暗中保护沈砚免受各方势力迫害",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "顾清鸿": {
+    "name": "顾清鸿",
+    "identity": "沪上青帮旧部后人，表面是洋行古董商人，实际是暗中传递情报的联络人",
+    "current_location": "沪上外滩码头区",
+    "goal": "在各方势力间周旋，保护沈家秘密不被曝光",
+    "status": "dead",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "沈清岚": {
+    "name": "沈清岚",
+    "identity": "南洋华侨财团的账房先生，实则为北洋军阀时期秘密情报人员的后代，暗中调查沈家身世之谜",
+    "current_location": "沪上洋行总部",
+    "goal": "查明沈砚真实身份并保护其免受各方势力追杀",
+    "status": "dead",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "沈清淮": {
+    "name": "沈清淮",
+    "identity": "南洋华侨财团的账房先生，实则为北洋军阀时期秘密情报人员的后代，暗中调查沈家身世之谜",
+    "current_location": "沪上洋行账房",
+    "goal": "揭露沈家真实身份，同时保护自身不被卷入各方势力斗争",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  }
+}

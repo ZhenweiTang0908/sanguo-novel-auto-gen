@@ -1,0 +1,2807 @@
+{
+  "main_conflict": "沈砚在家族与真爱之间挣扎，同时被多方势力觊觎。他的身世秘密逐渐浮出水面，而他与周墨的感情也面临考验。",
+  "sub_conflicts": [],
+  "open_threads": [
+    {
+      "thread_id": "hook_1_0",
+      "description": "林婉儿手中的照片揭示了沈砚的真实身世，暗示其父亲另有其人。",
+      "status": "open",
+      "introduced_chapter": 1,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_1_1",
+      "description": "周墨的牺牲为后续剧情埋下伏笔，他的死亡是否会影响沈砚的命运？",
+      "status": "open",
+      "introduced_chapter": 1,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_1_2",
+      "description": "顾景明的出现预示更大的冲突即将爆发。",
+      "status": "open",
+      "introduced_chapter": 1,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_0",
+      "description": "林婉儿提到沈砚的父亲还有一个兄弟，暗示更大的家族秘密。",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_1",
+      "description": "照片中出现的陌生男人引发读者对沈砚身世的进一步猜测。",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_2_2",
+      "description": "顾清如的动机和真实目的尚未完全揭晓。",
+      "status": "open",
+      "introduced_chapter": 2,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_3_0",
+      "description": "白凤楼掌握着关于沈砚母亲的线索，可能揭示更多关于沈家的秘密。",
+      "status": "open",
+      "introduced_chapter": 3,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_3_1",
+      "description": "沈启华临死前留下的密信内容未明，可能涉及更大的阴谋。",
+      "status": "open",
+      "introduced_chapter": 3,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_3_2",
+      "description": "沈砚需要前往青帮地盘寻找真相，预示新的冲突和挑战。",
+      "status": "open",
+      "introduced_chapter": 3,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_4_0",
+      "description": "周墨的死成为沈砚复仇的导火索。",
+      "status": "open",
+      "introduced_chapter": 4,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_4_1",
+      "description": "白凤楼提到真正的敌人还在后面，为后续剧情埋下悬念。",
+      "status": "open",
+      "introduced_chapter": 4,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_4_2",
+      "description": "母亲临终前的遗言“我永远爱他”引发沈砚的情感波动。",
+      "status": "open",
+      "introduced_chapter": 4,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_5_0",
+      "description": "沈砚手中握有周墨留下的纸条，暗示林婉儿知道他真正的家在哪。",
+      "status": "open",
+      "introduced_chapter": 5,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_5_1",
+      "description": "白凤楼的出现为后续剧情埋下伏笔，可能涉及更深层的阴谋。",
+      "status": "open",
+      "introduced_chapter": 5,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_6_0",
+      "description": "白凤楼在巷口出现，暗示他掌握更多关于沈砚的秘密，甚至可能知道他的真正身份。",
+      "status": "open",
+      "introduced_chapter": 6,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_6_1",
+      "description": "陈阿婆的神秘身份与过去经历引发读者好奇，她是否还有其他未揭示的背景？",
+      "status": "open",
+      "introduced_chapter": 6,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_7_0",
+      "description": "沈砚的父亲突然出现，自称是他的亲生父亲，暗示更大的秘密。",
+      "status": "open",
+      "introduced_chapter": 7,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_7_1",
+      "description": "顾清如可能掌握更多关于沈砚身世的真相。",
+      "status": "open",
+      "introduced_chapter": 7,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_7_2",
+      "description": "白凤楼并未真正被消灭，仍可能卷土重来。",
+      "status": "open",
+      "introduced_chapter": 7,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_8_0",
+      "description": "黑影突然出现，暗示有人在暗中监视或阻挠他们的行动。",
+      "status": "open",
+      "introduced_chapter": 8,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_8_1",
+      "description": "沈砚的‘哥哥’似乎知道更多关于沈家的秘密，可能涉及更深层的阴谋。",
+      "status": "open",
+      "introduced_chapter": 8,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_8_2",
+      "description": "南洋的线索成为接下来的关键目标，可能隐藏着沈家真正的历史。",
+      "status": "open",
+      "introduced_chapter": 8,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_9_0",
+      "description": "林婉儿的信件以及刻有沈家家徽的戒指，暗示沈家还有更多未被揭示的秘密",
+      "status": "open",
+      "introduced_chapter": 9,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_9_1",
+      "description": "沈砚需要前往南洋寻找真相，为后续剧情埋下伏笔",
+      "status": "open",
+      "introduced_chapter": 9,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_10_0",
+      "description": "林婉儿吐血昏迷，暗示她可能身受重伤或有隐藏身份。",
+      "status": "open",
+      "introduced_chapter": 10,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_10_1",
+      "description": "黑暗中的一双眼睛，暗示有第三方势力正在观察一切。",
+      "status": "open",
+      "introduced_chapter": 10,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_11_0",
+      "description": "一辆刻有神秘符号的装甲车出现在街道尽头，车内坐着沈砚的亲生父亲，暗示更大的阴谋。",
+      "status": "open",
+      "introduced_chapter": 11,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_11_1",
+      "description": "屋顶上的神秘人物持续监视，为后续剧情埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 11,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_11_2",
+      "description": "沈砚的身世与血统成为各方争夺的核心，可能引发更大冲突。",
+      "status": "open",
+      "introduced_chapter": 11,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_12_0",
+      "description": "林婉儿的出现，暗示她可能是沈家秘密的关键人物，或与沈砚的过去有关。",
+      "status": "open",
+      "introduced_chapter": 12,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_12_1",
+      "description": "沈砚父亲提到“你母亲为了保护你才把你送走”，为后续揭示母亲之死埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 12,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_12_2",
+      "description": "周墨的牺牲为他未来可能的回归或复仇留下空间。",
+      "status": "open",
+      "introduced_chapter": 12,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_13_0",
+      "description": "白凤楼挡在沈砚面前，暗示他可能是敌非友，或是另有目的。",
+      "status": "open",
+      "introduced_chapter": 13,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_13_1",
+      "description": "沈砚必须前往法租界寻找程慕云，为后续剧情埋下新线索。",
+      "status": "open",
+      "introduced_chapter": 13,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_13_2",
+      "description": "林婉儿的出现并非偶然，背后有更复杂的布局。",
+      "status": "open",
+      "introduced_chapter": 13,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_14_0",
+      "description": "沈砚被击中倒地，生死未卜。",
+      "status": "open",
+      "introduced_chapter": 14,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_14_1",
+      "description": "神秘人身份揭晓，与沈父有深仇大恨。",
+      "status": "open",
+      "introduced_chapter": 14,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_14_2",
+      "description": "白凤楼的真实目的尚未完全揭示。",
+      "status": "open",
+      "introduced_chapter": 14,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_15_0",
+      "description": "沈砚的双胞胎兄弟出现，暗示更大的秘密和阴谋。",
+      "status": "open",
+      "introduced_chapter": 15,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_15_1",
+      "description": "沈砚的真实身份成为关键悬念，影响整个故事走向。",
+      "status": "open",
+      "introduced_chapter": 15,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_16_0",
+      "description": "船上出现一个与沈砚一模一样的男人，暗示可能存在双生子或替身的设定。",
+      "status": "open",
+      "introduced_chapter": 16,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_16_1",
+      "description": "周墨的死亡留下悬念，他的真实身份和目的仍未揭晓。",
+      "status": "open",
+      "introduced_chapter": 16,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_17_0",
+      "description": "沈砚醒来后发现周墨出现在身边，暗示周墨可能掌握更多真相。",
+      "status": "open",
+      "introduced_chapter": 17,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_17_1",
+      "description": "沈寒的牺牲是否真的完成？他是否还活着？",
+      "status": "open",
+      "introduced_chapter": 17,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_18_0",
+      "description": "顾清如出现在黑船上，手持密信，暗示她可能与沈砚的身世或沈寒的计划有关。",
+      "status": "open",
+      "introduced_chapter": 18,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_18_1",
+      "description": "北洋商会的追踪表明沈砚的处境更加危险，为后续冲突埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 18,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_19_0",
+      "description": "林婉儿出现在天机谷入口，手持武器，暗示她与沈砚之间存在复杂关系。",
+      "status": "open",
+      "introduced_chapter": 19,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_20_0",
+      "description": "密室中的老者与沈砚容貌相同，暗示其真实身份或血缘关系。",
+      "status": "open",
+      "introduced_chapter": 20,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_20_1",
+      "description": "苏怀瑾对沈砚的感情复杂，为后续情感线发展留下空间。",
+      "status": "open",
+      "introduced_chapter": 20,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_20_2",
+      "description": "沈砚的身世之谜进一步加深，推动故事向更深层的家族恩怨发展。",
+      "status": "open",
+      "introduced_chapter": 20,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_21_0",
+      "description": "神秘男子的出现，暗示沈砚真正的“家”和身份背后有更大的秘密。",
+      "status": "open",
+      "introduced_chapter": 21,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_21_1",
+      "description": "沈砚是否能接受自己的真实身份，以及如何面对过去的背叛与冷漠，成为接下来的重要冲突点。",
+      "status": "open",
+      "introduced_chapter": 21,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_22_0",
+      "description": "沈砚的父亲并未死去，而是隐匿多年，可能藏身于某个地方。",
+      "status": "open",
+      "introduced_chapter": 22,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_22_1",
+      "description": "顾清如决定去找回父亲，暗示更大的秘密即将揭晓。",
+      "status": "open",
+      "introduced_chapter": 22,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_22_2",
+      "description": "账本中可能还隐藏着更多关于沈家和顾家的秘密。",
+      "status": "open",
+      "introduced_chapter": 22,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_22_3",
+      "description": "黑衣人背后是否有更大的势力支持？",
+      "status": "open",
+      "introduced_chapter": 22,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_23_0",
+      "description": "沈砚的父亲是“不该存在的男人”，暗示其身份特殊或涉及禁忌。",
+      "status": "open",
+      "introduced_chapter": 23,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_23_1",
+      "description": "白凤楼可能是沈砚父亲的下落线索，为后续剧情埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 23,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_23_2",
+      "description": "林婉儿的真实身份和目的尚未完全揭示，增加悬念。",
+      "status": "open",
+      "introduced_chapter": 23,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_24_0",
+      "description": "沈砚父亲留下的信件内容未揭晓，暗示重大秘密",
+      "status": "open",
+      "introduced_chapter": 24,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_24_1",
+      "description": "钥匙能打开“真正的家”，引向未知地点",
+      "status": "open",
+      "introduced_chapter": 24,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_24_2",
+      "description": "白凤楼与沈家的恩怨背后另有隐情",
+      "status": "open",
+      "introduced_chapter": 24,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_24_3",
+      "description": "林婉儿掌握更多关于沈砚身世的细节",
+      "status": "open",
+      "introduced_chapter": 24,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_25_0",
+      "description": "神秘人物的出现，暗示未来更大的阴谋或敌人。",
+      "status": "open",
+      "introduced_chapter": 25,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_25_1",
+      "description": "沈砚必须面对顾家与沈家的双重身份，引发后续冲突。",
+      "status": "open",
+      "introduced_chapter": 25,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_25_2",
+      "description": "顾清如对沈砚的感情未明，为感情线埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 25,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_26_0",
+      "description": "顾景明的突然现身，预示更大的阴谋或冲突即将展开。",
+      "status": "open",
+      "introduced_chapter": 26,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_26_1",
+      "description": "沈砚父亲留下的地图指向沈家祖坟，暗示沈家历史中隐藏的重大秘密。",
+      "status": "open",
+      "introduced_chapter": 26,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_26_2",
+      "description": "顾清如的出现与沈砚的过去关系，为后续情感线埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 26,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_27_0",
+      "description": "林婉儿在南洋掌握沈砚真实身份的关键信息，可能揭示更多关于沈家和顾家的秘密。",
+      "status": "open",
+      "introduced_chapter": 27,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_27_1",
+      "description": "顾景明对沈砚的执念未减，暗示他不会轻易放弃追捕。",
+      "status": "open",
+      "introduced_chapter": 27,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_27_2",
+      "description": "周墨与沈砚之间的情感纠葛将成为后续剧情的重要推动力。",
+      "status": "open",
+      "introduced_chapter": 27,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_28_0",
+      "description": "周墨独自面对追兵，他的真实身份或能力可能被揭示。",
+      "status": "open",
+      "introduced_chapter": 28,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_28_1",
+      "description": "林婉儿仍在南洋，暗示她可能是后续剧情的关键人物。",
+      "status": "open",
+      "introduced_chapter": 28,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_28_2",
+      "description": "白凤楼的介入为未来更大的冲突埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 28,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_29_0",
+      "description": "沈砚的真实身世与顾景明的阴谋被揭开，暗示更大的权力斗争。",
+      "status": "open",
+      "introduced_chapter": 29,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_29_1",
+      "description": "顾家老宅中的密室与画作成为后续行动的核心目标。",
+      "status": "open",
+      "introduced_chapter": 29,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_29_2",
+      "description": "陆婉宁提到“命运早已写好”，为后续剧情埋下神秘伏笔。",
+      "status": "open",
+      "introduced_chapter": 29,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_30_0",
+      "description": "陆婉宁提到父亲日记中的线索，暗示更多关于顾景明过去的秘密。",
+      "status": "open",
+      "introduced_chapter": 30,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_30_1",
+      "description": "周墨受伤但未死，为后续剧情留下悬念。",
+      "status": "open",
+      "introduced_chapter": 30,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_30_2",
+      "description": "沈砚母亲的信件内容引发对顾景明动机的进一步探讨。",
+      "status": "open",
+      "introduced_chapter": 30,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_31_0",
+      "description": "有人在暗中策划抓捕沈砚，意图控制北洋商会。",
+      "status": "open",
+      "introduced_chapter": 31,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_31_1",
+      "description": "林婉儿开始为沈砚筹划，暗示她可能成为关键人物。",
+      "status": "open",
+      "introduced_chapter": 31,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_31_2",
+      "description": "周墨的牺牲为后续剧情埋下复仇或救赎的伏笔。",
+      "status": "open",
+      "introduced_chapter": 31,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_31_3",
+      "description": "顾清如的动向未明，可能影响后续剧情发展。",
+      "status": "open",
+      "introduced_chapter": 31,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_32_0",
+      "description": "林婉儿透露沈母的尸体被秘密安葬，为后续寻找真相埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 32,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_32_1",
+      "description": "林文昭的人已经盯上沈砚，暗示接下来会有更大冲突。",
+      "status": "open",
+      "introduced_chapter": 32,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_32_2",
+      "description": "沈砚必须尽快找到母亲的遗体，否则将永远失去真相。",
+      "status": "open",
+      "introduced_chapter": 32,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_33_0",
+      "description": "江慕雪提到的密信和顾清如的存在，为后续揭示沈砚真实身份埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 33,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_33_1",
+      "description": "林文昭的布局暗示南洋并非安全之地，为下一章的逃亡或冲突做铺垫。",
+      "status": "open",
+      "introduced_chapter": 33,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_34_0",
+      "description": "沈砚的身世之谜彻底揭开，为后续剧情提供核心冲突。",
+      "status": "open",
+      "introduced_chapter": 34,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_34_1",
+      "description": "白凤楼提出让沈砚加入其阵营，暗示更大的权力斗争。",
+      "status": "open",
+      "introduced_chapter": 34,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_34_2",
+      "description": "林文昭在黑暗中观察一切，预示他将采取更激烈的行动。",
+      "status": "open",
+      "introduced_chapter": 34,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_35_0",
+      "description": "沈砚的真实身份之谜尚未完全揭开，背后还有更大的秘密。",
+      "status": "open",
+      "introduced_chapter": 35,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_35_1",
+      "description": "黑衣人袭击沈砚的动机不明，可能是林文昭的爪牙。",
+      "status": "open",
+      "introduced_chapter": 35,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_35_2",
+      "description": "南洋盟友的存在为后续剧情提供新线索。",
+      "status": "open",
+      "introduced_chapter": 35,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_36_0",
+      "description": "白凤楼是否真的站在沈砚一方仍成谜",
+      "status": "open",
+      "introduced_chapter": 36,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_36_1",
+      "description": "沈砚身世之谜背后隐藏的更大秘密",
+      "status": "open",
+      "introduced_chapter": 36,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_36_2",
+      "description": "老赵的生死未明，其掌握的信息至关重要",
+      "status": "open",
+      "introduced_chapter": 36,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_37_0",
+      "description": "黑影尾随沈砚等人，暗示有第三方势力仍在暗中观察或监视。",
+      "status": "open",
+      "introduced_chapter": 37,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_37_1",
+      "description": "沈家账本中的秘密尚未完全揭晓，为后续剧情埋下悬念。",
+      "status": "open",
+      "introduced_chapter": 37,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_37_2",
+      "description": "林婉儿的真实目的仍未明确，她的动机仍需进一步探索。",
+      "status": "open",
+      "introduced_chapter": 37,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_38_0",
+      "description": "沈砚的父亲张天雄的死因与顾景明直接相关，为复仇主线提供明确目标。",
+      "status": "open",
+      "introduced_chapter": 38,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_38_1",
+      "description": "顾清如掌握着沈砚父亲的信件，暗示她可能知道更多关于沈家和顾景明的隐情。",
+      "status": "open",
+      "introduced_chapter": 38,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_38_2",
+      "description": "林婉儿提到要去见白凤楼，暗示她可能与这个神秘组织有关联。",
+      "status": "open",
+      "introduced_chapter": 38,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_38_3",
+      "description": "周墨在关键时刻出现，表明他与沈砚之间存在更深的羁绊。",
+      "status": "open",
+      "introduced_chapter": 38,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_39_0",
+      "description": "白凤楼的真实目的和背后更大的阴谋尚未揭晓。",
+      "status": "open",
+      "introduced_chapter": 39,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_39_1",
+      "description": "顾清枫掌握的关键证据可能改变整个局势。",
+      "status": "open",
+      "introduced_chapter": 39,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_39_2",
+      "description": "周墨的背叛动机和他是否还有其他隐藏任务未被揭示。",
+      "status": "open",
+      "introduced_chapter": 39,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_40_0",
+      "description": "陆明远的出现暗示还有第三方势力在暗中观察沈砚的动向，可能涉及更大的阴谋。",
+      "status": "open",
+      "introduced_chapter": 40,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_40_1",
+      "description": "顾清如提到要找到自己的真相，暗示她可能也有不为人知的身世或秘密。",
+      "status": "open",
+      "introduced_chapter": 40,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_40_2",
+      "description": "白凤楼的离开并不代表故事结束，他的回归将成为下一阶段的关键伏笔。",
+      "status": "open",
+      "introduced_chapter": 40,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_41_0",
+      "description": "沈砚的真实身份与身世之谜，以及他是否真的是军阀之子。",
+      "status": "open",
+      "introduced_chapter": 41,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_41_1",
+      "description": "沈砚母亲还活着的线索，为后续寻找她埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 41,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_41_2",
+      "description": "陆明远的出现，暗示背后还有更大的棋局。",
+      "status": "open",
+      "introduced_chapter": 41,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_42_0",
+      "description": "沈砚的父亲沈云山的真实死因与北洋军阀的背景被进一步揭开。",
+      "status": "open",
+      "introduced_chapter": 42,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_42_1",
+      "description": "白凤楼的行动暗示其背后可能有更强大的势力支持。",
+      "status": "open",
+      "introduced_chapter": 42,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_42_2",
+      "description": "沈清梧的动机和过往经历仍存悬念。",
+      "status": "open",
+      "introduced_chapter": 42,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_42_3",
+      "description": "沈砚与周墨之间的深厚情谊成为后续剧情的重要支撑点。",
+      "status": "open",
+      "introduced_chapter": 42,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_43_0",
+      "description": "程慕云知道沈砚的秘密，可能成为关键人物。",
+      "status": "open",
+      "introduced_chapter": 43,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_43_1",
+      "description": "陆明远正在调查沈砚的真正身份，真相即将揭晓。",
+      "status": "open",
+      "introduced_chapter": 43,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_43_2",
+      "description": "周墨的回归暗示他可能掌握更多关于沈砚的过去。",
+      "status": "open",
+      "introduced_chapter": 43,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_43_3",
+      "description": "洞穴爆炸后，沈砚等人面临新的威胁。",
+      "status": "open",
+      "introduced_chapter": 43,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_44_0",
+      "description": "陈岩的复活以及他与顾清如的结盟，暗示更大的阴谋",
+      "status": "open",
+      "introduced_chapter": 44,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_44_1",
+      "description": "顾清如掌握局势，似乎掌控着整个计划",
+      "status": "open",
+      "introduced_chapter": 44,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_45_0",
+      "description": "陈岩的回归，暗示更大的恩怨纠葛。",
+      "status": "open",
+      "introduced_chapter": 45,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_45_1",
+      "description": "顾清如的生死未卜，留下悬念。",
+      "status": "open",
+      "introduced_chapter": 45,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_45_2",
+      "description": "顾景明的真实目的仍未完全揭晓。",
+      "status": "open",
+      "introduced_chapter": 45,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_45_3",
+      "description": "白凤楼的真正后台尚未明确。",
+      "status": "open",
+      "introduced_chapter": 45,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_46_0",
+      "description": "白凤楼在南洋的据点成为新的目标。",
+      "status": "open",
+      "introduced_chapter": 46,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_46_1",
+      "description": "顾清如的真实意图仍存疑，可能另有目的。",
+      "status": "open",
+      "introduced_chapter": 46,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_46_2",
+      "description": "陈岩的追击暗示后续将有更激烈的对抗。",
+      "status": "open",
+      "introduced_chapter": 46,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_47_0",
+      "description": "白凤楼出现在小岛附近，暗示他早已布下陷阱，等待沈砚现身。",
+      "status": "open",
+      "introduced_chapter": 47,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_47_1",
+      "description": "沈砚与周墨之间未明说的感情，为后续情感线埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 47,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_47_2",
+      "description": "陈岩的存在表明北洋商会仍在追踪沈砚，可能引发新一轮冲突。",
+      "status": "open",
+      "introduced_chapter": 47,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_48_0",
+      "description": "阿贵的真实身份和他掌握的信息可能影响整个故事走向。",
+      "status": "open",
+      "introduced_chapter": 48,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_48_1",
+      "description": "沈砚的身世之谜进一步展开，为后续章节埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 48,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_48_2",
+      "description": "陆明远即将揭露更多关于沈砚身世的真相。",
+      "status": "open",
+      "introduced_chapter": 48,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_49_0",
+      "description": "南洋的秘密即将揭晓，涉及沈砚的真实身份。",
+      "status": "open",
+      "introduced_chapter": 49,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_49_1",
+      "description": "周墨的过去可能与这场阴谋有关。",
+      "status": "open",
+      "introduced_chapter": 49,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_49_2",
+      "description": "顾景明的阴谋远比沈砚想象的更复杂。",
+      "status": "open",
+      "introduced_chapter": 49,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_50_0",
+      "description": "沈砚发现自己眼中有异色，暗示他并非普通人。",
+      "status": "open",
+      "introduced_chapter": 50,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_50_1",
+      "description": "白凤楼提到沈砚的血脉与神秘组织有关，为后续剧情埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 50,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_51_0",
+      "description": "周墨可能是黑鸦会真正的继承人",
+      "status": "open",
+      "introduced_chapter": 51,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_51_1",
+      "description": "沈砚眼中异色逐渐显现，暗示某种力量觉醒",
+      "status": "open",
+      "introduced_chapter": 51,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_51_2",
+      "description": "白凤楼的出现带来新的威胁和谜团",
+      "status": "open",
+      "introduced_chapter": 51,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_52_0",
+      "description": "顾清如出现在仓库门口，但她的双眼透着诡异的红光，暗示她可能已被控制或有其他身份。",
+      "status": "open",
+      "introduced_chapter": 52,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_53_0",
+      "description": "神秘人物的出现和黑色光芒的预兆",
+      "status": "open",
+      "introduced_chapter": 53,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_53_1",
+      "description": "程慕云的真实目的尚未揭晓",
+      "status": "open",
+      "introduced_chapter": 53,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_53_2",
+      "description": "沈砚父亲之死的真相可能与顾景明有关",
+      "status": "open",
+      "introduced_chapter": 53,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_54_0",
+      "description": "林婉儿知道沈砚父亲是林文昭，但为何隐瞒？她是否在策划什么？",
+      "status": "open",
+      "introduced_chapter": 54,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_54_1",
+      "description": "沈砚的真实身份引发更多疑问，他是否会被其他势力追杀？",
+      "status": "open",
+      "introduced_chapter": 54,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_54_2",
+      "description": "周墨的死亡成为沈砚复仇的导火索，埋下后续冲突的伏笔。",
+      "status": "open",
+      "introduced_chapter": 54,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_55_0",
+      "description": "林婉儿的尸体上出现的神秘符号，暗示南洋财团的秘密计划。",
+      "status": "open",
+      "introduced_chapter": 55,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_55_1",
+      "description": "陆明远的出现和他声称要保护沈砚的动机，引发读者对其真实身份的猜测。",
+      "status": "open",
+      "introduced_chapter": 55,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_56_0",
+      "description": "沈砚意外觉醒神秘能力，暗示他可能拥有不为人知的背景或力量。",
+      "status": "open",
+      "introduced_chapter": 56,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_56_1",
+      "description": "沈砚被南洋财团视为真正的目标，暗示他的身份比想象中更加重要。",
+      "status": "open",
+      "introduced_chapter": 56,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_56_2",
+      "description": "陆明远的死亡为后续剧情埋下复仇与真相追寻的伏笔。",
+      "status": "open",
+      "introduced_chapter": 56,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_57_0",
+      "description": "沈砚体内力量的觉醒，以及‘青鸾之眼’的真正含义尚未揭晓。",
+      "status": "open",
+      "introduced_chapter": 57,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_57_1",
+      "description": "南洋财团的介入，暗示更大的阴谋正在展开。",
+      "status": "open",
+      "introduced_chapter": 57,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_57_2",
+      "description": "沈砚是否能真正掌控这股力量，将影响他未来的命运。",
+      "status": "open",
+      "introduced_chapter": 57,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_58_0",
+      "description": "南洋方向的爆炸暗示北洋商会正在发动攻击，可能与沈家有关。",
+      "status": "open",
+      "introduced_chapter": 58,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_58_1",
+      "description": "江慕雪的身世之谜进一步加深，她是否还有其他秘密？",
+      "status": "open",
+      "introduced_chapter": 58,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_58_2",
+      "description": "沈砚体内的红色能量究竟来自何处？它是否会带来更大的危险？",
+      "status": "open",
+      "introduced_chapter": 58,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_59_0",
+      "description": "沈家古墓的秘密尚未揭晓，玉佩可能隐藏关键线索。",
+      "status": "open",
+      "introduced_chapter": 59,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_59_1",
+      "description": "江慕雪受伤昏迷，她的身世和目的成谜。",
+      "status": "open",
+      "introduced_chapter": 59,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_59_2",
+      "description": "南洋各势力正在追捕沈砚，暗示更大的阴谋。",
+      "status": "open",
+      "introduced_chapter": 59,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_60_0",
+      "description": "沈砚真正的身份之谜：他不是沈家亲生儿子。",
+      "status": "open",
+      "introduced_chapter": 60,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_60_1",
+      "description": "林文昭作为沈砚的亲叔叔，暗示更大的家族恩怨。",
+      "status": "open",
+      "introduced_chapter": 60,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_60_2",
+      "description": "南洋岛屿上的秘密等待揭开，可能是沈家命运的关键。",
+      "status": "open",
+      "introduced_chapter": 60,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_61_0",
+      "description": "沈砚作为北洋军阀遗孤的身份，暗示未来可能承担更大责任。",
+      "status": "open",
+      "introduced_chapter": 61,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_61_1",
+      "description": "顾清如的背叛与阴谋未完全揭露，留下更多悬念。",
+      "status": "open",
+      "introduced_chapter": 61,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_61_2",
+      "description": "白凤楼的立场和目的仍不明确，为后续发展埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 61,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_62_0",
+      "description": "神秘人对沈砚的计划，暗示更大的阴谋正在酝酿。",
+      "status": "open",
+      "introduced_chapter": 62,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_62_1",
+      "description": "江慕雪的真实身份和任务目标仍未完全揭晓。",
+      "status": "open",
+      "introduced_chapter": 62,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_62_2",
+      "description": "沈砚的真正身份和身世之谜，成为接下来的关键线索。",
+      "status": "open",
+      "introduced_chapter": 62,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_62_3",
+      "description": "周墨的介入可能带来新的转机或冲突。",
+      "status": "open",
+      "introduced_chapter": 62,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_63_0",
+      "description": "沈砚的真实身份是沈清梧，暗示他可能拥有特殊能力或使命。",
+      "status": "open",
+      "introduced_chapter": 63,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_63_1",
+      "description": "江慕雪提到的南洋证据，为后续剧情提供明确方向。",
+      "status": "open",
+      "introduced_chapter": 63,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_63_2",
+      "description": "赵三提到的白凤楼，可能是一个关键人物或组织。",
+      "status": "open",
+      "introduced_chapter": 63,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_64_0",
+      "description": "沈砚必须先对付顾清如，否则将面临生命威胁。",
+      "status": "open",
+      "introduced_chapter": 64,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_64_1",
+      "description": "白凤楼承诺安排沈砚前往南洋，但需要他先完成任务。",
+      "status": "open",
+      "introduced_chapter": 64,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_64_2",
+      "description": "秦慕雪暗示自己可能是顾清如的人，但不会伤害沈砚。",
+      "status": "open",
+      "introduced_chapter": 64,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_65_0",
+      "description": "沈砚母亲临终前的遗言暗示更多关于沈家的秘密。",
+      "status": "open",
+      "introduced_chapter": 65,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_65_1",
+      "description": "白凤楼的真实身份和动机尚未完全揭晓。",
+      "status": "open",
+      "introduced_chapter": 65,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_65_2",
+      "description": "秦慕雪似乎掌握重要情报，但未直接参与主线剧情。",
+      "status": "open",
+      "introduced_chapter": 65,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_66_0",
+      "description": "沈砚的真实身份之谜，以及那张神秘照片背后的真相。",
+      "status": "open",
+      "introduced_chapter": 66,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_66_1",
+      "description": "顾清如掌握沈家秘密，可能带来关键信息或转折。",
+      "status": "open",
+      "introduced_chapter": 66,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_66_2",
+      "description": "白凤楼的真正目的尚未完全揭露，暗藏更大阴谋。",
+      "status": "open",
+      "introduced_chapter": 66,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_67_0",
+      "description": "白凤楼在码头的行动即将展开，沈砚将面临生死考验",
+      "status": "open",
+      "introduced_chapter": 67,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_67_1",
+      "description": "顾清如的背叛可能带来更大的风险或转机",
+      "status": "open",
+      "introduced_chapter": 67,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_67_2",
+      "description": "周墨的忠诚与情感冲突将成为后续剧情的重要线索",
+      "status": "open",
+      "introduced_chapter": 67,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_68_0",
+      "description": "周墨牺牲自己引开敌人，为沈砚争取时间寻找顾清如。",
+      "status": "open",
+      "introduced_chapter": 68,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_68_1",
+      "description": "白凤楼的死亡引发青帮内部动荡，可能带来新的势力变化。",
+      "status": "open",
+      "introduced_chapter": 68,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_68_2",
+      "description": "顾清如的身份和立场成为接下来剧情的重要线索。",
+      "status": "open",
+      "introduced_chapter": 68,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_69_0",
+      "description": "顾清如的船只突然出现，暗示她可能掌握更多关于沈砚的秘密。",
+      "status": "open",
+      "introduced_chapter": 69,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_69_1",
+      "description": "沈砚的真实身世背后隐藏着更大的秘密，等待后续揭示。",
+      "status": "open",
+      "introduced_chapter": 69,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_70_0",
+      "description": "林婉儿掌握沈砚身世的真相，可能成为关键转折点。",
+      "status": "open",
+      "introduced_chapter": 70,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_70_1",
+      "description": "顾景明仍在寻找沈砚，暗示未来将有更大冲突。",
+      "status": "open",
+      "introduced_chapter": 70,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_70_2",
+      "description": "陈阿婆的出现为后续剧情提供新线索和助力。",
+      "status": "open",
+      "introduced_chapter": 70,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_71_0",
+      "description": "林文昭派人追杀顾清如，暗示其背后有更大的阴谋。",
+      "status": "open",
+      "introduced_chapter": 71,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_71_1",
+      "description": "沈砚的真实身份被揭开，但仍有未解之谜。",
+      "status": "open",
+      "introduced_chapter": 71,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_71_2",
+      "description": "周墨的牺牲行为为后续剧情留下悬念。",
+      "status": "open",
+      "introduced_chapter": 71,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_71_3",
+      "description": "沈砚与顾清如计划逃往南洋，可能引发新的冲突。",
+      "status": "open",
+      "introduced_chapter": 71,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_72_0",
+      "description": "顾清如的真实身份和目的尚未揭晓，引发读者好奇。",
+      "status": "open",
+      "introduced_chapter": 72,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_72_1",
+      "description": "周墨对沈砚的关心背后是否另有隐情？",
+      "status": "open",
+      "introduced_chapter": 72,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_72_2",
+      "description": "南洋华侨财团是否会真正帮助沈砚？",
+      "status": "open",
+      "introduced_chapter": 72,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_72_3",
+      "description": "沈砚能否在南洋找到真正的庇护？",
+      "status": "open",
+      "introduced_chapter": 72,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_73_0",
+      "description": "沈砚需要前往南洋寻找林婉儿，揭开更多身世之谜。",
+      "status": "open",
+      "introduced_chapter": 73,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_73_1",
+      "description": "周墨作为青帮长老的身份和动机仍需进一步揭示。",
+      "status": "open",
+      "introduced_chapter": 73,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_73_2",
+      "description": "林文昭掌握的账本内容可能引发更大冲突。",
+      "status": "open",
+      "introduced_chapter": 73,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_74_0",
+      "description": "林婉儿在南洋等待沈砚，暗示她掌握重要信息",
+      "status": "open",
+      "introduced_chapter": 74,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_74_1",
+      "description": "怀表中的照片和裂痕可能隐藏关键线索",
+      "status": "open",
+      "introduced_chapter": 74,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_74_2",
+      "description": "北洋商会对沈砚的追捕表明他掌握着某种威胁他们的秘密",
+      "status": "open",
+      "introduced_chapter": 74,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_75_0",
+      "description": "沈砚必须前往南洋寻找账本，但面临北洋商会的追杀。",
+      "status": "open",
+      "introduced_chapter": 75,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_75_1",
+      "description": "林婉儿作为沈家表兄的遗孤，掌握更多关于父亲的秘密。",
+      "status": "open",
+      "introduced_chapter": 75,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_75_2",
+      "description": "陈阿婆的过去和她与沈家的关系仍存疑点。",
+      "status": "open",
+      "introduced_chapter": 75,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_76_0",
+      "description": "沈砚的身世之谜尚未完全解开，南洋可能隐藏更多真相",
+      "status": "open",
+      "introduced_chapter": 76,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_76_1",
+      "description": "周墨与沈砚之间的情感纠葛将面临更大考验",
+      "status": "open",
+      "introduced_chapter": 76,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_76_2",
+      "description": "顾景明的死亡是否真正终结了仇恨？",
+      "status": "open",
+      "introduced_chapter": 76,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_77_0",
+      "description": "林文昭与沈家的交易以及他背叛沈父的真相尚未完全揭晓。",
+      "status": "open",
+      "introduced_chapter": 77,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_77_1",
+      "description": "林婉儿为何会出现在这里，她的目的和身份仍是个谜。",
+      "status": "open",
+      "introduced_chapter": 77,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_77_2",
+      "description": "沈砚与周墨之间的情感纠葛将面临更大的考验。",
+      "status": "open",
+      "introduced_chapter": 77,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_78_0",
+      "description": "沈砚真正的身世之谜尚未完全解开，背后可能隐藏更大的秘密。",
+      "status": "open",
+      "introduced_chapter": 78,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_78_1",
+      "description": "沈清梧虽然承认沈砚是真正血脉，但并未完全解释清楚整个家族历史。",
+      "status": "open",
+      "introduced_chapter": 78,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_78_2",
+      "description": "教堂中的枪声暗示顾清如的人已经逼近，新一轮冲突即将爆发。",
+      "status": "open",
+      "introduced_chapter": 78,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_79_0",
+      "description": "教堂爆炸后，沈砚等人是否能完全脱险？",
+      "status": "open",
+      "introduced_chapter": 79,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_79_1",
+      "description": "顾清淮的真实身份和动机仍未揭晓。",
+      "status": "open",
+      "introduced_chapter": 79,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_79_2",
+      "description": "黑衣人背后的主使者是谁？他们的最终目标是什么？",
+      "status": "open",
+      "introduced_chapter": 79,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_80_0",
+      "description": "沈砚的父亲是谁？他为何被送走？背后是否涉及更大的阴谋？",
+      "status": "open",
+      "introduced_chapter": 80,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_80_1",
+      "description": "秦慕雪为何要救沈砚？她与沈父之间是否有更深的联系？",
+      "status": "open",
+      "introduced_chapter": 80,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_80_2",
+      "description": "顾景明究竟是谁？他为何要追杀沈砚？",
+      "status": "open",
+      "introduced_chapter": 80,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_81_0",
+      "description": "沈清梧掌握更多关于沈家秘密的信息，可能成为后续关键人物。",
+      "status": "open",
+      "introduced_chapter": 81,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_81_1",
+      "description": "周墨重伤，他的生死将成为故事的重要悬念。",
+      "status": "open",
+      "introduced_chapter": 81,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_81_2",
+      "description": "顾清如与林文昭的监视行动表明他们对沈砚的掌控已深入。",
+      "status": "open",
+      "introduced_chapter": 81,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_82_0",
+      "description": "林婉儿知道真相并可能介入剧情，带来情感与行动上的转折。",
+      "status": "open",
+      "introduced_chapter": 82,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_82_1",
+      "description": "秦慕雪暗示自己有未完成的任务，为后续剧情埋下悬念。",
+      "status": "open",
+      "introduced_chapter": 82,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_82_2",
+      "description": "顾景明派人追捕沈砚，制造紧迫感与危机感。",
+      "status": "open",
+      "introduced_chapter": 82,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_83_0",
+      "description": "周墨是否能成功脱险？他的生死将直接影响沈砚的命运。",
+      "status": "open",
+      "introduced_chapter": 83,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_83_1",
+      "description": "顾清如的真实目的尚未完全揭晓，她是否还有其他隐藏身份？",
+      "status": "open",
+      "introduced_chapter": 83,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_83_2",
+      "description": "林婉儿对沈砚的革新计划的支持背后，是否有更深层的动机？",
+      "status": "open",
+      "introduced_chapter": 83,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_84_0",
+      "description": "沈砚的父亲是否还活着？他的下落是什么？",
+      "status": "open",
+      "introduced_chapter": 84,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_84_1",
+      "description": "沈清梧为何知道沈砚的真实身份？他是否另有目的？",
+      "status": "open",
+      "introduced_chapter": 84,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_84_2",
+      "description": "暗处的监视者是谁？他是否知晓沈家的秘密？",
+      "status": "open",
+      "introduced_chapter": 84,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_84_3",
+      "description": "沈砚将如何选择自己的身份？他会继续隐藏还是接受真相？",
+      "status": "open",
+      "introduced_chapter": 84,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_85_0",
+      "description": "白凤楼即将现身，沈砚必须面对真正的敌人。",
+      "status": "open",
+      "introduced_chapter": 85,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_85_1",
+      "description": "顾清如对沈砚的感情是否真诚仍存疑，为后续剧情埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 85,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_85_2",
+      "description": "赵铁柱的牺牲暗示背后还有更大的阴谋。",
+      "status": "open",
+      "introduced_chapter": 85,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_86_0",
+      "description": "林婉儿的真实身份和目的尚未揭晓，她手中的玉佩暗示她与沈清淮有某种联系。",
+      "status": "open",
+      "introduced_chapter": 86,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_86_1",
+      "description": "沈砚对过去的记忆模糊，但林婉儿提到的‘阿雪’让他产生强烈共鸣，为后续回忆埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 86,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_86_2",
+      "description": "白凤楼和北洋商会的冲突即将爆发，沈砚等人将面临更大危机。",
+      "status": "open",
+      "introduced_chapter": 86,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_87_0",
+      "description": "沈砚的真实身份和身世之谜进一步展开。",
+      "status": "open",
+      "introduced_chapter": 87,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_87_1",
+      "description": "周墨对沈砚的感情与忠诚成为关键伏笔。",
+      "status": "open",
+      "introduced_chapter": 87,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_87_2",
+      "description": "林文昭在码头的阴谋暗示更大的权力斗争。",
+      "status": "open",
+      "introduced_chapter": 87,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_88_0",
+      "description": "周墨是否真的会死？他的计划是否成功？",
+      "status": "open",
+      "introduced_chapter": 88,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_88_1",
+      "description": "林文昭的真正目的是什么？他是否会介入后续剧情？",
+      "status": "open",
+      "introduced_chapter": 88,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_88_2",
+      "description": "沈砚如何面对自己的新身份？他是否会选择复仇或逃避？",
+      "status": "open",
+      "introduced_chapter": 88,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_89_0",
+      "description": "周墨的死亡成为沈砚复仇的导火索。",
+      "status": "open",
+      "introduced_chapter": 89,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_89_1",
+      "description": "沈砚的真实身份背后还有更多未解之谜。",
+      "status": "open",
+      "introduced_chapter": 89,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_89_2",
+      "description": "幕后黑手的出现预示更大的阴谋正在酝酿。",
+      "status": "open",
+      "introduced_chapter": 89,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_90_0",
+      "description": "周墨仍活着，但下落不明，成为后续剧情的关键线索",
+      "status": "open",
+      "introduced_chapter": 90,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_90_1",
+      "description": "顾景明不会轻易放弃，可能发动更大规模的追杀",
+      "status": "open",
+      "introduced_chapter": 90,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_90_2",
+      "description": "沈砚需要找到周墨以揭开更多真相",
+      "status": "open",
+      "introduced_chapter": 90,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_90_3",
+      "description": "林婉儿和白凤楼的真正目的尚未完全揭晓",
+      "status": "open",
+      "introduced_chapter": 90,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_91_0",
+      "description": "南洋商会地下室可能藏有重要秘密。",
+      "status": "open",
+      "introduced_chapter": 91,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_91_1",
+      "description": "顾清淮的真实目的尚未揭晓，他是否可信仍是疑问。",
+      "status": "open",
+      "introduced_chapter": 91,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_91_2",
+      "description": "周墨的伤势和背后势力未完全交代，留下悬念。",
+      "status": "open",
+      "introduced_chapter": 91,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_92_0",
+      "description": "周墨的下落成谜，沈砚必须找到他。",
+      "status": "open",
+      "introduced_chapter": 92,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_92_1",
+      "description": "顾清如掌握更多关于沈砚父亲的秘密，可能影响后续剧情。",
+      "status": "open",
+      "introduced_chapter": 92,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_92_2",
+      "description": "沈砚面临选择：是否加入白凤楼以求生存。",
+      "status": "open",
+      "introduced_chapter": 92,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_92_3",
+      "description": "顾景明的动机和背后势力尚未完全揭示。",
+      "status": "open",
+      "introduced_chapter": 92,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_93_0",
+      "description": "沈砚的真实身份是北洋军阀遗孤，暗示他可能卷入更大的政治斗争。",
+      "status": "open",
+      "introduced_chapter": 93,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_93_1",
+      "description": "南洋华侨财团地下仓库的设定为后续剧情提供了新的探索方向。",
+      "status": "open",
+      "introduced_chapter": 93,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_93_2",
+      "description": "沈清梧透露的信息让周墨陷入更深的道德困境。",
+      "status": "open",
+      "introduced_chapter": 93,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_94_0",
+      "description": "白凤楼掌握沈家身世的秘密，他的动机和目的尚未完全揭示。",
+      "status": "open",
+      "introduced_chapter": 94,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_94_1",
+      "description": "南洋的亲人身份成谜，暗示沈砚的身世可能牵涉更大的历史背景。",
+      "status": "open",
+      "introduced_chapter": 94,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_94_2",
+      "description": "顾清如对沈砚的感情成为未来剧情的重要推动力。",
+      "status": "open",
+      "introduced_chapter": 94,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_94_3",
+      "description": "沈清梧的行踪不明，他的下一步行动充满悬念。",
+      "status": "open",
+      "introduced_chapter": 94,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_95_0",
+      "description": "秦慕雪的身份和背景未完全揭晓，留下悬念。",
+      "status": "open",
+      "introduced_chapter": 95,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_95_1",
+      "description": "白凤楼受伤后可能引发更大的报复或反击。",
+      "status": "open",
+      "introduced_chapter": 95,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_95_2",
+      "description": "顾清如为何在此时出手，背后是否有更深层的目的？",
+      "status": "open",
+      "introduced_chapter": 95,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_96_0",
+      "description": "沈清梧在码头的出现，暗示他可能知道更多关于沈砚身世的秘密。",
+      "status": "open",
+      "introduced_chapter": 96,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_96_1",
+      "description": "南洋成为沈砚的新目的地，但那里是否真的安全仍存疑。",
+      "status": "open",
+      "introduced_chapter": 96,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_96_2",
+      "description": "秦慕雪的出现表明青帮已经掌握了沈砚的身份，后续可能有更激烈的对抗。",
+      "status": "open",
+      "introduced_chapter": 96,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_97_0",
+      "description": "顾清如的复杂情绪暗示她可能有未公开的背景或秘密。",
+      "status": "open",
+      "introduced_chapter": 97,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_97_1",
+      "description": "沈家血脉的真正价值和用途仍未完全揭示。",
+      "status": "open",
+      "introduced_chapter": 97,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_97_2",
+      "description": "南洋是否真的安全，仍是未知数。",
+      "status": "open",
+      "introduced_chapter": 97,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_98_0",
+      "description": "沈砚的真实身份和沈家的秘密尚未完全揭晓。",
+      "status": "open",
+      "introduced_chapter": 98,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_98_1",
+      "description": "沈清淮的出现可能带来新的盟友或敌人。",
+      "status": "open",
+      "introduced_chapter": 98,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_98_2",
+      "description": "顾清如对沈砚的复杂态度暗示她可能掌握更多关于沈家的信息。",
+      "status": "open",
+      "introduced_chapter": 98,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_99_0",
+      "description": "沈砚的真正父亲沈清梧的身份和目的未明，他试图烧毁一切，可能隐藏重要秘密。",
+      "status": "open",
+      "introduced_chapter": 99,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_99_1",
+      "description": "白凤楼的出现暗示有第三方势力正在布局，可能影响后续剧情走向。",
+      "status": "open",
+      "introduced_chapter": 99,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_99_2",
+      "description": "南洋的亲人身份成谜，为下一章埋下伏笔。",
+      "status": "open",
+      "introduced_chapter": 99,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_100_0",
+      "description": "林婉儿留下的密信中包含关键信息，可能涉及沈家秘密或未来行动。",
+      "status": "open",
+      "introduced_chapter": 100,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_100_1",
+      "description": "白凤楼的出现预示着更大的威胁，可能与沈家旧敌有关。",
+      "status": "open",
+      "introduced_chapter": 100,
+      "resolved_chapter": null,
+      "notes": ""
+    },
+    {
+      "thread_id": "hook_100_2",
+      "description": "孤岛上的青帮标志暗示南洋地区隐藏着更多未解之谜。",
+      "status": "open",
+      "introduced_chapter": 100,
+      "resolved_chapter": null,
+      "notes": ""
+    }
+  ],
+  "used_creatives": [
+    {
+      "creative_type": "forbidden_knowledge",
+      "used_in_chapter": 8,
+      "description": "禁忌之书",
+      "impact": "在船上翻阅时，他们被白凤楼的人追踪，不得不在逃亡中解读书中的内容。"
+    },
+    {
+      "creative_type": "identity_reveal",
+      "used_in_chapter": 8,
+      "description": "身份的迷雾",
+      "impact": "在南洋途中，林婉儿无意中透露了一些只有周墨知道的秘密，让沈砚开始怀疑她的身份。"
+    },
+    {
+      "creative_type": "love_triangle",
+      "used_in_chapter": 15,
+      "description": "情愫难断",
+      "impact": "通过一场意外的相遇，让沈砚在周墨和白凤楼之间做出选择，同时引发内部矛盾，增加戏剧张力。"
+    },
+    {
+      "creative_type": "imposter",
+      "used_in_chapter": 15,
+      "description": "真假沈家少主",
+      "impact": "沈砚必须证明自己的身份，同时面对身份危机与外部威胁，提升剧情的紧张感与复杂性。"
+    },
+    {
+      "creative_type": "forgotten_prophecy",
+      "used_in_chapter": 29,
+      "description": "遗落预言",
+      "impact": "通过古卷的出现，为沈砚的身份和命运增添神秘色彩，引发更多猜测与探索。"
+    },
+    {
+      "creative_type": "betting_game",
+      "used_in_chapter": 29,
+      "description": "生死博弈",
+      "impact": "通过赌博情节增加紧张感，同时引出关键线索，推进角色间的关系变化。"
+    },
+    {
+      "creative_type": "deal_with_devil",
+      "used_in_chapter": 33,
+      "description": "与青帮的交易",
+      "impact": "青帮提出苛刻条件，沈砚必须权衡是否值得付出代价，同时也埋下未来冲突的伏笔。"
+    },
+    {
+      "creative_type": "third_party_intervention",
+      "used_in_chapter": 33,
+      "description": "神秘商人现身",
+      "impact": "该商人可能是南洋财团的代表，暗示更大的势力正在暗中操控局势。沈砚必须决定是否信任他。"
+    },
+    {
+      "creative_type": "enemies_allies_swap",
+      "used_in_chapter": 36,
+      "description": "敌营里的叛徒",
+      "impact": "白凤楼的某位手下被沈砚感化，提供敌人布防图，使他们能避开陷阱，同时制造信任危机。"
+    },
+    {
+      "creative_type": "scheming",
+      "used_in_chapter": 36,
+      "description": "青帮的反扑",
+      "impact": "青帮派人假扮成旧识接近江慕雪，制造误会，迫使沈砚不得不在保护她与揭露真相之间做出选择。"
+    },
+    {
+      "creative_type": "past_secret",
+      "used_in_chapter": 38,
+      "description": "沈家的另一段往事",
+      "impact": "通过沈砚的回忆或信件内容，带出沈家与顾家之间不为人知的秘密，增加人物情感冲突。"
+    },
+    {
+      "creative_type": "faction_conflict",
+      "used_in_chapter": 38,
+      "description": "青帮与南洋财团的博弈",
+      "impact": "让沈砚无意中听到会议内容，被迫在青帮与南洋之间做出选择，增加其立场的复杂性。"
+    },
+    {
+      "creative_type": "secret_alliance",
+      "used_in_chapter": 39,
+      "description": "暗中援手",
+      "impact": "在逃亡过程中插入一场突如其来的救援，为后续南洋势力介入埋下伏笔。"
+    },
+    {
+      "creative_type": "betrayal",
+      "used_in_chapter": 39,
+      "description": "信任破裂",
+      "impact": "在逃亡途中制造紧张气氛，引发内部冲突，推动剧情向更复杂的方向发展。"
+    },
+    {
+      "creative_type": "power_struggle",
+      "used_in_chapter": 42,
+      "description": "暗流涌动",
+      "impact": "沈砚收到父亲密令，要求他协助处理商会内部叛乱，但他更想保护周墨与林婉儿，形成内心冲突。"
+    },
+    {
+      "creative_type": "sacrifice",
+      "used_in_chapter": 42,
+      "description": "血色抉择",
+      "impact": "在逃离码头后，三人遭遇白凤楼的追兵，沈砚为掩护同伴而主动暴露，制造紧张感与情感张力。"
+    },
+    {
+      "creative_type": "political_marriage",
+      "used_in_chapter": 45,
+      "description": "联姻背后的阴谋",
+      "impact": "在一次宴会上，南洋代表向沈砚提出婚约，而林婉儿对此感到不安，暗示背后有更深的算计。"
+    },
+    {
+      "creative_type": "scandal_exposure",
+      "used_in_chapter": 45,
+      "description": "暗流下的丑闻",
+      "impact": "沈砚等人刚上船便听到船员议论此事，暗示他们已被卷入更大的政治漩涡中。"
+    },
+    {
+      "creative_type": "forbidden_knowledge",
+      "used_in_chapter": 46,
+      "description": "暗影中的密令",
+      "impact": "在货轮上的搜查行动中，沈砚偶然发现这份文件，迫使他做出抉择：揭露真相还是保持沉默。"
+    },
+    {
+      "creative_type": "flashback",
+      "used_in_chapter": 46,
+      "description": "旧日回音",
+      "impact": "利用梦境或回忆片段，揭示沈砚与程家的过往纠葛，为后续情感线埋下伏笔。"
+    },
+    {
+      "creative_type": "new_faction_intro",
+      "used_in_chapter": 49,
+      "description": "神秘的南洋新势力",
+      "impact": "引入新的利益冲突，为后续势力博弈埋下伏笔，同时推动沈砚进一步深入南洋阴谋。"
+    },
+    {
+      "creative_type": "unreliable_narrator",
+      "used_in_chapter": 49,
+      "description": "记忆的裂痕",
+      "impact": "通过周墨的内心挣扎，揭示过往事件的另一种可能，增加剧情的悬疑感与人物深度。"
+    },
+    {
+      "creative_type": "love_triangle",
+      "used_in_chapter": 51,
+      "description": "暗涌的情愫",
+      "impact": "在码头行动中，沈砚目睹周墨与林婉儿短暂独处，导致三人关系紧张，为后续情感线埋下伏笔。"
+    },
+    {
+      "creative_type": "item_discovery",
+      "used_in_chapter": 51,
+      "description": "沉船中的遗物",
+      "impact": "沈砚带领林婉儿潜入沉船，在箱中找到关键证据，进一步推动他探寻自身真实身份与过去恩怨。"
+    },
+    {
+      "creative_type": "power_struggle",
+      "used_in_chapter": 53,
+      "description": "南洋财团内部权力更迭",
+      "impact": "沈砚被卷入一场暗杀事件，意外获得叛逃者的密语，引导他接近真相。"
+    },
+    {
+      "creative_type": "dark_turn",
+      "used_in_chapter": 53,
+      "description": "顾清如的背叛",
+      "impact": "沈砚在毫无防备的情况下被包围，周墨及时赶到救下他，但顾清如的背叛令他心痛不已。"
+    },
+    {
+      "creative_type": "betrayal",
+      "used_in_chapter": 56,
+      "description": "信任的裂痕",
+      "impact": "在本章中，沈砚发现林婉儿的秘密行为，与她爆发激烈冲突，推动剧情走向情感与权力的双重危机。"
+    },
+    {
+      "creative_type": "secret_alliance",
+      "used_in_chapter": 56,
+      "description": "暗流下的联盟",
+      "impact": "本章可描写青帮头目与南洋华侨代表的密谈，为后续更大规模的冲突埋下伏笔。"
+    },
+    {
+      "creative_type": "forbidden_knowledge",
+      "used_in_chapter": 58,
+      "description": "古玉背后的秘密",
+      "impact": "通过解读古玉上的文字，沈砚揭开自身身世之谜，同时引出更大的阴谋。"
+    },
+    {
+      "creative_type": "scandal_exposure",
+      "used_in_chapter": 58,
+      "description": "暗中交易的证据",
+      "impact": "在逃亡过程中，沈砚发现这份账本，决定将其公之于众，引发一场政治风暴。"
+    },
+    {
+      "creative_type": "revenge",
+      "used_in_chapter": 64,
+      "description": "血债血偿",
+      "impact": "沈砚潜入林文昭的藏身之处，却发现他早已成为北洋商会的重要人物，复仇之路充满危险。"
+    },
+    {
+      "creative_type": "unexpected_ally",
+      "used_in_chapter": 64,
+      "description": "暗夜援手",
+      "impact": "沈砚在被追杀之际，女子出手相救，透露她掌握顾景明的罪证，并愿意协助他反制各方势力。"
+    },
+    {
+      "creative_type": "third_party_intervention",
+      "used_in_chapter": 65,
+      "description": "神秘商人现身",
+      "impact": "商人在暗中提供关键情报，暗示顾景明与南洋财团之间的秘密交易，同时引出新的势力介入。"
+    },
+    {
+      "creative_type": "scheming",
+      "used_in_chapter": 65,
+      "description": "青帮内斗",
+      "impact": "沈砚被迫在多方势力间周旋，揭示青帮在地下世界的生存法则与忠诚的代价。"
+    },
+    {
+      "creative_type": "identity_reveal",
+      "used_in_chapter": 67,
+      "description": "隐藏多年的身世之谜",
+      "impact": "沈砚在逃亡途中被陆明远所救，陆明远揭露身份，并暗示顾清如的计划背后有更深的隐情。"
+    },
+    {
+      "creative_type": "war_strategy",
+      "used_in_chapter": 67,
+      "description": "布局反击的暗杀行动",
+      "impact": "沈砚设下陷阱，试图击溃顾清如的势力，但行动失败，成为各派系追捕的目标。"
+    },
+    {
+      "creative_type": "faction_conflict",
+      "used_in_chapter": 68,
+      "description": "青帮的地下抉择",
+      "impact": "本章可描写青帮内部密会，沈砚被卷入其中，面临立场抉择，同时埋下后续背叛伏笔。"
+    },
+    {
+      "creative_type": "sacrifice",
+      "used_in_chapter": 68,
+      "description": "为真相付出代价",
+      "impact": "本章可安排沈砚陷入陷阱，面对生死抉择，同时引出关于他身世的惊人真相。"
+    },
+    {
+      "creative_type": "forbidden_knowledge",
+      "used_in_chapter": 70,
+      "description": "禁忌知识的代价",
+      "impact": "周墨为保护沈砚，不得不暂时隐瞒真相，但沈砚的好奇心让他一步步逼近危险。"
+    },
+    {
+      "creative_type": "hidden_heir",
+      "used_in_chapter": 70,
+      "description": "血统之谜的真相",
+      "impact": "周墨在帮助沈砚逃离时，意外发现了这封信，并暗示沈砚的身份将改变整个权力格局。"
+    },
+    {
+      "creative_type": "betrayal",
+      "used_in_chapter": 71,
+      "description": "暗中交易的代价",
+      "impact": "在码头枪战后的混乱中，沈砚偶然发现一封未寄出的信件，揭示周墨的真实立场。"
+    },
+    {
+      "creative_type": "past_secret",
+      "used_in_chapter": 71,
+      "description": "旧日情仇浮现",
+      "impact": "沈砚与青帮残部交火时，对方头目揭露一段尘封往事，为后续恩怨铺垫。"
+    },
+    {
+      "creative_type": "secret_alliance",
+      "used_in_chapter": 72,
+      "description": "暗影中的盟约",
+      "impact": "他们在逃亡途中进入一处废弃仓库，发现了青帮与南洋财团的密信往来，引发对局势的新思考。"
+    },
+    {
+      "creative_type": "flashback",
+      "used_in_chapter": 72,
+      "description": "破碎的记忆",
+      "impact": "他在一次危机中陷入昏迷，通过回忆逐步揭开身世之谜，为后续剧情埋下伏笔。"
+    },
+    {
+      "creative_type": "love_triangle",
+      "used_in_chapter": 74,
+      "description": "情感的裂痕",
+      "impact": "沈砚的身世真相让顾清如质疑自己的立场，而周墨则试图拉拢她，形成微妙的情感三角。"
+    },
+    {
+      "creative_type": "item_discovery",
+      "used_in_chapter": 74,
+      "description": "神秘的怀表与记忆",
+      "impact": "怀表成为关键线索，引导沈砚深入调查过去的秘密，同时引发顾清如的担忧。"
+    },
+    {
+      "creative_type": "revenge",
+      "used_in_chapter": 76,
+      "description": "复仇者的踪迹",
+      "impact": "沈砚与对方正面交锋，展开一场心理与行动的博弈，为后续复仇主线埋下关键转折点。"
+    },
+    {
+      "creative_type": "power_struggle",
+      "used_in_chapter": 76,
+      "description": "暗中夺权的棋子",
+      "impact": "沈砚在与顾清和的交谈中无意提及父亲留下的线索，引起旁听者的注意，埋下后续争斗伏笔。"
+    },
+    {
+      "creative_type": "forbidden_knowledge",
+      "used_in_chapter": 77,
+      "description": "密室中的血书",
+      "impact": "通过密室场景揭示家族秘密，加深主角对父亲临终话语的理解，并埋下复仇伏笔。"
+    },
+    {
+      "creative_type": "enemies_allies_swap",
+      "used_in_chapter": 77,
+      "description": "敌我难辨",
+      "impact": "展示势力间关系的微妙变化，为后续青帮转向埋下伏笔，增强剧情复杂性。"
+    },
+    {
+      "creative_type": "betting_game",
+      "used_in_chapter": 78,
+      "description": "赌局暗藏杀机",
+      "impact": "在南洋码头的一处秘密赌场中展开，引出更多敌对势力的现身，并为后续权力争夺埋下伏笔。"
+    },
+    {
+      "creative_type": "third_party_intervention",
+      "used_in_chapter": 78,
+      "description": "意外的援手",
+      "impact": "女子在密室外出现，带来关于南洋仇人的重要信息，并暗示她与沈家有旧。"
+    },
+    {
+      "creative_type": "unexpected_ally",
+      "used_in_chapter": 80,
+      "description": "暗夜援手",
+      "impact": "该女子透露南洋财团与北洋商会的秘密交易，为沈砚提供关键情报，同时暗示她可能与林婉儿有某种联系。"
+    },
+    {
+      "creative_type": "public_humiliation",
+      "used_in_chapter": 80,
+      "description": "名流宴会上的质问",
+      "impact": "林婉儿利用宴会场合制造舆论压力，迫使顾清如陷入被动，同时暴露其与北洋商会的不正当关系。"
+    },
+    {
+      "creative_type": "war_strategy",
+      "used_in_chapter": 83,
+      "description": "暗线布局",
+      "impact": "通过一场精心设计的行动展示双方势力的智谋较量，提升紧张感。"
+    },
+    {
+      "creative_type": "love_triangle",
+      "used_in_chapter": 83,
+      "description": "暗涌情愫",
+      "impact": "在一次秘密会议中，三人被迫共处，情感张力与任务压力交织，制造戏剧冲突。"
+    },
+    {
+      "creative_type": "flashback",
+      "used_in_chapter": 84,
+      "description": "尘封记忆",
+      "impact": "利用梦境或幻觉形式展开回忆，逐步揭开沈砚身世之谜，并牵动主线剧情发展。"
+    },
+    {
+      "creative_type": "scheming",
+      "used_in_chapter": 84,
+      "description": "棋局再起",
+      "impact": "通过青帮内部的密谋会议或密信往来，展现各方势力的角力，增加剧情张力。"
+    },
+    {
+      "creative_type": "hidden_heir",
+      "used_in_chapter": 85,
+      "description": "身份的真相",
+      "impact": "沈砚被多方逼迫，必须在揭露真相与保全性命之间做出抉择，同时引发青帮与商会之间的新一轮博弈。"
+    },
+    {
+      "creative_type": "forbidden_knowledge",
+      "used_in_chapter": 85,
+      "description": "禁忌之书",
+      "impact": "手札内容暴露沈家过去的罪行，迫使沈砚面对自己的家族历史，并引发新一轮追杀。"
+    },
+    {
+      "creative_type": "dark_turn",
+      "used_in_chapter": 90,
+      "description": "背叛之吻",
+      "impact": "在沈砚准备与林文昭合作时，林婉儿以亲密姿态接近他，却在关键时刻揭穿身份，导致局势突变。"
+    },
+    {
+      "creative_type": "body_discovery",
+      "used_in_chapter": 90,
+      "description": "血色证物",
+      "impact": "尸体的出现将沈砚和周墨推向更深的调查，揭露顾清如的真实死因与背后势力的联系。"
+    },
+    {
+      "creative_type": "secret_alliance",
+      "used_in_chapter": 94,
+      "description": "暗影中的新盟约",
+      "impact": "沈砚与周墨在疗伤期间研究账本，意外发现一份被隐藏的密信，引出一个尚未公开的势力联盟。"
+    },
+    {
+      "creative_type": "mistake_identity",
+      "used_in_chapter": 94,
+      "description": "误认的背叛者",
+      "impact": "沈砚因一次情报失误而怀疑某位青帮成员，但随着调查深入，真相逐渐浮出水面，带来新的信任危机。"
+    },
+    {
+      "creative_type": "scandal_exposure",
+      "used_in_chapter": 96,
+      "description": "昔日恋情曝光",
+      "impact": "一封未寄出的情书被意外流出，让沈砚陷入道德与政治双重危机。"
+    },
+    {
+      "creative_type": "betrayal",
+      "used_in_chapter": 96,
+      "description": "盟友的致命背叛",
+      "impact": "周墨在密室中与南洋代表交涉，却突然遭人袭击，揭示内部已有内鬼。"
+    },
+    {
+      "creative_type": "parallel_editing",
+      "used_in_chapter": 97,
+      "description": "双线并行的暗杀计划",
+      "impact": "章节中穿插沈砚与周墨的调查片段，以及刺客行动的场景，营造紧张氛围与戏剧性冲突。"
+    },
+    {
+      "creative_type": "enemies_allies_swap",
+      "used_in_chapter": 97,
+      "description": "周墨的背叛与救赎",
+      "impact": "在一场针对沈砚的袭击中，周墨反向出手，表面背叛实则保护，最终以命相搏，留下悬念。"
+    },
+    {
+      "creative_type": "hidden_heir",
+      "used_in_chapter": 98,
+      "description": "失散的血脉",
+      "impact": "陈阿婆在临终前透露沈清梧的真实身世，沈砚震惊之余，必须面对这个突如其来的家族变数。"
+    },
+    {
+      "creative_type": "power_struggle",
+      "used_in_chapter": 98,
+      "description": "青帮内乱",
+      "impact": "沈砚和周墨在码头附近目睹一场青帮内斗，同时发现有南洋势力在幕后操控，迫使他们不得不重新评估自己的立场。"
+    }
+  ],
+  "active_creative_types": [
+    "body_discovery",
+    "secret_alliance",
+    "mistake_identity",
+    "scandal_exposure",
+    "betrayal",
+    "parallel_editing",
+    "enemies_allies_swap",
+    "hidden_heir",
+    "power_struggle"
+  ]
+}
