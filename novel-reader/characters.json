@@ -4,7 +4,7 @@
     "identity": "实为曹操亲生弟弟，因政变被流放",
     "current_location": "初始地点",
     "goal": "待探索",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -84,7 +84,7 @@
     "identity": "黄巾军残部中的隐秘领袖，实为前朝太史令之后，掌握着古代天机图的秘密",
     "current_location": "荆州暗河密窟",
     "goal": "找到天机图的完整拼图，揭开黄巾起义背后的真正幕后黑手",
-    "status": "alive",
+    "status": "dead",
     "role": "main",
     "relationship_changes": [],
     "new_traits": []
@@ -104,7 +104,7 @@
     "identity": "前朝宦官后裔，现为洛阳暗探，受神秘组织‘天机阁’操控，负责收集各方势力情报",
     "current_location": "洛阳城内密道",
     "goal": "查明黄巾起义背后的真正策划者，并在关键时刻刺杀关键人物以改变局势",
-    "status": "alive",
+    "status": "dead",
     "role": "main",
     "relationship_changes": [],
     "new_traits": []
@@ -144,7 +144,7 @@
     "identity": "玄蛇盟的叛逃者，曾是密探，现为游走于各方势力之间的双面谍",
     "current_location": "荆州边境的隐秘山谷",
     "goal": "揭露玄蛇盟与黄巾起义背后的真正阴谋，并寻找能抗衡天机阁的力量",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -154,7 +154,7 @@
     "identity": "前朝御医后裔，现为玄蛇盟的暗中联络人，负责传递各方势力间的关键情报",
     "current_location": "洛阳城外的废弃药铺",
     "goal": "查明黄巾起义背后的真正策划者，并寻找能够揭露天机阁阴谋的证据",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -194,7 +194,7 @@
     "identity": "前朝御史之子，现为玄蛇盟中立派的联络人，掌握着多方势力的密信与秘密。",
     "current_location": "江东暗巷之中，藏身于一座废弃的祠堂内",
     "goal": "在各方势力之间保持平衡，等待时机揭露黄巾起义背后的真正黑手。",
-    "status": "alive",
+    "status": "dead",
     "role": "main",
     "relationship_changes": [],
     "new_traits": []
@@ -244,7 +244,7 @@
     "identity": "前朝御史之女，现为玄蛇盟中立派的密探，掌握多方势力间的关键情报与叛徒名单",
     "current_location": "洛阳城内暗巷深处的密室",
     "goal": "揭露黄巾起义背后的真正幕后黑手，并在各方势力中维持微妙平衡",
-    "status": "alive",
+    "status": "dead",
     "role": "main",
     "relationship_changes": [],
     "new_traits": []
@@ -264,7 +264,7 @@
     "identity": "前朝御史之女，现为青鸾阁的密探，代号‘玄鸟’，负责潜入魏国高层搜集机密情报",
     "current_location": "洛阳城内，混入魏国官员府邸",
     "goal": "查明魏国军械库的秘密，揭露曹操是否与玄蛇盟有暗中交易",
-    "status": "alive",
+    "status": "dead",
     "role": "main",
     "relationship_changes": [],
     "new_traits": []
@@ -284,7 +284,7 @@
     "identity": "前朝御史之子，现为青鸾阁的密探，代号‘玄蛇’，专司刺探玄蛇盟与三国之间的暗中交易",
     "current_location": "洛阳城内一处隐秘酒楼‘醉鹤轩’",
     "goal": "获取玄蛇盟与魏国高层勾结的证据，并将其交给蜀国势力以打破四角格局",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -314,6 +314,26 @@
     "identity": "前朝御史之孙，现为青鸾阁的密探，代号‘玄蛟’，专司刺探魏国军情与暗中策动江南势力。",
     "current_location": "江东境内，潜伏于孙权幕府之中",
     "goal": "获取魏国军备情报，并在关键时刻策动江东内部变乱以破坏三国平衡",
+    "status": "alive",
+    "role": "supporting",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "沈玄奕": {
+    "name": "沈玄奕",
+    "identity": "前朝御史之子，现为青鸾阁暗中联络人，掌握黄巾起义后各方势力的密信与叛徒名单",
+    "current_location": "洛阳城内一处隐秘宅院",
+    "goal": "揭露玄蛇盟真正幕后黑手，并阻止其操控天下局势",
+    "status": "alive",
+    "role": "main",
+    "relationship_changes": [],
+    "new_traits": []
+  },
+  "沈清晖": {
+    "name": "沈清晖",
+    "identity": "前朝御史之女，现为玄蛇盟与青鸾阁之间的秘密信使，掌握多方势力的密信与暗中交易情报",
+    "current_location": "洛阳城内一处隐秘酒楼‘夜影阁’",
+    "goal": "寻找黄巾起义真正幕后黑手的线索，并在三国与玄蛇盟之间维持微妙平衡",
     "status": "alive",
     "role": "supporting",
     "relationship_changes": [],
