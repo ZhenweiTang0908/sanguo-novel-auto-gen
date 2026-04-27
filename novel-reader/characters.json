@@ -54,7 +54,7 @@
     "identity": "其实是蛟龙转世，能控制水域",
     "current_location": "初始地点",
     "goal": "待探索",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -134,7 +134,7 @@
     "identity": "玄蛇盟的暗卫首领，擅长毒术与易容，真实身份是前朝皇室旁支后裔",
     "current_location": "荆州暗巷中的一座废弃庙宇",
     "goal": "寻找并保护一件能揭露黄巾起义真相的玉简，防止其落入敌对势力之手",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -294,7 +294,7 @@
     "identity": "洛阳城中神秘的铜镜师，实为前朝皇室暗卫后裔，掌握着能映照人心的‘心镜’秘术。",
     "current_location": "洛阳城西巷的铜镜铺内",
     "goal": "寻找黄巾起义真正幕后黑手的线索，并防止‘心镜’落入玄蛇盟之手。",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
@@ -324,7 +324,7 @@
     "identity": "前朝御史之子，现为青鸾阁暗中联络人，掌握黄巾起义后各方势力的密信与叛徒名单",
     "current_location": "洛阳城内一处隐秘宅院",
     "goal": "揭露玄蛇盟真正幕后黑手，并阻止其操控天下局势",
-    "status": "alive",
+    "status": "dead",
     "role": "main",
     "relationship_changes": [],
     "new_traits": []
@@ -334,7 +334,7 @@
     "identity": "前朝御史之女，现为玄蛇盟与青鸾阁之间的秘密信使，掌握多方势力的密信与暗中交易情报",
     "current_location": "洛阳城内一处隐秘酒楼‘夜影阁’",
     "goal": "寻找黄巾起义真正幕后黑手的线索，并在三国与玄蛇盟之间维持微妙平衡",
-    "status": "alive",
+    "status": "dead",
     "role": "supporting",
     "relationship_changes": [],
     "new_traits": []
